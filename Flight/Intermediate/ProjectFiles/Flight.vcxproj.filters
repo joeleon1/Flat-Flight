@@ -4,7 +4,7 @@
 	<ItemGroup>
 		<None Include="..\..\Flight.uproject" />
 		<Filter Include="Source">
-			<UniqueIdentifier>{02FFB10B-1D2D-42FE-B029-2813DCC2184A}</UniqueIdentifier>
+			<UniqueIdentifier>{2E65C7FB-EDDA-4938-AFF9-B3253FB2A66A}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Source\Flight.Target.cs">
 			<Filter>Source</Filter>
@@ -13,7 +13,7 @@
 			<Filter>Source</Filter>
 		</None >
 		<Filter Include="Config">
-			<UniqueIdentifier>{73D1C6C0-A014-4C41-A0F0-62613EC39752}</UniqueIdentifier>
+			<UniqueIdentifier>{085844BD-B08D-4F89-8143-2896193C47B1}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Config\DefaultEditor.ini">
 			<Filter>Config</Filter>
@@ -25,7 +25,7 @@
 			<Filter>Config</Filter>
 		</None >
 		<Filter Include="Source\Flight">
-			<UniqueIdentifier>{53C18A45-D5DA-4717-9621-0E0813E88A02}</UniqueIdentifier>
+			<UniqueIdentifier>{9F888D37-7CBA-46DA-9125-9E4359672126}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Source\Flight\Flight.Build.cs">
 			<Filter>Source\Flight</Filter>

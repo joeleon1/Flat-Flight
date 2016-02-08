@@ -12,7 +12,7 @@ void EmptyLinkFunctionForGeneratedCodeFlight() {}
 	void AFlightBullet::StaticRegisterNativesAFlightBullet()
 	{
 	}
-	IMPLEMENT_CLASS(AFlightBullet, 2372792518);
+	IMPLEMENT_CLASS(AFlightBullet, 2450313988);
 	void AFlightGameMode::StaticRegisterNativesAFlightGameMode()
 	{
 	}
@@ -20,7 +20,7 @@ void EmptyLinkFunctionForGeneratedCodeFlight() {}
 #if USE_COMPILED_IN_NATIVES
 // Cross Module References
 	ENGINE_API class UClass* Z_Construct_UClass_AActor();
-	ENGINE_API class UClass* Z_Construct_UClass_UCapsuleComponent_NoRegister();
+	ENGINE_API class UClass* Z_Construct_UClass_USphereComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_UProjectileMovementComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_AGameMode();
@@ -49,18 +49,16 @@ void EmptyLinkFunctionForGeneratedCodeFlight() {}
 
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
-				UProperty* NewProp_TimeTillDeath = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("TimeTillDeath"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(TimeTillDeath, AFlightBullet), 0x0000080000020001);
-				UProperty* NewProp_Collider = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("Collider"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(Collider, AFlightBullet), 0x00000800000a0009, Z_Construct_UClass_UCapsuleComponent_NoRegister());
+				UProperty* NewProp_Collider = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("Collider"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(Collider, AFlightBullet), 0x00000800000a0009, Z_Construct_UClass_USphereComponent_NoRegister());
 				UProperty* NewProp_Mesh = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("Mesh"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(Mesh, AFlightBullet), 0x00000800000a0009, Z_Construct_UClass_UStaticMeshComponent_NoRegister());
 				UProperty* NewProp_MovementComponent = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("MovementComponent"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(MovementComponent, AFlightBullet), 0x00000800000a0009, Z_Construct_UClass_UProjectileMovementComponent_NoRegister());
+				UProperty* NewProp_TimeTillDeath = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("TimeTillDeath"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(TimeTillDeath, AFlightBullet), 0x0000000000000001);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->StaticLink();
 #if WITH_METADATA
 				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
 				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("FlightBullet.h"));
 				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("FlightBullet.h"));
-				MetaData->SetValue(NewProp_TimeTillDeath, TEXT("Category"), TEXT("FlightBullet"));
-				MetaData->SetValue(NewProp_TimeTillDeath, TEXT("ModuleRelativePath"), TEXT("FlightBullet.h"));
 				MetaData->SetValue(NewProp_Collider, TEXT("Category"), TEXT("FlightBullet"));
 				MetaData->SetValue(NewProp_Collider, TEXT("EditInline"), TEXT("true"));
 				MetaData->SetValue(NewProp_Collider, TEXT("ModuleRelativePath"), TEXT("FlightBullet.h"));
@@ -70,6 +68,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				MetaData->SetValue(NewProp_MovementComponent, TEXT("Category"), TEXT("FlightBullet"));
 				MetaData->SetValue(NewProp_MovementComponent, TEXT("EditInline"), TEXT("true"));
 				MetaData->SetValue(NewProp_MovementComponent, TEXT("ModuleRelativePath"), TEXT("FlightBullet.h"));
+				MetaData->SetValue(NewProp_TimeTillDeath, TEXT("Category"), TEXT("FlightBullet"));
+				MetaData->SetValue(NewProp_TimeTillDeath, TEXT("ModuleRelativePath"), TEXT("FlightBullet.h"));
 #endif
 			}
 		}
@@ -120,7 +120,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/Flight")), false, false));
 			ReturnPackage->SetPackageFlags(PKG_CompiledIn | 0x00000000);
 			FGuid Guid;
-			Guid.A = 0x824A3AA8;
+			Guid.A = 0xCCE7DED1;
 			Guid.B = 0xC1591A5A;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;

@@ -16,6 +16,9 @@ public:
 	// Called every frame
 	virtual void Tick( float DeltaSeconds ) override;
 
+	UPROPERTY(EditAnywhere)
+		float TimeTillDeath;
+
 private:
 	float timeAlive;
 protected:
@@ -27,8 +30,5 @@ protected:
 	UStaticMeshComponent* Mesh;
 
 	UPROPERTY(VisibleAnywhere)
-	UCapsuleComponent* Collider;
-
-	UPROPERTY(VisibleAnywhere)
-	float TimeTillDeath;
+	USphereComponent* Collider;
 };
