@@ -17,6 +17,14 @@ void EmptyLinkFunctionForGeneratedCodeFlight() {}
 	{
 	}
 	IMPLEMENT_CLASS(AFlightGameMode, 2900729568);
+	void APaperPlayerShip::StaticRegisterNativesAPaperPlayerShip()
+	{
+	}
+	IMPLEMENT_CLASS(APaperPlayerShip, 2997559567);
+	void APlayerShip::StaticRegisterNativesAPlayerShip()
+	{
+	}
+	IMPLEMENT_CLASS(APlayerShip, 3715695009);
 #if USE_COMPILED_IN_NATIVES
 // Cross Module References
 	ENGINE_API class UClass* Z_Construct_UClass_AActor();
@@ -24,11 +32,17 @@ void EmptyLinkFunctionForGeneratedCodeFlight() {}
 	ENGINE_API class UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_UProjectileMovementComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_AGameMode();
+	PAPER2D_API class UClass* Z_Construct_UClass_APaperCharacter();
+	ENGINE_API class UClass* Z_Construct_UClass_APawn();
 
 	FLIGHT_API class UClass* Z_Construct_UClass_AFlightBullet_NoRegister();
 	FLIGHT_API class UClass* Z_Construct_UClass_AFlightBullet();
 	FLIGHT_API class UClass* Z_Construct_UClass_AFlightGameMode_NoRegister();
 	FLIGHT_API class UClass* Z_Construct_UClass_AFlightGameMode();
+	FLIGHT_API class UClass* Z_Construct_UClass_APaperPlayerShip_NoRegister();
+	FLIGHT_API class UClass* Z_Construct_UClass_APaperPlayerShip();
+	FLIGHT_API class UClass* Z_Construct_UClass_APlayerShip_NoRegister();
+	FLIGHT_API class UClass* Z_Construct_UClass_APlayerShip();
 	FLIGHT_API class UPackage* Z_Construct_UPackage_Flight();
 	UClass* Z_Construct_UClass_AFlightBullet_NoRegister()
 	{
@@ -112,6 +126,70 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AFlightGameMode(Z_Construct_UClass_AFlightGameMode, TEXT("AFlightGameMode"));
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AFlightGameMode);
+	UClass* Z_Construct_UClass_APaperPlayerShip_NoRegister()
+	{
+		return APaperPlayerShip::StaticClass();
+	}
+	UClass* Z_Construct_UClass_APaperPlayerShip()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_APaperCharacter();
+			Z_Construct_UPackage_Flight();
+			OuterClass = APaperPlayerShip::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Navigation"));
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("PaperPlayerShip.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("PaperPlayerShip.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_APaperPlayerShip(Z_Construct_UClass_APaperPlayerShip, TEXT("APaperPlayerShip"));
+	DEFINE_VTABLE_PTR_HELPER_CTOR(APaperPlayerShip);
+	UClass* Z_Construct_UClass_APlayerShip_NoRegister()
+	{
+		return APlayerShip::StaticClass();
+	}
+	UClass* Z_Construct_UClass_APlayerShip()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_APawn();
+			Z_Construct_UPackage_Flight();
+			OuterClass = APlayerShip::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Navigation"));
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("PlayerShip.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("PlayerShip.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_APlayerShip(Z_Construct_UClass_APlayerShip, TEXT("APlayerShip"));
+	DEFINE_VTABLE_PTR_HELPER_CTOR(APlayerShip);
 	UPackage* Z_Construct_UPackage_Flight()
 	{
 		static UPackage* ReturnPackage = NULL;
@@ -120,8 +198,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/Flight")), false, false));
 			ReturnPackage->SetPackageFlags(PKG_CompiledIn | 0x00000000);
 			FGuid Guid;
-			Guid.A = 0xCCE7DED1;
-			Guid.B = 0xC1591A5A;
+			Guid.A = 0x0DB18037;
+			Guid.B = 0x6E297729;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

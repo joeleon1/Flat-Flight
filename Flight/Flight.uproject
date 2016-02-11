@@ -7,7 +7,11 @@
 		{
 			"Name": "Flight",
 			"Type": "Runtime",
-			"LoadingPhase": "Default"
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine",
+				"Paper2D"
+			]
 		}
 	]
 }

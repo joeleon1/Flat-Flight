@@ -11,3 +11,9 @@
 #ifndef FLIGHT_FlightGameMode_generated_h
 	#include "FlightGameMode.h"
 #endif
+#ifndef FLIGHT_PaperPlayerShip_generated_h
+	#include "PaperPlayerShip.h"
+#endif
+#ifndef FLIGHT_PlayerShip_generated_h
+	#include "PlayerShip.h"
+#endif
