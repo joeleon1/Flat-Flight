@@ -13,9 +13,9 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define FLIGHT_PlayerShip_generated_h
 
-#define Flight_Source_Flight_PlayerShip_h_11_RPC_WRAPPERS
-#define Flight_Source_Flight_PlayerShip_h_11_RPC_WRAPPERS_NO_PURE_DECLS
-#define Flight_Source_Flight_PlayerShip_h_11_INCLASS_NO_PURE_DECLS \
+#define Flight_Source_Flight_PlayerShip_h_12_RPC_WRAPPERS
+#define Flight_Source_Flight_PlayerShip_h_12_RPC_WRAPPERS_NO_PURE_DECLS
+#define Flight_Source_Flight_PlayerShip_h_12_INCLASS_NO_PURE_DECLS \
 	private: \
 	static void StaticRegisterNativesAPlayerShip(); \
 	friend FLIGHT_API class UClass* Z_Construct_UClass_APlayerShip(); \
@@ -26,7 +26,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	virtual UObject* _getUObject() const override { return const_cast<APlayerShip*>(this); }
 
 
-#define Flight_Source_Flight_PlayerShip_h_11_INCLASS \
+#define Flight_Source_Flight_PlayerShip_h_12_INCLASS \
 	private: \
 	static void StaticRegisterNativesAPlayerShip(); \
 	friend FLIGHT_API class UClass* Z_Construct_UClass_APlayerShip(); \
@@ -37,7 +37,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	virtual UObject* _getUObject() const override { return const_cast<APlayerShip*>(this); }
 
 
-#define Flight_Source_Flight_PlayerShip_h_11_STANDARD_CONSTRUCTORS \
+#define Flight_Source_Flight_PlayerShip_h_12_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API APlayerShip(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(APlayerShip) \
@@ -49,7 +49,7 @@ private: \
 public:
 
 
-#define Flight_Source_Flight_PlayerShip_h_11_ENHANCED_CONSTRUCTORS \
+#define Flight_Source_Flight_PlayerShip_h_12_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private copy-constructor, should never be used */ \
 	NO_API APlayerShip(const APlayerShip& InCopy); \
@@ -59,23 +59,23 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(APlayerShip); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(APlayerShip)
 
 
-#define Flight_Source_Flight_PlayerShip_h_8_PROLOG
-#define Flight_Source_Flight_PlayerShip_h_11_GENERATED_BODY_LEGACY \
+#define Flight_Source_Flight_PlayerShip_h_9_PROLOG
+#define Flight_Source_Flight_PlayerShip_h_12_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Flight_Source_Flight_PlayerShip_h_11_RPC_WRAPPERS \
-	Flight_Source_Flight_PlayerShip_h_11_INCLASS \
-	Flight_Source_Flight_PlayerShip_h_11_STANDARD_CONSTRUCTORS \
+	Flight_Source_Flight_PlayerShip_h_12_RPC_WRAPPERS \
+	Flight_Source_Flight_PlayerShip_h_12_INCLASS \
+	Flight_Source_Flight_PlayerShip_h_12_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define Flight_Source_Flight_PlayerShip_h_11_GENERATED_BODY \
+#define Flight_Source_Flight_PlayerShip_h_12_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Flight_Source_Flight_PlayerShip_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
-	Flight_Source_Flight_PlayerShip_h_11_INCLASS_NO_PURE_DECLS \
-	Flight_Source_Flight_PlayerShip_h_11_ENHANCED_CONSTRUCTORS \
+	Flight_Source_Flight_PlayerShip_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+	Flight_Source_Flight_PlayerShip_h_12_INCLASS_NO_PURE_DECLS \
+	Flight_Source_Flight_PlayerShip_h_12_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

@@ -12,11 +12,16 @@ void EmptyLinkFunctionForGeneratedCodeFlight() {}
 	void AFlightBullet::StaticRegisterNativesAFlightBullet()
 	{
 	}
-	IMPLEMENT_CLASS(AFlightBullet, 2450313988);
+	IMPLEMENT_CLASS(AFlightBullet, 2980958513);
 	void AFlightGameMode::StaticRegisterNativesAFlightGameMode()
 	{
 	}
 	IMPLEMENT_CLASS(AFlightGameMode, 2900729568);
+	void AFlightPowerUp::StaticRegisterNativesAFlightPowerUp()
+	{
+		FNativeFunctionRegistrar::RegisterFunction(AFlightPowerUp::StaticClass(),"OnBeginOverlap",(Native)&AFlightPowerUp::execOnBeginOverlap);
+	}
+	IMPLEMENT_CLASS(AFlightPowerUp, 3588960654);
 	void APaperPlayerShip::StaticRegisterNativesAPaperPlayerShip()
 	{
 	}
@@ -32,6 +37,7 @@ void EmptyLinkFunctionForGeneratedCodeFlight() {}
 	ENGINE_API class UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_UProjectileMovementComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_AGameMode();
+	ENGINE_API class UClass* Z_Construct_UClass_AActor_NoRegister();
 	PAPER2D_API class UClass* Z_Construct_UClass_APaperCharacter();
 	ENGINE_API class UClass* Z_Construct_UClass_APawn();
 
@@ -39,6 +45,9 @@ void EmptyLinkFunctionForGeneratedCodeFlight() {}
 	FLIGHT_API class UClass* Z_Construct_UClass_AFlightBullet();
 	FLIGHT_API class UClass* Z_Construct_UClass_AFlightGameMode_NoRegister();
 	FLIGHT_API class UClass* Z_Construct_UClass_AFlightGameMode();
+	FLIGHT_API class UFunction* Z_Construct_UFunction_AFlightPowerUp_OnBeginOverlap();
+	FLIGHT_API class UClass* Z_Construct_UClass_AFlightPowerUp_NoRegister();
+	FLIGHT_API class UClass* Z_Construct_UClass_AFlightPowerUp();
 	FLIGHT_API class UClass* Z_Construct_UClass_APaperPlayerShip_NoRegister();
 	FLIGHT_API class UClass* Z_Construct_UClass_APaperPlayerShip();
 	FLIGHT_API class UClass* Z_Construct_UClass_APlayerShip_NoRegister();
@@ -71,19 +80,21 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->StaticLink();
 #if WITH_METADATA
 				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
-				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("FlightBullet.h"));
-				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("FlightBullet.h"));
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("Bullets/FlightBullet.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Bullets/FlightBullet.h"));
+				MetaData->SetValue(OuterClass, TEXT("ToolTip"), TEXT("I will be turning this into an Abstract class when types of bullets are decided."));
 				MetaData->SetValue(NewProp_Collider, TEXT("Category"), TEXT("FlightBullet"));
 				MetaData->SetValue(NewProp_Collider, TEXT("EditInline"), TEXT("true"));
-				MetaData->SetValue(NewProp_Collider, TEXT("ModuleRelativePath"), TEXT("FlightBullet.h"));
+				MetaData->SetValue(NewProp_Collider, TEXT("ModuleRelativePath"), TEXT("Bullets/FlightBullet.h"));
 				MetaData->SetValue(NewProp_Mesh, TEXT("Category"), TEXT("FlightBullet"));
 				MetaData->SetValue(NewProp_Mesh, TEXT("EditInline"), TEXT("true"));
-				MetaData->SetValue(NewProp_Mesh, TEXT("ModuleRelativePath"), TEXT("FlightBullet.h"));
+				MetaData->SetValue(NewProp_Mesh, TEXT("ModuleRelativePath"), TEXT("Bullets/FlightBullet.h"));
 				MetaData->SetValue(NewProp_MovementComponent, TEXT("Category"), TEXT("FlightBullet"));
 				MetaData->SetValue(NewProp_MovementComponent, TEXT("EditInline"), TEXT("true"));
-				MetaData->SetValue(NewProp_MovementComponent, TEXT("ModuleRelativePath"), TEXT("FlightBullet.h"));
+				MetaData->SetValue(NewProp_MovementComponent, TEXT("ModuleRelativePath"), TEXT("Bullets/FlightBullet.h"));
 				MetaData->SetValue(NewProp_TimeTillDeath, TEXT("Category"), TEXT("FlightBullet"));
-				MetaData->SetValue(NewProp_TimeTillDeath, TEXT("ModuleRelativePath"), TEXT("FlightBullet.h"));
+				MetaData->SetValue(NewProp_TimeTillDeath, TEXT("ModuleRelativePath"), TEXT("Bullets/FlightBullet.h"));
+				MetaData->SetValue(NewProp_TimeTillDeath, TEXT("ToolTip"), TEXT("When the bullet will kill its self"));
 #endif
 			}
 		}
@@ -126,6 +137,72 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AFlightGameMode(Z_Construct_UClass_AFlightGameMode, TEXT("AFlightGameMode"));
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AFlightGameMode);
+	UFunction* Z_Construct_UFunction_AFlightPowerUp_OnBeginOverlap()
+	{
+		struct FlightPowerUp_eventOnBeginOverlap_Parms
+		{
+			AActor* OtherActor;
+		};
+		UObject* Outer=Z_Construct_UClass_AFlightPowerUp();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("OnBeginOverlap"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x00020400, 65535, sizeof(FlightPowerUp_eventOnBeginOverlap_Parms));
+			UProperty* NewProp_OtherActor = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("OtherActor"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(OtherActor, FlightPowerUp_eventOnBeginOverlap_Parms), 0x0000000000000080, Z_Construct_UClass_AActor_NoRegister());
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Power Ups/FlightPowerUp.h"));
+			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Each Power Up will override this function to give the appropriate effects to the player. It will ONLY fire when the power up overlaps with the player."));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UClass* Z_Construct_UClass_AFlightPowerUp_NoRegister()
+	{
+		return AFlightPowerUp::StaticClass();
+	}
+	UClass* Z_Construct_UClass_AFlightPowerUp()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AActor();
+			Z_Construct_UPackage_Flight();
+			OuterClass = AFlightPowerUp::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900081;
+
+				OuterClass->LinkChild(Z_Construct_UFunction_AFlightPowerUp_OnBeginOverlap());
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_Collider = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("Collider"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(Collider, AFlightPowerUp), 0x0000080000090009, Z_Construct_UClass_USphereComponent_NoRegister());
+				UProperty* NewProp_Mesh = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("Mesh"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(Mesh, AFlightPowerUp), 0x0000080000090009, Z_Construct_UClass_UStaticMeshComponent_NoRegister());
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AFlightPowerUp_OnBeginOverlap()); // 3720292695
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("Power Ups/FlightPowerUp.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Power Ups/FlightPowerUp.h"));
+				MetaData->SetValue(OuterClass, TEXT("ToolTip"), TEXT("Pure Virtual class  for the power ups each will inherit from this class and override the OnBeginOverlap function for their functionality"));
+				MetaData->SetValue(NewProp_Collider, TEXT("Category"), TEXT("FlightPowerUp"));
+				MetaData->SetValue(NewProp_Collider, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_Collider, TEXT("ModuleRelativePath"), TEXT("Power Ups/FlightPowerUp.h"));
+				MetaData->SetValue(NewProp_Mesh, TEXT("Category"), TEXT("FlightPowerUp"));
+				MetaData->SetValue(NewProp_Mesh, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_Mesh, TEXT("ModuleRelativePath"), TEXT("Power Ups/FlightPowerUp.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_AFlightPowerUp(Z_Construct_UClass_AFlightPowerUp, TEXT("AFlightPowerUp"));
+	DEFINE_VTABLE_PTR_HELPER_CTOR(AFlightPowerUp);
 	UClass* Z_Construct_UClass_APaperPlayerShip_NoRegister()
 	{
 		return APaperPlayerShip::StaticClass();
@@ -198,8 +275,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/Flight")), false, false));
 			ReturnPackage->SetPackageFlags(PKG_CompiledIn | 0x00000000);
 			FGuid Guid;
-			Guid.A = 0x0DB18037;
-			Guid.B = 0x6E297729;
+			Guid.A = 0x49CA6BC6;
+			Guid.B = 0x5E4753C4;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

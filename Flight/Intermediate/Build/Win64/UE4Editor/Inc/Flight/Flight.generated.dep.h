@@ -6,10 +6,13 @@
 ===========================================================================*/
 
 #ifndef FLIGHT_FlightBullet_generated_h
-	#include "FlightBullet.h"
+	#include "Bullets/FlightBullet.h"
 #endif
 #ifndef FLIGHT_FlightGameMode_generated_h
 	#include "FlightGameMode.h"
+#endif
+#ifndef FLIGHT_FlightPowerUp_generated_h
+	#include "Power Ups/FlightPowerUp.h"
 #endif
 #ifndef FLIGHT_PaperPlayerShip_generated_h
 	#include "PaperPlayerShip.h"
