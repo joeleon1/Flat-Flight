@@ -24,12 +24,24 @@ void APlayerShip::Tick( float DeltaTime )
 {
 	Super::Tick( DeltaTime );
 
+	if (bIsFiring)
+	{
+		//GetWorld()->SpawnActor()
+	}
+
 }
 
 // Called to bind functionality to input
 void APlayerShip::SetupPlayerInputComponent(class UInputComponent* InputComponent)
 {
 	Super::SetupPlayerInputComponent(InputComponent);
+	InputComponent->BindAction(TEXT("Fire"), EInputEvent::IE_Pressed, this, &APlayerShip::StartFiring);
+	InputComponent->BindAction(TEXT("Fire"), EInputEvent::IE_Released, this, &APlayerShip::EndFiring);
 
+}
+
+void APlayerShip::SetWeapon(FlightGun* Weapon)
+{
+	CurrentWeapon = Weapon;
 }
 

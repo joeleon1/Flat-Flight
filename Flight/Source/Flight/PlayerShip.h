@@ -3,6 +3,7 @@
 #pragma once
 
 #include "GameFramework/Pawn.h"
+#include "Weapons/FlightGun.h"
 #include "PlayerShip.generated.h"
 
 UCLASS()
@@ -23,6 +24,14 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
 
-	
+	void SetWeapon(FlightGun* NewWeapon);
+
+private:
+	FORCEINLINE void StartFiring() { bIsFiring = true; }
+	FORCEINLINE void EndFiring() { bIsFiring = false; }
+
+	bool bIsFiring;
+	FlightGun* CurrentWeapon;
+	FlightGun* BasicWeapon;
 	
 };
