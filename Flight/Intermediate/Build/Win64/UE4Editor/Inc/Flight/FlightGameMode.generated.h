@@ -50,8 +50,6 @@ public:
 
 
 #define Flight_Source_Flight_FlightGameMode_h_14_ENHANCED_CONSTRUCTORS \
-	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API AFlightGameMode(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
 private: \
 	/** Private copy-constructor, should never be used */ \
 	NO_API AFlightGameMode(const AFlightGameMode& InCopy); \

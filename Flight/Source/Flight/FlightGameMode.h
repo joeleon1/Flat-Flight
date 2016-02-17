@@ -12,8 +12,10 @@ UCLASS()
 class FLIGHT_API AFlightGameMode : public AGameMode
 {
 	GENERATED_BODY()
-	
-	
-	
+
+public:
+	AFlightGameMode(const FObjectInitializer& ObjectInitializer);
+
+	virtual void BeginPlay() override;
 	
 };
