@@ -4,7 +4,7 @@
 	<ItemGroup>
 		<None Include="..\..\Flight.uproject" />
 		<Filter Include="Source">
-			<UniqueIdentifier>{FE27420E-8442-4683-9885-956903AFFD61}</UniqueIdentifier>
+			<UniqueIdentifier>{D68235C9-0096-4027-9C7A-B69C93D0C427}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Source\Flight.Target.cs">
 			<Filter>Source</Filter>
@@ -13,7 +13,7 @@
 			<Filter>Source</Filter>
 		</None >
 		<Filter Include="Config">
-			<UniqueIdentifier>{6381602B-6E67-4D4E-BAD9-46F32DFBE6D8}</UniqueIdentifier>
+			<UniqueIdentifier>{0CD064A4-CBB1-417A-BDFE-F4FC3572C838}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Config\DefaultEditor.ini">
 			<Filter>Config</Filter>
@@ -28,7 +28,7 @@
 			<Filter>Config</Filter>
 		</None >
 		<Filter Include="Source\Flight">
-			<UniqueIdentifier>{24B3E102-4E21-4621-9D2E-3E2A48AE1654}</UniqueIdentifier>
+			<UniqueIdentifier>{46AEAE53-B062-49AF-8128-186577E80F83}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Source\Flight\Flight.Build.cs">
 			<Filter>Source\Flight</Filter>
@@ -58,7 +58,7 @@
 			<Filter>Source\Flight</Filter>
 		</ClInclude >
 		<Filter Include="Source\Flight\Bullets">
-			<UniqueIdentifier>{9D468340-63CE-4B2B-B824-0CA6B0587092}</UniqueIdentifier>
+			<UniqueIdentifier>{C6B861CF-DC4B-4B33-A63F-044E4E108AC3}</UniqueIdentifier>
 		</Filter>
 		<ClCompile Include="..\..\Source\Flight\Bullets\FlightBullet.cpp">
 			<Filter>Source\Flight\Bullets</Filter>
@@ -67,7 +67,7 @@
 			<Filter>Source\Flight\Bullets</Filter>
 		</ClInclude >
 		<Filter Include="Source\Flight\Power Ups">
-			<UniqueIdentifier>{89C62B39-7A28-482C-8529-7E4174090F6B}</UniqueIdentifier>
+			<UniqueIdentifier>{D0ABCA9F-E401-4010-B1E1-48BD8A8E9F92}</UniqueIdentifier>
 		</Filter>
 		<ClCompile Include="..\..\Source\Flight\Power Ups\FlightPowerUp.cpp">
 			<Filter>Source\Flight\Power Ups</Filter>
@@ -76,7 +76,7 @@
 			<Filter>Source\Flight\Power Ups</Filter>
 		</ClInclude >
 		<Filter Include="Source\Flight\Weapons">
-			<UniqueIdentifier>{081202B5-CCD3-4298-9BBC-FFF240BEAB51}</UniqueIdentifier>
+			<UniqueIdentifier>{DA8DBFC4-B088-4D79-AB68-E79B85D4F010}</UniqueIdentifier>
 		</Filter>
 		<ClCompile Include="..\..\Source\Flight\Weapons\FlightGun.cpp">
 			<Filter>Source\Flight\Weapons</Filter>
