@@ -13,9 +13,9 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define FLIGHT_BasicWeapon_generated_h
 
-#define Flight_Source_Flight_BasicWeapon_h_14_RPC_WRAPPERS
-#define Flight_Source_Flight_BasicWeapon_h_14_RPC_WRAPPERS_NO_PURE_DECLS
-#define Flight_Source_Flight_BasicWeapon_h_14_INCLASS_NO_PURE_DECLS \
+#define Flight_Source_Flight_Weapons_BasicWeapon_h_14_RPC_WRAPPERS
+#define Flight_Source_Flight_Weapons_BasicWeapon_h_14_RPC_WRAPPERS_NO_PURE_DECLS
+#define Flight_Source_Flight_Weapons_BasicWeapon_h_14_INCLASS_NO_PURE_DECLS \
 	private: \
 	static void StaticRegisterNativesABasicWeapon(); \
 	friend FLIGHT_API class UClass* Z_Construct_UClass_ABasicWeapon(); \
@@ -26,7 +26,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	virtual UObject* _getUObject() const override { return const_cast<ABasicWeapon*>(this); }
 
 
-#define Flight_Source_Flight_BasicWeapon_h_14_INCLASS \
+#define Flight_Source_Flight_Weapons_BasicWeapon_h_14_INCLASS \
 	private: \
 	static void StaticRegisterNativesABasicWeapon(); \
 	friend FLIGHT_API class UClass* Z_Construct_UClass_ABasicWeapon(); \
@@ -37,9 +37,9 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	virtual UObject* _getUObject() const override { return const_cast<ABasicWeapon*>(this); }
 
 
-#define Flight_Source_Flight_BasicWeapon_h_14_STANDARD_CONSTRUCTORS \
+#define Flight_Source_Flight_Weapons_BasicWeapon_h_14_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API ABasicWeapon(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	NO_API ABasicWeapon(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ABasicWeapon) \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, ABasicWeapon); \
 DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ABasicWeapon); \
@@ -49,9 +49,7 @@ private: \
 public:
 
 
-#define Flight_Source_Flight_BasicWeapon_h_14_ENHANCED_CONSTRUCTORS \
-	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API ABasicWeapon() { }; \
+#define Flight_Source_Flight_Weapons_BasicWeapon_h_14_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private copy-constructor, should never be used */ \
 	NO_API ABasicWeapon(const ABasicWeapon& InCopy); \
@@ -61,29 +59,29 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ABasicWeapon); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ABasicWeapon)
 
 
-#define Flight_Source_Flight_BasicWeapon_h_11_PROLOG
-#define Flight_Source_Flight_BasicWeapon_h_14_GENERATED_BODY_LEGACY \
+#define Flight_Source_Flight_Weapons_BasicWeapon_h_11_PROLOG
+#define Flight_Source_Flight_Weapons_BasicWeapon_h_14_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Flight_Source_Flight_BasicWeapon_h_14_RPC_WRAPPERS \
-	Flight_Source_Flight_BasicWeapon_h_14_INCLASS \
-	Flight_Source_Flight_BasicWeapon_h_14_STANDARD_CONSTRUCTORS \
+	Flight_Source_Flight_Weapons_BasicWeapon_h_14_RPC_WRAPPERS \
+	Flight_Source_Flight_Weapons_BasicWeapon_h_14_INCLASS \
+	Flight_Source_Flight_Weapons_BasicWeapon_h_14_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define Flight_Source_Flight_BasicWeapon_h_14_GENERATED_BODY \
+#define Flight_Source_Flight_Weapons_BasicWeapon_h_14_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Flight_Source_Flight_BasicWeapon_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
-	Flight_Source_Flight_BasicWeapon_h_14_INCLASS_NO_PURE_DECLS \
-	Flight_Source_Flight_BasicWeapon_h_14_ENHANCED_CONSTRUCTORS \
+	Flight_Source_Flight_Weapons_BasicWeapon_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+	Flight_Source_Flight_Weapons_BasicWeapon_h_14_INCLASS_NO_PURE_DECLS \
+	Flight_Source_Flight_Weapons_BasicWeapon_h_14_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID Flight_Source_Flight_BasicWeapon_h
+#define CURRENT_FILE_ID Flight_Source_Flight_Weapons_BasicWeapon_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

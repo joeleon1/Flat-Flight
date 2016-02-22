@@ -1,97 +1,94 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <ItemGroup>
-    <None Include="..\..\Flight.uproject" />
-    <Filter Include="Source">
-      <UniqueIdentifier>{CF9D7148-275F-4C5C-8206-8065AB35B40E}</UniqueIdentifier>
-    </Filter>
-    <None Include="..\..\Source\Flight.Target.cs">
-      <Filter>Source</Filter>
-    </None>
-    <None Include="..\..\Source\FlightEditor.Target.cs">
-      <Filter>Source</Filter>
-    </None>
-    <Filter Include="Config">
-      <UniqueIdentifier>{ADFD378F-4111-4671-9D80-4894F1F08D6D}</UniqueIdentifier>
-    </Filter>
-    <None Include="..\..\Config\DefaultEditor.ini">
-      <Filter>Config</Filter>
-    </None>
-    <None Include="..\..\Config\DefaultEngine.ini">
-      <Filter>Config</Filter>
-    </None>
-    <None Include="..\..\Config\DefaultGame.ini">
-      <Filter>Config</Filter>
-    </None>
-    <None Include="..\..\Config\DefaultInput.ini">
-      <Filter>Config</Filter>
-    </None>
-    <Filter Include="Source\Flight">
-      <UniqueIdentifier>{0A7E5FE1-9FDE-4BEB-8D67-0BD0799B58B8}</UniqueIdentifier>
-    </Filter>
-    <None Include="..\..\Source\Flight\Flight.Build.cs">
-      <Filter>Source\Flight</Filter>
-    </None>
-    <ClCompile Include="..\..\Source\Flight\Flight.cpp">
-      <Filter>Source\Flight</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Flight\Flight.h">
-      <Filter>Source\Flight</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Flight\FlightGameMode.cpp">
-      <Filter>Source\Flight</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Flight\FlightGameMode.h">
-      <Filter>Source\Flight</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Flight\PaperPlayerShip.cpp">
-      <Filter>Source\Flight</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Flight\PaperPlayerShip.h">
-      <Filter>Source\Flight</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Flight\PlayerShip.cpp">
-      <Filter>Source\Flight</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Flight\PlayerShip.h">
-      <Filter>Source\Flight</Filter>
-    </ClInclude>
-    <Filter Include="Source\Flight\Bullets">
-      <UniqueIdentifier>{5A80BCB7-DE0E-4684-AD4B-E7330C498202}</UniqueIdentifier>
-    </Filter>
-    <ClCompile Include="..\..\Source\Flight\Bullets\FlightBullet.cpp">
-      <Filter>Source\Flight\Bullets</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Flight\Bullets\FlightBullet.h">
-      <Filter>Source\Flight\Bullets</Filter>
-    </ClInclude>
-    <Filter Include="Source\Flight\Power Ups">
-      <UniqueIdentifier>{74004C55-8AD6-4DBE-A528-C4589179EE3E}</UniqueIdentifier>
-    </Filter>
-    <ClCompile Include="..\..\Source\Flight\Power Ups\FlightPowerUp.cpp">
-      <Filter>Source\Flight\Power Ups</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Flight\Power Ups\FlightPowerUp.h">
-      <Filter>Source\Flight\Power Ups</Filter>
-    </ClInclude>
-    <Filter Include="Source\Flight\Weapons">
-      <UniqueIdentifier>{83CB25F3-9969-471C-9A95-BC0B193992CB}</UniqueIdentifier>
-    </Filter>
-    <ClCompile Include="..\..\Source\Flight\Weapons\FlightWeapon.cpp">
-      <Filter>Source\Flight\Weapons</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Flight\Weapons\FlightWeapon.h">
-      <Filter>Source\Flight\Weapons</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Source\Flight\BasicWeapon.h">
-      <Filter>Source\Flight</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\Source\Flight\BasicWeapon.cpp">
-      <Filter>Source\Flight</Filter>
-    </ClCompile>
-  </ItemGroup>
+	<ItemGroup>
+		<None Include="..\..\Flight.uproject" />
+		<Filter Include="Source">
+			<UniqueIdentifier>{8E48C557-5922-468B-9A59-8E1EF6C79AE7}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Source\Flight.Target.cs">
+			<Filter>Source</Filter>
+		</None >
+		<None Include="..\..\Source\FlightEditor.Target.cs">
+			<Filter>Source</Filter>
+		</None >
+		<Filter Include="Config">
+			<UniqueIdentifier>{5AD23A2D-642C-45CF-B427-C6A9A08AA7E1}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Config\DefaultEditor.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultEngine.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultGame.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultInput.ini">
+			<Filter>Config</Filter>
+		</None >
+		<Filter Include="Source\Flight">
+			<UniqueIdentifier>{BBE245B2-A355-47E1-8F94-ADC23FF13EEF}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Source\Flight\Flight.Build.cs">
+			<Filter>Source\Flight</Filter>
+		</None >
+		<ClCompile Include="..\..\Source\Flight\Flight.cpp">
+			<Filter>Source\Flight</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\Flight\Flight.h">
+			<Filter>Source\Flight</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\Flight\FlightGameMode.cpp">
+			<Filter>Source\Flight</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\Flight\FlightGameMode.h">
+			<Filter>Source\Flight</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\Flight\PaperPlayerShip.cpp">
+			<Filter>Source\Flight</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\Flight\PaperPlayerShip.h">
+			<Filter>Source\Flight</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\Flight\PlayerShip.cpp">
+			<Filter>Source\Flight</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\Flight\PlayerShip.h">
+			<Filter>Source\Flight</Filter>
+		</ClInclude >
+		<Filter Include="Source\Flight\Bullets">
+			<UniqueIdentifier>{FC83DAC7-D0C1-48A1-9A45-8DA030493576}</UniqueIdentifier>
+		</Filter>
+		<ClCompile Include="..\..\Source\Flight\Bullets\FlightBullet.cpp">
+			<Filter>Source\Flight\Bullets</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\Flight\Bullets\FlightBullet.h">
+			<Filter>Source\Flight\Bullets</Filter>
+		</ClInclude >
+		<Filter Include="Source\Flight\Power Ups">
+			<UniqueIdentifier>{2A969ED6-761B-4A20-ACA5-B69FE57C7C4B}</UniqueIdentifier>
+		</Filter>
+		<ClCompile Include="..\..\Source\Flight\Power Ups\FlightPowerUp.cpp">
+			<Filter>Source\Flight\Power Ups</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\Flight\Power Ups\FlightPowerUp.h">
+			<Filter>Source\Flight\Power Ups</Filter>
+		</ClInclude >
+		<Filter Include="Source\Flight\Weapons">
+			<UniqueIdentifier>{7B84BA0F-31E5-4466-BCB1-F3B2D793B6A5}</UniqueIdentifier>
+		</Filter>
+		<ClCompile Include="..\..\Source\Flight\Weapons\BasicWeapon.cpp">
+			<Filter>Source\Flight\Weapons</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\Flight\Weapons\BasicWeapon.h">
+			<Filter>Source\Flight\Weapons</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\Flight\Weapons\FlightWeapon.cpp">
+			<Filter>Source\Flight\Weapons</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\Flight\Weapons\FlightWeapon.h">
+			<Filter>Source\Flight\Weapons</Filter>
+		</ClInclude >
+	</ItemGroup>
 </Project>

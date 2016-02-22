@@ -18,7 +18,7 @@
 	#include "Weapons/FlightWeapon.h"
 #endif
 #ifndef FLIGHT_BasicWeapon_generated_h
-	#include "BasicWeapon.h"
+	#include "Weapons/BasicWeapon.h"
 #endif
 #ifndef FLIGHT_PaperPlayerShip_generated_h
 	#include "PaperPlayerShip.h"

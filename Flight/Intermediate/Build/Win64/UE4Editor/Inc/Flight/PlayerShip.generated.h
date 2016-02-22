@@ -39,7 +39,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 #define Flight_Source_Flight_PlayerShip_h_12_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API APlayerShip(const FObjectInitializer& ObjectInitializer); \
+	NO_API APlayerShip(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(APlayerShip) \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, APlayerShip); \
 DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(APlayerShip); \
@@ -50,13 +50,15 @@ public:
 
 
 #define Flight_Source_Flight_PlayerShip_h_12_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API APlayerShip(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
 private: \
 	/** Private copy-constructor, should never be used */ \
 	NO_API APlayerShip(const APlayerShip& InCopy); \
 public: \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, APlayerShip); \
 DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(APlayerShip); \
-	DEFINE_DEFAULT_CONSTRUCTOR_CALL(APlayerShip)
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(APlayerShip)
 
 
 #define Flight_Source_Flight_PlayerShip_h_9_PROLOG
