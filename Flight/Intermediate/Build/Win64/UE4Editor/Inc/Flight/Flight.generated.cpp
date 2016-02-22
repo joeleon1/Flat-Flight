@@ -29,7 +29,7 @@ void EmptyLinkFunctionForGeneratedCodeFlight() {}
 	void APlayerShip::StaticRegisterNativesAPlayerShip()
 	{
 	}
-	IMPLEMENT_CLASS(APlayerShip, 3715695009);
+	IMPLEMENT_CLASS(APlayerShip, 3864245123);
 #if USE_COMPILED_IN_NATIVES
 // Cross Module References
 	ENGINE_API class UClass* Z_Construct_UClass_AActor();
@@ -40,6 +40,8 @@ void EmptyLinkFunctionForGeneratedCodeFlight() {}
 	ENGINE_API class UClass* Z_Construct_UClass_AActor_NoRegister();
 	PAPER2D_API class UClass* Z_Construct_UClass_APaperCharacter();
 	ENGINE_API class UClass* Z_Construct_UClass_APawn();
+	ENGINE_API class UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
+	ENGINE_API class UClass* Z_Construct_UClass_USceneComponent_NoRegister();
 
 	FLIGHT_API class UClass* Z_Construct_UClass_AFlightBullet_NoRegister();
 	FLIGHT_API class UClass* Z_Construct_UClass_AFlightBullet();
@@ -253,12 +255,27 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->ClassFlags |= 0x20900080;
 
 
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_Mesh = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("Mesh"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(Mesh, APlayerShip), 0x00000000000a0009, Z_Construct_UClass_UStaticMeshComponent_NoRegister());
+				UProperty* NewProp_Camera = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("Camera"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(Camera, APlayerShip), 0x00000000000a001d, Z_Construct_UClass_UCameraComponent_NoRegister());
+				UProperty* NewProp_root = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("root"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(root, APlayerShip), 0x00000000000a001d, Z_Construct_UClass_USceneComponent_NoRegister());
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->StaticLink();
 #if WITH_METADATA
 				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
 				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Navigation"));
 				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("PlayerShip.h"));
 				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("PlayerShip.h"));
+				MetaData->SetValue(NewProp_Mesh, TEXT("Category"), TEXT("PlayerShip"));
+				MetaData->SetValue(NewProp_Mesh, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_Mesh, TEXT("ModuleRelativePath"), TEXT("PlayerShip.h"));
+				MetaData->SetValue(NewProp_Camera, TEXT("Category"), TEXT("PlayerShip"));
+				MetaData->SetValue(NewProp_Camera, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_Camera, TEXT("ModuleRelativePath"), TEXT("PlayerShip.h"));
+				MetaData->SetValue(NewProp_root, TEXT("AllowPrivateAccess"), TEXT("true"));
+				MetaData->SetValue(NewProp_root, TEXT("Category"), TEXT("PlayerShip"));
+				MetaData->SetValue(NewProp_root, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_root, TEXT("ModuleRelativePath"), TEXT("PlayerShip.h"));
 #endif
 			}
 		}
@@ -275,7 +292,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/Flight")), false, false));
 			ReturnPackage->SetPackageFlags(PKG_CompiledIn | 0x00000000);
 			FGuid Guid;
-			Guid.A = 0x49CA6BC6;
+			Guid.A = 0xD9335796;
 			Guid.B = 0x5E4753C4;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;

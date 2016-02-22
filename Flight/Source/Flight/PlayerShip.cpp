@@ -7,8 +7,21 @@
 // Sets default values
 APlayerShip::APlayerShip()
 {
- 	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+
+
+	root = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
+	RootComponent = root;
+
+	Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
+	Mesh->AttachTo(RootComponent);
+
+	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
+	//lock camera position
+	Camera->SetAbsolute(true, true);
+	//Camera->AttachTo(root);
+
 
 }
 

@@ -26,6 +26,15 @@ public:
 
 	void SetWeapon(FlightGun* NewWeapon);
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+	class USceneComponent* root;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+		UCameraComponent* Camera;
+
+	UPROPERTY(VisibleAnywhere)
+		UStaticMeshComponent* Mesh;
+
 private:
 	FORCEINLINE void StartFiring() { bIsFiring = true; }
 	FORCEINLINE void EndFiring() { bIsFiring = false; }
