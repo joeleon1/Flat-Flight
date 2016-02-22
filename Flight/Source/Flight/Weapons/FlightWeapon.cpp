@@ -5,7 +5,7 @@
 
 AFlightWeapon::AFlightWeapon() :TimeSinceShot(99)
 {
-
+	PrimaryActorTick.bCanEverTick = true;
 }
 
 void AFlightWeapon::Tick(float DeltaTime)
@@ -16,6 +16,11 @@ void AFlightWeapon::Tick(float DeltaTime)
 
 void AFlightWeapon::Fire()
 {
-	GetWorld()->SpawnActor<AFlightBullet>(ProjectileClass, this->GetActorLocation(), FRotator(0, 0, 0));
-	GetWorld()->SpawnActor<AFlightBullet>(ProjectileClass, this->GetActorLocation(), FRotator(0, 0, 0));
+	if (TimeSinceShot > FireRate)
+	{
+		TimeSinceShot = 0;
+		GetWorld()->SpawnActor<AFlightBullet>(ProjectileClass, this->GetOwner()->GetActorLocation(), FRotator(0, 90, 0));
+		GetWorld()->SpawnActor<AFlightBullet>(ProjectileClass, this->GetOwner()->GetActorLocation(), FRotator(0, -90, 0));
+	}
+	
 }
