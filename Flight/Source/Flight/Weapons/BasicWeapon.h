@@ -12,7 +12,8 @@ UCLASS()
 class FLIGHT_API ABasicWeapon : public AFlightWeapon
 {
 	GENERATED_BODY()
-	
+public:
+		ABasicWeapon();
 	
 	
 	
