@@ -14,6 +14,12 @@
 #ifndef FLIGHT_FlightPowerUp_generated_h
 	#include "Power Ups/FlightPowerUp.h"
 #endif
+#ifndef FLIGHT_FlightWeapon_generated_h
+	#include "Weapons/FlightWeapon.h"
+#endif
+#ifndef FLIGHT_BasicWeapon_generated_h
+	#include "BasicWeapon.h"
+#endif
 #ifndef FLIGHT_PaperPlayerShip_generated_h
 	#include "PaperPlayerShip.h"
 #endif

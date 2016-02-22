@@ -22,6 +22,14 @@ void EmptyLinkFunctionForGeneratedCodeFlight() {}
 		FNativeFunctionRegistrar::RegisterFunction(AFlightPowerUp::StaticClass(),"OnBeginOverlap",(Native)&AFlightPowerUp::execOnBeginOverlap);
 	}
 	IMPLEMENT_CLASS(AFlightPowerUp, 3588960654);
+	void AFlightWeapon::StaticRegisterNativesAFlightWeapon()
+	{
+	}
+	IMPLEMENT_CLASS(AFlightWeapon, 1146313973);
+	void ABasicWeapon::StaticRegisterNativesABasicWeapon()
+	{
+	}
+	IMPLEMENT_CLASS(ABasicWeapon, 3659844810);
 	void APaperPlayerShip::StaticRegisterNativesAPaperPlayerShip()
 	{
 	}
@@ -29,7 +37,7 @@ void EmptyLinkFunctionForGeneratedCodeFlight() {}
 	void APlayerShip::StaticRegisterNativesAPlayerShip()
 	{
 	}
-	IMPLEMENT_CLASS(APlayerShip, 3864245123);
+	IMPLEMENT_CLASS(APlayerShip, 3715695009);
 #if USE_COMPILED_IN_NATIVES
 // Cross Module References
 	ENGINE_API class UClass* Z_Construct_UClass_AActor();
@@ -40,8 +48,6 @@ void EmptyLinkFunctionForGeneratedCodeFlight() {}
 	ENGINE_API class UClass* Z_Construct_UClass_AActor_NoRegister();
 	PAPER2D_API class UClass* Z_Construct_UClass_APaperCharacter();
 	ENGINE_API class UClass* Z_Construct_UClass_APawn();
-	ENGINE_API class UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
-	ENGINE_API class UClass* Z_Construct_UClass_USceneComponent_NoRegister();
 
 	FLIGHT_API class UClass* Z_Construct_UClass_AFlightBullet_NoRegister();
 	FLIGHT_API class UClass* Z_Construct_UClass_AFlightBullet();
@@ -50,6 +56,10 @@ void EmptyLinkFunctionForGeneratedCodeFlight() {}
 	FLIGHT_API class UFunction* Z_Construct_UFunction_AFlightPowerUp_OnBeginOverlap();
 	FLIGHT_API class UClass* Z_Construct_UClass_AFlightPowerUp_NoRegister();
 	FLIGHT_API class UClass* Z_Construct_UClass_AFlightPowerUp();
+	FLIGHT_API class UClass* Z_Construct_UClass_AFlightWeapon_NoRegister();
+	FLIGHT_API class UClass* Z_Construct_UClass_AFlightWeapon();
+	FLIGHT_API class UClass* Z_Construct_UClass_ABasicWeapon_NoRegister();
+	FLIGHT_API class UClass* Z_Construct_UClass_ABasicWeapon();
 	FLIGHT_API class UClass* Z_Construct_UClass_APaperPlayerShip_NoRegister();
 	FLIGHT_API class UClass* Z_Construct_UClass_APaperPlayerShip();
 	FLIGHT_API class UClass* Z_Construct_UClass_APlayerShip_NoRegister();
@@ -205,6 +215,76 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AFlightPowerUp(Z_Construct_UClass_AFlightPowerUp, TEXT("AFlightPowerUp"));
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AFlightPowerUp);
+	UClass* Z_Construct_UClass_AFlightWeapon_NoRegister()
+	{
+		return AFlightWeapon::StaticClass();
+	}
+	UClass* Z_Construct_UClass_AFlightWeapon()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AActor();
+			Z_Construct_UPackage_Flight();
+			OuterClass = AFlightWeapon::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900081;
+
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_FireRate = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("FireRate"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(FireRate, AFlightWeapon), 0x0000080000010001);
+				UProperty* NewProp_ProjectileClass = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("ProjectileClass"), RF_Public|RF_Transient|RF_Native) UClassProperty(CPP_PROPERTY_BASE(ProjectileClass, AFlightWeapon), 0x0004080000000000, Z_Construct_UClass_AFlightBullet_NoRegister());
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("Weapons/FlightWeapon.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Weapons/FlightWeapon.h"));
+				MetaData->SetValue(NewProp_FireRate, TEXT("Category"), TEXT("FlightWeapon"));
+				MetaData->SetValue(NewProp_FireRate, TEXT("ModuleRelativePath"), TEXT("Weapons/FlightWeapon.h"));
+				MetaData->SetValue(NewProp_ProjectileClass, TEXT("ModuleRelativePath"), TEXT("Weapons/FlightWeapon.h"));
+				MetaData->SetValue(NewProp_ProjectileClass, TEXT("ToolTip"), TEXT("The type of bullet that will get spawned"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_AFlightWeapon(Z_Construct_UClass_AFlightWeapon, TEXT("AFlightWeapon"));
+	DEFINE_VTABLE_PTR_HELPER_CTOR(AFlightWeapon);
+	UClass* Z_Construct_UClass_ABasicWeapon_NoRegister()
+	{
+		return ABasicWeapon::StaticClass();
+	}
+	UClass* Z_Construct_UClass_ABasicWeapon()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AFlightWeapon();
+			Z_Construct_UPackage_Flight();
+			OuterClass = ABasicWeapon::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("BasicWeapon.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("BasicWeapon.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_ABasicWeapon(Z_Construct_UClass_ABasicWeapon, TEXT("ABasicWeapon"));
+	DEFINE_VTABLE_PTR_HELPER_CTOR(ABasicWeapon);
 	UClass* Z_Construct_UClass_APaperPlayerShip_NoRegister()
 	{
 		return APaperPlayerShip::StaticClass();
@@ -255,27 +335,12 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->ClassFlags |= 0x20900080;
 
 
-PRAGMA_DISABLE_DEPRECATION_WARNINGS
-				UProperty* NewProp_Mesh = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("Mesh"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(Mesh, APlayerShip), 0x00000000000a0009, Z_Construct_UClass_UStaticMeshComponent_NoRegister());
-				UProperty* NewProp_Camera = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("Camera"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(Camera, APlayerShip), 0x00000000000a001d, Z_Construct_UClass_UCameraComponent_NoRegister());
-				UProperty* NewProp_root = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("root"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(root, APlayerShip), 0x00000000000a001d, Z_Construct_UClass_USceneComponent_NoRegister());
-PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->StaticLink();
 #if WITH_METADATA
 				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
 				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Navigation"));
 				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("PlayerShip.h"));
 				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("PlayerShip.h"));
-				MetaData->SetValue(NewProp_Mesh, TEXT("Category"), TEXT("PlayerShip"));
-				MetaData->SetValue(NewProp_Mesh, TEXT("EditInline"), TEXT("true"));
-				MetaData->SetValue(NewProp_Mesh, TEXT("ModuleRelativePath"), TEXT("PlayerShip.h"));
-				MetaData->SetValue(NewProp_Camera, TEXT("Category"), TEXT("PlayerShip"));
-				MetaData->SetValue(NewProp_Camera, TEXT("EditInline"), TEXT("true"));
-				MetaData->SetValue(NewProp_Camera, TEXT("ModuleRelativePath"), TEXT("PlayerShip.h"));
-				MetaData->SetValue(NewProp_root, TEXT("AllowPrivateAccess"), TEXT("true"));
-				MetaData->SetValue(NewProp_root, TEXT("Category"), TEXT("PlayerShip"));
-				MetaData->SetValue(NewProp_root, TEXT("EditInline"), TEXT("true"));
-				MetaData->SetValue(NewProp_root, TEXT("ModuleRelativePath"), TEXT("PlayerShip.h"));
 #endif
 			}
 		}
@@ -292,8 +357,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/Flight")), false, false));
 			ReturnPackage->SetPackageFlags(PKG_CompiledIn | 0x00000000);
 			FGuid Guid;
-			Guid.A = 0xD9335796;
-			Guid.B = 0x5E4753C4;
+			Guid.A = 0xA4FDCC38;
+			Guid.B = 0xA228EE74;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

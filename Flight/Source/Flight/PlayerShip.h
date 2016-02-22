@@ -3,7 +3,7 @@
 #pragma once
 
 #include "GameFramework/Pawn.h"
-#include "Weapons/FlightGun.h"
+#include "Weapons/FlightWeapon.h"
 #include "PlayerShip.generated.h"
 
 UCLASS()
@@ -24,7 +24,7 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
 
-	void SetWeapon(FlightGun* NewWeapon);
+	void SetWeapon(AFlightWeapon* NewWeapon);
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	class USceneComponent* root;
@@ -40,7 +40,7 @@ private:
 	FORCEINLINE void EndFiring() { bIsFiring = false; }
 
 	bool bIsFiring;
-	FlightGun* CurrentWeapon;
-	FlightGun* BasicWeapon;
+	AFlightWeapon* CurrentWeapon;
+	AFlightWeapon* BasicWeapon;
 	
 };
