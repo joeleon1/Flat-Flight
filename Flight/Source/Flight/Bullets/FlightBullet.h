@@ -31,4 +31,7 @@ protected:
 
 	UPROPERTY(VisibleAnywhere)
 	USphereComponent* Collider;
+	//Damage the bullet does
+	UPROPERTY(EditDefaultsOnly, Category = "Bullet Properties")
+	float Damage;
 };

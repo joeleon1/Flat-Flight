@@ -5,7 +5,7 @@
 
 
 // Sets default values
-AFlightBullet::AFlightBullet() :timeAlive(0)
+AFlightBullet::AFlightBullet() :timeAlive(0), Damage(0)
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
@@ -32,6 +32,7 @@ void AFlightBullet::Tick(float DeltaTime)
 	timeAlive += DeltaTime;
 	if (timeAlive > TimeTillDeath)
 	{
+		
 		Destroy();
 	}
 }
