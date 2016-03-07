@@ -13,8 +13,6 @@ AFlightPowerUp::AFlightPowerUp()
 	RootComponent = Collider;
 	Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
 	Mesh->AttachTo(RootComponent);
-
-	OnActorBeginOverlap.AddDynamic(this, &AFlightPowerUp::OnBeginOverlap);
 }
 
 
