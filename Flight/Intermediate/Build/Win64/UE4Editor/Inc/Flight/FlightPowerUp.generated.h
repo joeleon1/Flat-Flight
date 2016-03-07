@@ -8,33 +8,14 @@
 #include "ObjectBase.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
-class AActor;
 #ifdef FLIGHT_FlightPowerUp_generated_h
 #error "FlightPowerUp.generated.h already included, missing '#pragma once' in FlightPowerUp.h"
 #endif
 #define FLIGHT_FlightPowerUp_generated_h
 
-#define Flight_Source_Flight_Power_Ups_FlightPowerUp_h_15_RPC_WRAPPERS \
- \
-	DECLARE_FUNCTION(execOnBeginOverlap) \
-	{ \
-		P_GET_OBJECT(AActor,Z_Param_OtherActor); \
-		P_FINISH; \
-		this->OnBeginOverlap(Z_Param_OtherActor); \
-	}
-
-
-#define Flight_Source_Flight_Power_Ups_FlightPowerUp_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
- \
-	DECLARE_FUNCTION(execOnBeginOverlap) \
-	{ \
-		P_GET_OBJECT(AActor,Z_Param_OtherActor); \
-		P_FINISH; \
-		this->OnBeginOverlap(Z_Param_OtherActor); \
-	}
-
-
-#define Flight_Source_Flight_Power_Ups_FlightPowerUp_h_15_INCLASS_NO_PURE_DECLS \
+#define Flight_Source_Flight_Power_Ups_FlightPowerUp_h_16_RPC_WRAPPERS
+#define Flight_Source_Flight_Power_Ups_FlightPowerUp_h_16_RPC_WRAPPERS_NO_PURE_DECLS
+#define Flight_Source_Flight_Power_Ups_FlightPowerUp_h_16_INCLASS_NO_PURE_DECLS \
 	private: \
 	static void StaticRegisterNativesAFlightPowerUp(); \
 	friend FLIGHT_API class UClass* Z_Construct_UClass_AFlightPowerUp(); \
@@ -45,7 +26,7 @@ class AActor;
 	virtual UObject* _getUObject() const override { return const_cast<AFlightPowerUp*>(this); }
 
 
-#define Flight_Source_Flight_Power_Ups_FlightPowerUp_h_15_INCLASS \
+#define Flight_Source_Flight_Power_Ups_FlightPowerUp_h_16_INCLASS \
 	private: \
 	static void StaticRegisterNativesAFlightPowerUp(); \
 	friend FLIGHT_API class UClass* Z_Construct_UClass_AFlightPowerUp(); \
@@ -56,7 +37,7 @@ class AActor;
 	virtual UObject* _getUObject() const override { return const_cast<AFlightPowerUp*>(this); }
 
 
-#define Flight_Source_Flight_Power_Ups_FlightPowerUp_h_15_STANDARD_CONSTRUCTORS \
+#define Flight_Source_Flight_Power_Ups_FlightPowerUp_h_16_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AFlightPowerUp(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AFlightPowerUp) \
@@ -68,7 +49,7 @@ private: \
 public:
 
 
-#define Flight_Source_Flight_Power_Ups_FlightPowerUp_h_15_ENHANCED_CONSTRUCTORS \
+#define Flight_Source_Flight_Power_Ups_FlightPowerUp_h_16_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private copy-constructor, should never be used */ \
 	NO_API AFlightPowerUp(const AFlightPowerUp& InCopy); \
@@ -78,23 +59,23 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AFlightPowerUp); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AFlightPowerUp)
 
 
-#define Flight_Source_Flight_Power_Ups_FlightPowerUp_h_12_PROLOG
-#define Flight_Source_Flight_Power_Ups_FlightPowerUp_h_15_GENERATED_BODY_LEGACY \
+#define Flight_Source_Flight_Power_Ups_FlightPowerUp_h_13_PROLOG
+#define Flight_Source_Flight_Power_Ups_FlightPowerUp_h_16_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Flight_Source_Flight_Power_Ups_FlightPowerUp_h_15_RPC_WRAPPERS \
-	Flight_Source_Flight_Power_Ups_FlightPowerUp_h_15_INCLASS \
-	Flight_Source_Flight_Power_Ups_FlightPowerUp_h_15_STANDARD_CONSTRUCTORS \
+	Flight_Source_Flight_Power_Ups_FlightPowerUp_h_16_RPC_WRAPPERS \
+	Flight_Source_Flight_Power_Ups_FlightPowerUp_h_16_INCLASS \
+	Flight_Source_Flight_Power_Ups_FlightPowerUp_h_16_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define Flight_Source_Flight_Power_Ups_FlightPowerUp_h_15_GENERATED_BODY \
+#define Flight_Source_Flight_Power_Ups_FlightPowerUp_h_16_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Flight_Source_Flight_Power_Ups_FlightPowerUp_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	Flight_Source_Flight_Power_Ups_FlightPowerUp_h_15_INCLASS_NO_PURE_DECLS \
-	Flight_Source_Flight_Power_Ups_FlightPowerUp_h_15_ENHANCED_CONSTRUCTORS \
+	Flight_Source_Flight_Power_Ups_FlightPowerUp_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
+	Flight_Source_Flight_Power_Ups_FlightPowerUp_h_16_INCLASS_NO_PURE_DECLS \
+	Flight_Source_Flight_Power_Ups_FlightPowerUp_h_16_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

@@ -12,24 +12,64 @@ void EmptyLinkFunctionForGeneratedCodeFlight() {}
 	void AFlightBullet::StaticRegisterNativesAFlightBullet()
 	{
 	}
-	IMPLEMENT_CLASS(AFlightBullet, 2980958513);
+	IMPLEMENT_CLASS(AFlightBullet, 4163245187);
+	void ACannonBullet::StaticRegisterNativesACannonBullet()
+	{
+		FNativeFunctionRegistrar::RegisterFunction(ACannonBullet::StaticClass(),"OnBeginOverlap",(Native)&ACannonBullet::execOnBeginOverlap);
+	}
+	IMPLEMENT_CLASS(ACannonBullet, 85986893);
+	void AFlamethrowerBullet::StaticRegisterNativesAFlamethrowerBullet()
+	{
+		FNativeFunctionRegistrar::RegisterFunction(AFlamethrowerBullet::StaticClass(),"OnBeginOverlap",(Native)&AFlamethrowerBullet::execOnBeginOverlap);
+	}
+	IMPLEMENT_CLASS(AFlamethrowerBullet, 623411128);
+	void ALaserBullet::StaticRegisterNativesALaserBullet()
+	{
+		FNativeFunctionRegistrar::RegisterFunction(ALaserBullet::StaticClass(),"OnBeginOverlap",(Native)&ALaserBullet::execOnBeginOverlap);
+	}
+	IMPLEMENT_CLASS(ALaserBullet, 1591641059);
 	void AFlightGameMode::StaticRegisterNativesAFlightGameMode()
 	{
 	}
 	IMPLEMENT_CLASS(AFlightGameMode, 2900729568);
-	void AFlightPowerUp::StaticRegisterNativesAFlightPowerUp()
-	{
-		FNativeFunctionRegistrar::RegisterFunction(AFlightPowerUp::StaticClass(),"OnBeginOverlap",(Native)&AFlightPowerUp::execOnBeginOverlap);
-	}
-	IMPLEMENT_CLASS(AFlightPowerUp, 3588960654);
 	void AFlightWeapon::StaticRegisterNativesAFlightWeapon()
 	{
 	}
 	IMPLEMENT_CLASS(AFlightWeapon, 1146313973);
+	void AFlightPowerUp::StaticRegisterNativesAFlightPowerUp()
+	{
+	}
+	IMPLEMENT_CLASS(AFlightPowerUp, 2954330417);
+	void AShieldsPowerUp::StaticRegisterNativesAShieldsPowerUp()
+	{
+		FNativeFunctionRegistrar::RegisterFunction(AShieldsPowerUp::StaticClass(),"OnBeginOverlap",(Native)&AShieldsPowerUp::execOnBeginOverlap);
+	}
+	IMPLEMENT_CLASS(AShieldsPowerUp, 3301674989);
+	void AWeaponPowerUp::StaticRegisterNativesAWeaponPowerUp()
+	{
+		FNativeFunctionRegistrar::RegisterFunction(AWeaponPowerUp::StaticClass(),"OnBeginOverlap",(Native)&AWeaponPowerUp::execOnBeginOverlap);
+	}
+	IMPLEMENT_CLASS(AWeaponPowerUp, 1981982754);
+	void AFlamethrowerPowerUp::StaticRegisterNativesAFlamethrowerPowerUp()
+	{
+	}
+	IMPLEMENT_CLASS(AFlamethrowerPowerUp, 594225889);
+	void ALaserCannonPowerUp::StaticRegisterNativesALaserCannonPowerUp()
+	{
+	}
+	IMPLEMENT_CLASS(ALaserCannonPowerUp, 1389821280);
 	void ABasicWeapon::StaticRegisterNativesABasicWeapon()
 	{
 	}
 	IMPLEMENT_CLASS(ABasicWeapon, 1250205333);
+	void AFlamethrowerWeapon::StaticRegisterNativesAFlamethrowerWeapon()
+	{
+	}
+	IMPLEMENT_CLASS(AFlamethrowerWeapon, 4152645578);
+	void ALaserCannonWeapon::StaticRegisterNativesALaserCannonWeapon()
+	{
+	}
+	IMPLEMENT_CLASS(ALaserCannonWeapon, 3498481608);
 	void APaperPlayerShip::StaticRegisterNativesAPaperPlayerShip()
 	{
 	}
@@ -38,32 +78,66 @@ void EmptyLinkFunctionForGeneratedCodeFlight() {}
 	{
 	}
 	IMPLEMENT_CLASS(APlayerShip, 3715695009);
+	void ASpawnVolume::StaticRegisterNativesASpawnVolume()
+	{
+		FNativeFunctionRegistrar::RegisterFunction(ASpawnVolume::StaticClass(),"GetRandomPointInVolume",(Native)&ASpawnVolume::execGetRandomPointInVolume);
+		FNativeFunctionRegistrar::RegisterFunction(ASpawnVolume::StaticClass(),"SpawnPickup",(Native)&ASpawnVolume::execSpawnPickup);
+	}
+	IMPLEMENT_CLASS(ASpawnVolume, 3066727262);
 #if USE_COMPILED_IN_NATIVES
 // Cross Module References
 	ENGINE_API class UClass* Z_Construct_UClass_AActor();
 	ENGINE_API class UClass* Z_Construct_UClass_USphereComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_UProjectileMovementComponent_NoRegister();
-	ENGINE_API class UClass* Z_Construct_UClass_AGameMode();
 	ENGINE_API class UClass* Z_Construct_UClass_AActor_NoRegister();
+	ENGINE_API class UClass* Z_Construct_UClass_AGameMode();
 	PAPER2D_API class UClass* Z_Construct_UClass_APaperCharacter();
 	ENGINE_API class UClass* Z_Construct_UClass_APawn();
+	COREUOBJECT_API class UScriptStruct* Z_Construct_UScriptStruct_FVector();
+	ENGINE_API class UClass* Z_Construct_UClass_UBoxComponent_NoRegister();
 
 	FLIGHT_API class UClass* Z_Construct_UClass_AFlightBullet_NoRegister();
 	FLIGHT_API class UClass* Z_Construct_UClass_AFlightBullet();
+	FLIGHT_API class UFunction* Z_Construct_UFunction_ACannonBullet_OnBeginOverlap();
+	FLIGHT_API class UClass* Z_Construct_UClass_ACannonBullet_NoRegister();
+	FLIGHT_API class UClass* Z_Construct_UClass_ACannonBullet();
+	FLIGHT_API class UFunction* Z_Construct_UFunction_AFlamethrowerBullet_OnBeginOverlap();
+	FLIGHT_API class UClass* Z_Construct_UClass_AFlamethrowerBullet_NoRegister();
+	FLIGHT_API class UClass* Z_Construct_UClass_AFlamethrowerBullet();
+	FLIGHT_API class UFunction* Z_Construct_UFunction_ALaserBullet_OnBeginOverlap();
+	FLIGHT_API class UClass* Z_Construct_UClass_ALaserBullet_NoRegister();
+	FLIGHT_API class UClass* Z_Construct_UClass_ALaserBullet();
 	FLIGHT_API class UClass* Z_Construct_UClass_AFlightGameMode_NoRegister();
 	FLIGHT_API class UClass* Z_Construct_UClass_AFlightGameMode();
-	FLIGHT_API class UFunction* Z_Construct_UFunction_AFlightPowerUp_OnBeginOverlap();
-	FLIGHT_API class UClass* Z_Construct_UClass_AFlightPowerUp_NoRegister();
-	FLIGHT_API class UClass* Z_Construct_UClass_AFlightPowerUp();
 	FLIGHT_API class UClass* Z_Construct_UClass_AFlightWeapon_NoRegister();
 	FLIGHT_API class UClass* Z_Construct_UClass_AFlightWeapon();
+	FLIGHT_API class UClass* Z_Construct_UClass_AFlightPowerUp_NoRegister();
+	FLIGHT_API class UClass* Z_Construct_UClass_AFlightPowerUp();
+	FLIGHT_API class UFunction* Z_Construct_UFunction_AShieldsPowerUp_OnBeginOverlap();
+	FLIGHT_API class UClass* Z_Construct_UClass_AShieldsPowerUp_NoRegister();
+	FLIGHT_API class UClass* Z_Construct_UClass_AShieldsPowerUp();
+	FLIGHT_API class UFunction* Z_Construct_UFunction_AWeaponPowerUp_OnBeginOverlap();
+	FLIGHT_API class UClass* Z_Construct_UClass_AWeaponPowerUp_NoRegister();
+	FLIGHT_API class UClass* Z_Construct_UClass_AWeaponPowerUp();
+	FLIGHT_API class UClass* Z_Construct_UClass_AFlamethrowerPowerUp_NoRegister();
+	FLIGHT_API class UClass* Z_Construct_UClass_AFlamethrowerPowerUp();
+	FLIGHT_API class UClass* Z_Construct_UClass_ALaserCannonPowerUp_NoRegister();
+	FLIGHT_API class UClass* Z_Construct_UClass_ALaserCannonPowerUp();
 	FLIGHT_API class UClass* Z_Construct_UClass_ABasicWeapon_NoRegister();
 	FLIGHT_API class UClass* Z_Construct_UClass_ABasicWeapon();
+	FLIGHT_API class UClass* Z_Construct_UClass_AFlamethrowerWeapon_NoRegister();
+	FLIGHT_API class UClass* Z_Construct_UClass_AFlamethrowerWeapon();
+	FLIGHT_API class UClass* Z_Construct_UClass_ALaserCannonWeapon_NoRegister();
+	FLIGHT_API class UClass* Z_Construct_UClass_ALaserCannonWeapon();
 	FLIGHT_API class UClass* Z_Construct_UClass_APaperPlayerShip_NoRegister();
 	FLIGHT_API class UClass* Z_Construct_UClass_APaperPlayerShip();
 	FLIGHT_API class UClass* Z_Construct_UClass_APlayerShip_NoRegister();
 	FLIGHT_API class UClass* Z_Construct_UClass_APlayerShip();
+	FLIGHT_API class UFunction* Z_Construct_UFunction_ASpawnVolume_GetRandomPointInVolume();
+	FLIGHT_API class UFunction* Z_Construct_UFunction_ASpawnVolume_SpawnPickup();
+	FLIGHT_API class UClass* Z_Construct_UClass_ASpawnVolume_NoRegister();
+	FLIGHT_API class UClass* Z_Construct_UClass_ASpawnVolume();
 	FLIGHT_API class UPackage* Z_Construct_UPackage_Flight();
 	UClass* Z_Construct_UClass_AFlightBullet_NoRegister()
 	{
@@ -84,6 +158,7 @@ void EmptyLinkFunctionForGeneratedCodeFlight() {}
 
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_Damage = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("Damage"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(Damage, AFlightBullet), 0x0000080000010001);
 				UProperty* NewProp_Collider = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("Collider"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(Collider, AFlightBullet), 0x00000800000a0009, Z_Construct_UClass_USphereComponent_NoRegister());
 				UProperty* NewProp_Mesh = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("Mesh"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(Mesh, AFlightBullet), 0x00000800000a0009, Z_Construct_UClass_UStaticMeshComponent_NoRegister());
 				UProperty* NewProp_MovementComponent = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("MovementComponent"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(MovementComponent, AFlightBullet), 0x00000800000a0009, Z_Construct_UClass_UProjectileMovementComponent_NoRegister());
@@ -95,6 +170,9 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("Bullets/FlightBullet.h"));
 				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Bullets/FlightBullet.h"));
 				MetaData->SetValue(OuterClass, TEXT("ToolTip"), TEXT("I will be turning this into an Abstract class when types of bullets are decided."));
+				MetaData->SetValue(NewProp_Damage, TEXT("Category"), TEXT("Bullet Properties"));
+				MetaData->SetValue(NewProp_Damage, TEXT("ModuleRelativePath"), TEXT("Bullets/FlightBullet.h"));
+				MetaData->SetValue(NewProp_Damage, TEXT("ToolTip"), TEXT("Damage the bullet does"));
 				MetaData->SetValue(NewProp_Collider, TEXT("Category"), TEXT("FlightBullet"));
 				MetaData->SetValue(NewProp_Collider, TEXT("EditInline"), TEXT("true"));
 				MetaData->SetValue(NewProp_Collider, TEXT("ModuleRelativePath"), TEXT("Bullets/FlightBullet.h"));
@@ -115,6 +193,168 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AFlightBullet(Z_Construct_UClass_AFlightBullet, TEXT("AFlightBullet"));
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AFlightBullet);
+	UFunction* Z_Construct_UFunction_ACannonBullet_OnBeginOverlap()
+	{
+		struct CannonBullet_eventOnBeginOverlap_Parms
+		{
+			AActor* OtherActor;
+		};
+		UObject* Outer=Z_Construct_UClass_ACannonBullet();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("OnBeginOverlap"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x00020401, 65535, sizeof(CannonBullet_eventOnBeginOverlap_Parms));
+			UProperty* NewProp_OtherActor = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("OtherActor"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(OtherActor, CannonBullet_eventOnBeginOverlap_Parms), 0x0000000000000080, Z_Construct_UClass_AActor_NoRegister());
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Bullets/CannonBullet.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UClass* Z_Construct_UClass_ACannonBullet_NoRegister()
+	{
+		return ACannonBullet::StaticClass();
+	}
+	UClass* Z_Construct_UClass_ACannonBullet()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AFlightBullet();
+			Z_Construct_UPackage_Flight();
+			OuterClass = ACannonBullet::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+				OuterClass->LinkChild(Z_Construct_UFunction_ACannonBullet_OnBeginOverlap());
+
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ACannonBullet_OnBeginOverlap()); // 4223743887
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("Bullets/CannonBullet.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Bullets/CannonBullet.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_ACannonBullet(Z_Construct_UClass_ACannonBullet, TEXT("ACannonBullet"));
+	DEFINE_VTABLE_PTR_HELPER_CTOR(ACannonBullet);
+	UFunction* Z_Construct_UFunction_AFlamethrowerBullet_OnBeginOverlap()
+	{
+		struct FlamethrowerBullet_eventOnBeginOverlap_Parms
+		{
+			AActor* OtherActor;
+		};
+		UObject* Outer=Z_Construct_UClass_AFlamethrowerBullet();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("OnBeginOverlap"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x00020401, 65535, sizeof(FlamethrowerBullet_eventOnBeginOverlap_Parms));
+			UProperty* NewProp_OtherActor = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("OtherActor"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(OtherActor, FlamethrowerBullet_eventOnBeginOverlap_Parms), 0x0000000000000080, Z_Construct_UClass_AActor_NoRegister());
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Bullets/FlamethrowerBullet.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UClass* Z_Construct_UClass_AFlamethrowerBullet_NoRegister()
+	{
+		return AFlamethrowerBullet::StaticClass();
+	}
+	UClass* Z_Construct_UClass_AFlamethrowerBullet()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AFlightBullet();
+			Z_Construct_UPackage_Flight();
+			OuterClass = AFlamethrowerBullet::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+				OuterClass->LinkChild(Z_Construct_UFunction_AFlamethrowerBullet_OnBeginOverlap());
+
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AFlamethrowerBullet_OnBeginOverlap()); // 3540797252
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("Bullets/FlamethrowerBullet.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Bullets/FlamethrowerBullet.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_AFlamethrowerBullet(Z_Construct_UClass_AFlamethrowerBullet, TEXT("AFlamethrowerBullet"));
+	DEFINE_VTABLE_PTR_HELPER_CTOR(AFlamethrowerBullet);
+	UFunction* Z_Construct_UFunction_ALaserBullet_OnBeginOverlap()
+	{
+		struct LaserBullet_eventOnBeginOverlap_Parms
+		{
+			AActor* OtherActor;
+		};
+		UObject* Outer=Z_Construct_UClass_ALaserBullet();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("OnBeginOverlap"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x00020401, 65535, sizeof(LaserBullet_eventOnBeginOverlap_Parms));
+			UProperty* NewProp_OtherActor = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("OtherActor"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(OtherActor, LaserBullet_eventOnBeginOverlap_Parms), 0x0000000000000080, Z_Construct_UClass_AActor_NoRegister());
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Bullets/LaserBullet.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UClass* Z_Construct_UClass_ALaserBullet_NoRegister()
+	{
+		return ALaserBullet::StaticClass();
+	}
+	UClass* Z_Construct_UClass_ALaserBullet()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AFlightBullet();
+			Z_Construct_UPackage_Flight();
+			OuterClass = ALaserBullet::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+				OuterClass->LinkChild(Z_Construct_UFunction_ALaserBullet_OnBeginOverlap());
+
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ALaserBullet_OnBeginOverlap()); // 430294681
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("Bullets/LaserBullet.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Bullets/LaserBullet.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_ALaserBullet(Z_Construct_UClass_ALaserBullet, TEXT("ALaserBullet"));
+	DEFINE_VTABLE_PTR_HELPER_CTOR(ALaserBullet);
 	UClass* Z_Construct_UClass_AFlightGameMode_NoRegister()
 	{
 		return AFlightGameMode::StaticClass();
@@ -149,72 +389,6 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AFlightGameMode(Z_Construct_UClass_AFlightGameMode, TEXT("AFlightGameMode"));
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AFlightGameMode);
-	UFunction* Z_Construct_UFunction_AFlightPowerUp_OnBeginOverlap()
-	{
-		struct FlightPowerUp_eventOnBeginOverlap_Parms
-		{
-			AActor* OtherActor;
-		};
-		UObject* Outer=Z_Construct_UClass_AFlightPowerUp();
-		static UFunction* ReturnFunction = NULL;
-		if (!ReturnFunction)
-		{
-			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("OnBeginOverlap"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x00020400, 65535, sizeof(FlightPowerUp_eventOnBeginOverlap_Parms));
-			UProperty* NewProp_OtherActor = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("OtherActor"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(OtherActor, FlightPowerUp_eventOnBeginOverlap_Parms), 0x0000000000000080, Z_Construct_UClass_AActor_NoRegister());
-			ReturnFunction->Bind();
-			ReturnFunction->StaticLink();
-#if WITH_METADATA
-			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
-			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Power Ups/FlightPowerUp.h"));
-			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Each Power Up will override this function to give the appropriate effects to the player. It will ONLY fire when the power up overlaps with the player."));
-#endif
-		}
-		return ReturnFunction;
-	}
-	UClass* Z_Construct_UClass_AFlightPowerUp_NoRegister()
-	{
-		return AFlightPowerUp::StaticClass();
-	}
-	UClass* Z_Construct_UClass_AFlightPowerUp()
-	{
-		static UClass* OuterClass = NULL;
-		if (!OuterClass)
-		{
-			Z_Construct_UClass_AActor();
-			Z_Construct_UPackage_Flight();
-			OuterClass = AFlightPowerUp::StaticClass();
-			if (!(OuterClass->ClassFlags & CLASS_Constructed))
-			{
-				UObjectForceRegistration(OuterClass);
-				OuterClass->ClassFlags |= 0x20900081;
-
-				OuterClass->LinkChild(Z_Construct_UFunction_AFlightPowerUp_OnBeginOverlap());
-
-PRAGMA_DISABLE_DEPRECATION_WARNINGS
-				UProperty* NewProp_Collider = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("Collider"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(Collider, AFlightPowerUp), 0x0000080000090009, Z_Construct_UClass_USphereComponent_NoRegister());
-				UProperty* NewProp_Mesh = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("Mesh"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(Mesh, AFlightPowerUp), 0x0000080000090009, Z_Construct_UClass_UStaticMeshComponent_NoRegister());
-PRAGMA_ENABLE_DEPRECATION_WARNINGS
-				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AFlightPowerUp_OnBeginOverlap()); // 3720292695
-				OuterClass->StaticLink();
-#if WITH_METADATA
-				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
-				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("Power Ups/FlightPowerUp.h"));
-				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Power Ups/FlightPowerUp.h"));
-				MetaData->SetValue(OuterClass, TEXT("ToolTip"), TEXT("Pure Virtual class  for the power ups each will inherit from this class and override the OnBeginOverlap function for their functionality"));
-				MetaData->SetValue(NewProp_Collider, TEXT("Category"), TEXT("FlightPowerUp"));
-				MetaData->SetValue(NewProp_Collider, TEXT("EditInline"), TEXT("true"));
-				MetaData->SetValue(NewProp_Collider, TEXT("ModuleRelativePath"), TEXT("Power Ups/FlightPowerUp.h"));
-				MetaData->SetValue(NewProp_Mesh, TEXT("Category"), TEXT("FlightPowerUp"));
-				MetaData->SetValue(NewProp_Mesh, TEXT("EditInline"), TEXT("true"));
-				MetaData->SetValue(NewProp_Mesh, TEXT("ModuleRelativePath"), TEXT("Power Ups/FlightPowerUp.h"));
-#endif
-			}
-		}
-		check(OuterClass->GetClass());
-		return OuterClass;
-	}
-	static FCompiledInDefer Z_CompiledInDefer_UClass_AFlightPowerUp(Z_Construct_UClass_AFlightPowerUp, TEXT("AFlightPowerUp"));
-	DEFINE_VTABLE_PTR_HELPER_CTOR(AFlightPowerUp);
 	UClass* Z_Construct_UClass_AFlightWeapon_NoRegister()
 	{
 		return AFlightWeapon::StaticClass();
@@ -254,6 +428,228 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AFlightWeapon(Z_Construct_UClass_AFlightWeapon, TEXT("AFlightWeapon"));
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AFlightWeapon);
+	UClass* Z_Construct_UClass_AFlightPowerUp_NoRegister()
+	{
+		return AFlightPowerUp::StaticClass();
+	}
+	UClass* Z_Construct_UClass_AFlightPowerUp()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AActor();
+			Z_Construct_UPackage_Flight();
+			OuterClass = AFlightPowerUp::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900081;
+
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_Collider = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("Collider"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(Collider, AFlightPowerUp), 0x00000800000a0009, Z_Construct_UClass_USphereComponent_NoRegister());
+				UProperty* NewProp_Mesh = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("Mesh"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(Mesh, AFlightPowerUp), 0x00000800000a0009, Z_Construct_UClass_UStaticMeshComponent_NoRegister());
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("Power Ups/FlightPowerUp.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Power Ups/FlightPowerUp.h"));
+				MetaData->SetValue(OuterClass, TEXT("ToolTip"), TEXT("Pure Virtual class  for the power ups each will inherit from this class and override the OnBeginOverlap function for their functionality"));
+				MetaData->SetValue(NewProp_Collider, TEXT("Category"), TEXT("FlightPowerUp"));
+				MetaData->SetValue(NewProp_Collider, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_Collider, TEXT("ModuleRelativePath"), TEXT("Power Ups/FlightPowerUp.h"));
+				MetaData->SetValue(NewProp_Mesh, TEXT("Category"), TEXT("FlightPowerUp"));
+				MetaData->SetValue(NewProp_Mesh, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_Mesh, TEXT("ModuleRelativePath"), TEXT("Power Ups/FlightPowerUp.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_AFlightPowerUp(Z_Construct_UClass_AFlightPowerUp, TEXT("AFlightPowerUp"));
+	DEFINE_VTABLE_PTR_HELPER_CTOR(AFlightPowerUp);
+	UFunction* Z_Construct_UFunction_AShieldsPowerUp_OnBeginOverlap()
+	{
+		struct ShieldsPowerUp_eventOnBeginOverlap_Parms
+		{
+			AActor* OtherActor;
+		};
+		UObject* Outer=Z_Construct_UClass_AShieldsPowerUp();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("OnBeginOverlap"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x00020401, 65535, sizeof(ShieldsPowerUp_eventOnBeginOverlap_Parms));
+			UProperty* NewProp_OtherActor = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("OtherActor"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(OtherActor, ShieldsPowerUp_eventOnBeginOverlap_Parms), 0x0000000000000080, Z_Construct_UClass_AActor_NoRegister());
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Power Ups/ShieldsPowerUp.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UClass* Z_Construct_UClass_AShieldsPowerUp_NoRegister()
+	{
+		return AShieldsPowerUp::StaticClass();
+	}
+	UClass* Z_Construct_UClass_AShieldsPowerUp()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AFlightPowerUp();
+			Z_Construct_UPackage_Flight();
+			OuterClass = AShieldsPowerUp::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+				OuterClass->LinkChild(Z_Construct_UFunction_AShieldsPowerUp_OnBeginOverlap());
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_Shields = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("Shields"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(Shields, AShieldsPowerUp), 0x0000080000010001);
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AShieldsPowerUp_OnBeginOverlap()); // 383981135
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("Power Ups/ShieldsPowerUp.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Power Ups/ShieldsPowerUp.h"));
+				MetaData->SetValue(NewProp_Shields, TEXT("Category"), TEXT("ShieldsPowerUp"));
+				MetaData->SetValue(NewProp_Shields, TEXT("ModuleRelativePath"), TEXT("Power Ups/ShieldsPowerUp.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_AShieldsPowerUp(Z_Construct_UClass_AShieldsPowerUp, TEXT("AShieldsPowerUp"));
+	DEFINE_VTABLE_PTR_HELPER_CTOR(AShieldsPowerUp);
+	UFunction* Z_Construct_UFunction_AWeaponPowerUp_OnBeginOverlap()
+	{
+		struct WeaponPowerUp_eventOnBeginOverlap_Parms
+		{
+			AActor* OtherActor;
+		};
+		UObject* Outer=Z_Construct_UClass_AWeaponPowerUp();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("OnBeginOverlap"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x00020401, 65535, sizeof(WeaponPowerUp_eventOnBeginOverlap_Parms));
+			UProperty* NewProp_OtherActor = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("OtherActor"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(OtherActor, WeaponPowerUp_eventOnBeginOverlap_Parms), 0x0000000000000080, Z_Construct_UClass_AActor_NoRegister());
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Power Ups/WeaponPowerUp.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UClass* Z_Construct_UClass_AWeaponPowerUp_NoRegister()
+	{
+		return AWeaponPowerUp::StaticClass();
+	}
+	UClass* Z_Construct_UClass_AWeaponPowerUp()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AFlightPowerUp();
+			Z_Construct_UPackage_Flight();
+			OuterClass = AWeaponPowerUp::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+				OuterClass->LinkChild(Z_Construct_UFunction_AWeaponPowerUp_OnBeginOverlap());
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_Weapon = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("Weapon"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(Weapon, AWeaponPowerUp), 0x0000080000020001, Z_Construct_UClass_AFlightWeapon_NoRegister());
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AWeaponPowerUp_OnBeginOverlap()); // 3266388693
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("Power Ups/WeaponPowerUp.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Power Ups/WeaponPowerUp.h"));
+				MetaData->SetValue(NewProp_Weapon, TEXT("Category"), TEXT("WeaponPowerUp"));
+				MetaData->SetValue(NewProp_Weapon, TEXT("ModuleRelativePath"), TEXT("Power Ups/WeaponPowerUp.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_AWeaponPowerUp(Z_Construct_UClass_AWeaponPowerUp, TEXT("AWeaponPowerUp"));
+	DEFINE_VTABLE_PTR_HELPER_CTOR(AWeaponPowerUp);
+	UClass* Z_Construct_UClass_AFlamethrowerPowerUp_NoRegister()
+	{
+		return AFlamethrowerPowerUp::StaticClass();
+	}
+	UClass* Z_Construct_UClass_AFlamethrowerPowerUp()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AWeaponPowerUp();
+			Z_Construct_UPackage_Flight();
+			OuterClass = AFlamethrowerPowerUp::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("Power Ups/FlamethrowerPowerUp.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Power Ups/FlamethrowerPowerUp.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_AFlamethrowerPowerUp(Z_Construct_UClass_AFlamethrowerPowerUp, TEXT("AFlamethrowerPowerUp"));
+	DEFINE_VTABLE_PTR_HELPER_CTOR(AFlamethrowerPowerUp);
+	UClass* Z_Construct_UClass_ALaserCannonPowerUp_NoRegister()
+	{
+		return ALaserCannonPowerUp::StaticClass();
+	}
+	UClass* Z_Construct_UClass_ALaserCannonPowerUp()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AWeaponPowerUp();
+			Z_Construct_UPackage_Flight();
+			OuterClass = ALaserCannonPowerUp::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("Power Ups/LaserCannonPowerUp.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Power Ups/LaserCannonPowerUp.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_ALaserCannonPowerUp(Z_Construct_UClass_ALaserCannonPowerUp, TEXT("ALaserCannonPowerUp"));
+	DEFINE_VTABLE_PTR_HELPER_CTOR(ALaserCannonPowerUp);
 	UClass* Z_Construct_UClass_ABasicWeapon_NoRegister()
 	{
 		return ABasicWeapon::StaticClass();
@@ -285,6 +681,68 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ABasicWeapon(Z_Construct_UClass_ABasicWeapon, TEXT("ABasicWeapon"));
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ABasicWeapon);
+	UClass* Z_Construct_UClass_AFlamethrowerWeapon_NoRegister()
+	{
+		return AFlamethrowerWeapon::StaticClass();
+	}
+	UClass* Z_Construct_UClass_AFlamethrowerWeapon()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AFlightWeapon();
+			Z_Construct_UPackage_Flight();
+			OuterClass = AFlamethrowerWeapon::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("Weapons/FlamethrowerWeapon.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Weapons/FlamethrowerWeapon.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_AFlamethrowerWeapon(Z_Construct_UClass_AFlamethrowerWeapon, TEXT("AFlamethrowerWeapon"));
+	DEFINE_VTABLE_PTR_HELPER_CTOR(AFlamethrowerWeapon);
+	UClass* Z_Construct_UClass_ALaserCannonWeapon_NoRegister()
+	{
+		return ALaserCannonWeapon::StaticClass();
+	}
+	UClass* Z_Construct_UClass_ALaserCannonWeapon()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AFlightWeapon();
+			Z_Construct_UPackage_Flight();
+			OuterClass = ALaserCannonWeapon::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("Weapons/LaserCannonWeapon.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Weapons/LaserCannonWeapon.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_ALaserCannonWeapon(Z_Construct_UClass_ALaserCannonWeapon, TEXT("ALaserCannonWeapon"));
+	DEFINE_VTABLE_PTR_HELPER_CTOR(ALaserCannonWeapon);
 	UClass* Z_Construct_UClass_APaperPlayerShip_NoRegister()
 	{
 		return APaperPlayerShip::StaticClass();
@@ -349,6 +807,105 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_APlayerShip(Z_Construct_UClass_APlayerShip, TEXT("APlayerShip"));
 	DEFINE_VTABLE_PTR_HELPER_CTOR(APlayerShip);
+	UFunction* Z_Construct_UFunction_ASpawnVolume_GetRandomPointInVolume()
+	{
+		struct SpawnVolume_eventGetRandomPointInVolume_Parms
+		{
+			FVector ReturnValue;
+		};
+		UObject* Outer=Z_Construct_UClass_ASpawnVolume();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("GetRandomPointInVolume"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x14820401, 65535, sizeof(SpawnVolume_eventGetRandomPointInVolume_Parms));
+			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_Native) UStructProperty(CPP_PROPERTY_BASE(ReturnValue, SpawnVolume_eventGetRandomPointInVolume_Parms), 0x0000000000000580, Z_Construct_UScriptStruct_FVector());
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Spawning"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("SpawnVolume.h"));
+			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("finds a random point within the BoxComponent"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_ASpawnVolume_SpawnPickup()
+	{
+		UObject* Outer=Z_Construct_UClass_ASpawnVolume();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("SpawnPickup"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x00020401, 65535);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Spawning"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("SpawnVolume.h"));
+			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("BlueprintCallable,"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UClass* Z_Construct_UClass_ASpawnVolume_NoRegister()
+	{
+		return ASpawnVolume::StaticClass();
+	}
+	UClass* Z_Construct_UClass_ASpawnVolume()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AActor();
+			Z_Construct_UPackage_Flight();
+			OuterClass = ASpawnVolume::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+				OuterClass->LinkChild(Z_Construct_UFunction_ASpawnVolume_GetRandomPointInVolume());
+				OuterClass->LinkChild(Z_Construct_UFunction_ASpawnVolume_SpawnPickup());
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_TimeTillStarted = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("TimeTillStarted"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(TimeTillStarted, ASpawnVolume), 0x0000080000000001);
+				UProperty* NewProp_RespawnMinTime = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("RespawnMinTime"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(RespawnMinTime, ASpawnVolume), 0x0000000000000001);
+				UProperty* NewProp_RespawnMaxTime = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("RespawnMaxTime"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(RespawnMaxTime, ASpawnVolume), 0x0000000000000001);
+				UProperty* NewProp_WhatToSpawn = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("WhatToSpawn"), RF_Public|RF_Transient|RF_Native) UClassProperty(CPP_PROPERTY_BASE(WhatToSpawn, ASpawnVolume), 0x0004000000000001, Z_Construct_UClass_AActor_NoRegister());
+				NewProp_WhatToSpawn->ArrayDim = CPP_ARRAY_DIM(WhatToSpawn, ASpawnVolume);
+				UProperty* NewProp_WhereToSpawn = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("WhereToSpawn"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(WhereToSpawn, ASpawnVolume), 0x00000000000a0009, Z_Construct_UClass_UBoxComponent_NoRegister());
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ASpawnVolume_GetRandomPointInVolume()); // 411363778
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ASpawnVolume_SpawnPickup()); // 3420602030
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("SpawnVolume.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("SpawnVolume.h"));
+				MetaData->SetValue(NewProp_TimeTillStarted, TEXT("Category"), TEXT("SpawnVolume"));
+				MetaData->SetValue(NewProp_TimeTillStarted, TEXT("ModuleRelativePath"), TEXT("SpawnVolume.h"));
+				MetaData->SetValue(NewProp_RespawnMinTime, TEXT("Category"), TEXT("SpawnVolume"));
+				MetaData->SetValue(NewProp_RespawnMinTime, TEXT("ModuleRelativePath"), TEXT("SpawnVolume.h"));
+				MetaData->SetValue(NewProp_RespawnMinTime, TEXT("ToolTip"), TEXT("The minimum amount of time untill a new spawn happens"));
+				MetaData->SetValue(NewProp_RespawnMaxTime, TEXT("Category"), TEXT("SpawnVolume"));
+				MetaData->SetValue(NewProp_RespawnMaxTime, TEXT("ModuleRelativePath"), TEXT("SpawnVolume.h"));
+				MetaData->SetValue(NewProp_RespawnMaxTime, TEXT("ToolTip"), TEXT("the maximum amount of time untill a new spawn happens"));
+				MetaData->SetValue(NewProp_WhatToSpawn, TEXT("Category"), TEXT("Spawning"));
+				MetaData->SetValue(NewProp_WhatToSpawn, TEXT("ModuleRelativePath"), TEXT("SpawnVolume.h"));
+				MetaData->SetValue(NewProp_WhatToSpawn, TEXT("ToolTip"), TEXT("The pickup to spawn"));
+				MetaData->SetValue(NewProp_WhereToSpawn, TEXT("Category"), TEXT("Spawning"));
+				MetaData->SetValue(NewProp_WhereToSpawn, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_WhereToSpawn, TEXT("ModuleRelativePath"), TEXT("SpawnVolume.h"));
+				MetaData->SetValue(NewProp_WhereToSpawn, TEXT("ToolTip"), TEXT("BoxComponent to specify the spawning area within the level"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_ASpawnVolume(Z_Construct_UClass_ASpawnVolume, TEXT("ASpawnVolume"));
+	DEFINE_VTABLE_PTR_HELPER_CTOR(ASpawnVolume);
 	UPackage* Z_Construct_UPackage_Flight()
 	{
 		static UPackage* ReturnPackage = NULL;
@@ -357,8 +914,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/Flight")), false, false));
 			ReturnPackage->SetPackageFlags(PKG_CompiledIn | 0x00000000);
 			FGuid Guid;
-			Guid.A = 0x34B13AED;
-			Guid.B = 0xA228EE74;
+			Guid.A = 0xBDA9F614;
+			Guid.B = 0x3E435352;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

@@ -8,21 +8,51 @@
 #ifndef FLIGHT_FlightBullet_generated_h
 	#include "Bullets/FlightBullet.h"
 #endif
+#ifndef FLIGHT_CannonBullet_generated_h
+	#include "Bullets/CannonBullet.h"
+#endif
+#ifndef FLIGHT_FlamethrowerBullet_generated_h
+	#include "Bullets/FlamethrowerBullet.h"
+#endif
+#ifndef FLIGHT_LaserBullet_generated_h
+	#include "Bullets/LaserBullet.h"
+#endif
 #ifndef FLIGHT_FlightGameMode_generated_h
 	#include "FlightGameMode.h"
-#endif
-#ifndef FLIGHT_FlightPowerUp_generated_h
-	#include "Power Ups/FlightPowerUp.h"
 #endif
 #ifndef FLIGHT_FlightWeapon_generated_h
 	#include "Weapons/FlightWeapon.h"
 #endif
+#ifndef FLIGHT_FlightPowerUp_generated_h
+	#include "Power Ups/FlightPowerUp.h"
+#endif
+#ifndef FLIGHT_ShieldsPowerUp_generated_h
+	#include "Power Ups/ShieldsPowerUp.h"
+#endif
+#ifndef FLIGHT_WeaponPowerUp_generated_h
+	#include "Power Ups/WeaponPowerUp.h"
+#endif
+#ifndef FLIGHT_FlamethrowerPowerUp_generated_h
+	#include "Power Ups/FlamethrowerPowerUp.h"
+#endif
+#ifndef FLIGHT_LaserCannonPowerUp_generated_h
+	#include "Power Ups/LaserCannonPowerUp.h"
+#endif
 #ifndef FLIGHT_BasicWeapon_generated_h
 	#include "Weapons/BasicWeapon.h"
+#endif
+#ifndef FLIGHT_FlamethrowerWeapon_generated_h
+	#include "Weapons/FlamethrowerWeapon.h"
+#endif
+#ifndef FLIGHT_LaserCannonWeapon_generated_h
+	#include "Weapons/LaserCannonWeapon.h"
 #endif
 #ifndef FLIGHT_PaperPlayerShip_generated_h
 	#include "PaperPlayerShip.h"
 #endif
 #ifndef FLIGHT_PlayerShip_generated_h
 	#include "PlayerShip.h"
+#endif
+#ifndef FLIGHT_SpawnVolume_generated_h
+	#include "SpawnVolume.h"
 #endif
