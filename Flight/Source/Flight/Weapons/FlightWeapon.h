@@ -24,12 +24,18 @@ public:
 
 	//Called to have the gun fire its weapon
 	virtual void Fire();
+
+	FORCEINLINE bool IsAlive() { return TimeAlive <= TimeTillDeath; }
 protected:
 
 	//The type of bullet that will get spawned
 	UPROPERTY()
 	TSubclassOf<AFlightBullet> ProjectileClass;
 	UPROPERTY(EditDefaultsOnly)
-		float FireRate;
+	float FireRate;
 	float TimeSinceShot;
+	//used for power up weapons to determine if they need to be replaced by the basic weapon
+	float TimeTillDeath;
+	//used to count how long it has existed;
+	float TimeAlive;
 };

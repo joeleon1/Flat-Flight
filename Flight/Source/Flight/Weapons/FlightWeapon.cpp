@@ -12,6 +12,8 @@ void AFlightWeapon::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 	TimeSinceShot += DeltaTime;
+	if(GetOwner())
+		TimeAlive += DeltaTime;
 }
 
 void AFlightWeapon::Fire()
@@ -19,6 +21,9 @@ void AFlightWeapon::Fire()
 	if (TimeSinceShot > FireRate)
 	{
 		TimeSinceShot = 0;
+	//	check(GetWorld());
+		//check(ProjectileClass);
+		check(GetOwner());
 		GetWorld()->SpawnActor<AFlightBullet>(ProjectileClass, this->GetOwner()->GetActorLocation(), FRotator(0, 90, 0));
 		GetWorld()->SpawnActor<AFlightBullet>(ProjectileClass, this->GetOwner()->GetActorLocation(), FRotator(0, -90, 0));
 	}
