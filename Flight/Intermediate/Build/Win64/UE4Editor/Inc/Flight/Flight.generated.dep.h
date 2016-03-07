@@ -5,6 +5,9 @@
 	DO NOT modify this manually! Edit the corresponding .h files instead!
 ===========================================================================*/
 
+#ifndef FLIGHT_Enemy_generated_h
+	#include "Enemy.h"
+#endif
 #ifndef FLIGHT_FlightBullet_generated_h
 	#include "Bullets/FlightBullet.h"
 #endif

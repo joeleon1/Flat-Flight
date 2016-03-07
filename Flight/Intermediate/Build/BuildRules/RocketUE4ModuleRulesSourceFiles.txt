@@ -467,8 +467,8 @@ C:\Program Files\Epic Games\4.10\Engine\Plugins\ScriptGeneratorPlugin\Source\Scr
 C:\Program Files\Epic Games\4.10\Engine\Plugins\ScriptPlugin\Source\ScriptEditorPlugin\ScriptEditorPlugin.Build.cs
 C:\Program Files\Epic Games\4.10\Engine\Plugins\ScriptPlugin\Source\ScriptPlugin\ScriptPlugin.Build.cs
 C:\Program Files\Epic Games\4.10\Engine\Plugins\Slate\SlateRemote\Source\SlateRemote\SlateRemote.Build.cs
-C:\Users\C401ITxx\Desktop\Flat-Flight\Flight\Source\Flight\Flight.Build.cs
+C:\Users\C401ITxx\Documents\GitHub\Flat-Flight\Flight\Source\Flight\Flight.Build.cs
 C:\Program Files\Epic Games\4.10\Engine\Source\UE4Editor.Target.cs
 C:\Program Files\Epic Games\4.10\Engine\Source\UE4Game.Target.cs
-C:\Users\C401ITxx\Desktop\Flat-Flight\Flight\Source\Flight.Target.cs
-C:\Users\C401ITxx\Desktop\Flat-Flight\Flight\Source\FlightEditor.Target.cs
+C:\Users\C401ITxx\Documents\GitHub\Flat-Flight\Flight\Source\Flight.Target.cs
+C:\Users\C401ITxx\Documents\GitHub\Flat-Flight\Flight\Source\FlightEditor.Target.cs

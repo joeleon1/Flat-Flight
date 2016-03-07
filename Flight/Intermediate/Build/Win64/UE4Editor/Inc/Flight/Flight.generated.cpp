@@ -9,6 +9,10 @@
 #include "Flight.generated.dep.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeFlight() {}
+	void AEnemy::StaticRegisterNativesAEnemy()
+	{
+	}
+	IMPLEMENT_CLASS(AEnemy, 2934221509);
 	void AFlightBullet::StaticRegisterNativesAFlightBullet()
 	{
 	}
@@ -97,6 +101,8 @@ void EmptyLinkFunctionForGeneratedCodeFlight() {}
 	COREUOBJECT_API class UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	ENGINE_API class UClass* Z_Construct_UClass_UBoxComponent_NoRegister();
 
+	FLIGHT_API class UClass* Z_Construct_UClass_AEnemy_NoRegister();
+	FLIGHT_API class UClass* Z_Construct_UClass_AEnemy();
 	FLIGHT_API class UClass* Z_Construct_UClass_AFlightBullet_NoRegister();
 	FLIGHT_API class UClass* Z_Construct_UClass_AFlightBullet();
 	FLIGHT_API class UFunction* Z_Construct_UFunction_ACannonBullet_OnBeginOverlap();
@@ -139,6 +145,37 @@ void EmptyLinkFunctionForGeneratedCodeFlight() {}
 	FLIGHT_API class UClass* Z_Construct_UClass_ASpawnVolume_NoRegister();
 	FLIGHT_API class UClass* Z_Construct_UClass_ASpawnVolume();
 	FLIGHT_API class UPackage* Z_Construct_UPackage_Flight();
+	UClass* Z_Construct_UClass_AEnemy_NoRegister()
+	{
+		return AEnemy::StaticClass();
+	}
+	UClass* Z_Construct_UClass_AEnemy()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AActor();
+			Z_Construct_UPackage_Flight();
+			OuterClass = AEnemy::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("Enemy.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Enemy.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_AEnemy(Z_Construct_UClass_AEnemy, TEXT("AEnemy"));
+	DEFINE_VTABLE_PTR_HELPER_CTOR(AEnemy);
 	UClass* Z_Construct_UClass_AFlightBullet_NoRegister()
 	{
 		return AFlightBullet::StaticClass();
@@ -914,8 +951,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/Flight")), false, false));
 			ReturnPackage->SetPackageFlags(PKG_CompiledIn | 0x00000000);
 			FGuid Guid;
-			Guid.A = 0xBDA9F614;
-			Guid.B = 0x3E435352;
+			Guid.A = 0x662128C4;
+			Guid.B = 0x48A5C3BC;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);
