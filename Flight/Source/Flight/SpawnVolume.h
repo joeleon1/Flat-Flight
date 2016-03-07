@@ -4,8 +4,14 @@
 
 #include "GameFramework/Actor.h"
 #include "SpawnVolume.generated.h"
+//change this define if you need the spawner to hold more items 
 #define SPAWNER_ARRAY_SIZE 10
 UCLASS()
+
+
+/*This class is created as a blue print and placed in the world you can set when it will start and how often it will spawn and will only spawn an actor when the previous one is destroyed
+All of these variables are set through the properties inspector in engine
+*/
 class FLIGHT_API ASpawnVolume : public AActor
 {
 	GENERATED_BODY()
