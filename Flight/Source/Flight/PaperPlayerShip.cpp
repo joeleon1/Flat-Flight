@@ -23,10 +23,16 @@ void APaperPlayerShip::BeginPlay()
 void APaperPlayerShip::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	if (!CurrentWeapon->IsAlive())
+	{
+		GEngine->AddOnScreenDebugMessage(1, 1, FColor::Red, "Weapon power up over");
+		CurrentWeapon->Destroy();
+		CurrentWeapon = BasicWeapon;
+	}
 	if (bIsFiring)
 	{
-		GEngine->AddOnScreenDebugMessage(1, 1, FColor::Red, "FIRING");
-		CurrentWeapon->Fire();
+		if(CurrentWeapon)
+			CurrentWeapon->Fire();
 	}
 
 }
@@ -42,5 +48,10 @@ void APaperPlayerShip::SetupPlayerInputComponent(class UInputComponent* InputCom
 
 void APaperPlayerShip::SetWeapon(AFlightWeapon* Weapon)
 {
-	CurrentWeapon = Weapon;
+	if(Weapon)
+		CurrentWeapon = Weapon;
+}
+void APaperPlayerShip::AddShields(float Sheilds)
+{
+	//Need to make a player state for out players for their health, score shields and other tracked information.
 }
