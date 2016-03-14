@@ -2,7 +2,7 @@
 
 #include "Flight.h"
 #include "FlightGameMode.h"
-
+#include "FlightPlayerState.h"
 
 
 
@@ -24,8 +24,9 @@ AFlightGameMode::AFlightGameMode(const FObjectInitializer& ObjectInitializer):Su
 	{
 		//set it to be the default pawn for our players
 		DefaultPawnClass = Cast<UClass>(ConstructorStatics.CharacterClass.Object->GeneratedClass);
+		
 	}
-
+	PlayerStateClass = AFlightPlayerState::StaticClass();
 	//Any other setting of game mode stuff goes here e.g. AI, HUD etc
 }
 
