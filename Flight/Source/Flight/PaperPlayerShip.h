@@ -4,8 +4,8 @@
 
 #include "PaperCharacter.h"
 #include "Weapons/FlightWeapon.h"
+#include "Weapons/NukeWeapon.h"
 #include "PaperPlayerShip.generated.h"
-
 /**
  * 
  */
@@ -28,13 +28,17 @@ public:
 
 	void SetWeapon(AFlightWeapon* NewWeapon);
 	void AddShields(float Sheilds);
+	void GetNuke();
 private:
 	FORCEINLINE void StartFiring() { bIsFiring = true; }
 	FORCEINLINE void EndFiring() { bIsFiring = false; }
+	FORCEINLINE void StartNuke() { bIsNuke = true; }
+	FORCEINLINE void EndNuke() { bIsNuke = false; }
 
-	bool bIsFiring;
+	bool bIsFiring,bIsNuke;
 	AFlightWeapon* CurrentWeapon;
 	AFlightWeapon* BasicWeapon;
+	ANukeWeapon* NukeWeapon;
 	
 	
 };

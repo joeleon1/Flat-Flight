@@ -4,9 +4,9 @@
 #include "PaperPlayerShip.h"
 #include "Engine.h"
 #include "Weapons/BasicWeapon.h"
+#include "FlightPlayerState.h"
 
-
-APaperPlayerShip::APaperPlayerShip() :bIsFiring(false)
+APaperPlayerShip::APaperPlayerShip() :bIsFiring(false),bIsNuke(false)
 {
 	PrimaryActorTick.bCanEverTick = true;
 }
@@ -17,6 +17,9 @@ void APaperPlayerShip::BeginPlay()
 	BasicWeapon = GetWorld()->SpawnActor<ABasicWeapon>();
 	BasicWeapon->SetOwner(this);
 	CurrentWeapon = BasicWeapon;
+
+	NukeWeapon = GetWorld()->SpawnActor<ANukeWeapon>();
+	NukeWeapon->SetOwner(this);
 }
 
 // Called every frame
@@ -34,6 +37,11 @@ void APaperPlayerShip::Tick(float DeltaTime)
 		if(CurrentWeapon)
 			CurrentWeapon->Fire();
 	}
+	if (bIsNuke)
+	{
+		if(NukeWeapon->HasAmmo())
+			NukeWeapon->Fire();
+	}	
 
 }
 
@@ -43,6 +51,8 @@ void APaperPlayerShip::SetupPlayerInputComponent(class UInputComponent* InputCom
 	Super::SetupPlayerInputComponent(InputComponent);
 	InputComponent->BindAction(TEXT("Fire"), EInputEvent::IE_Pressed, this, &APaperPlayerShip::StartFiring);
 	InputComponent->BindAction(TEXT("Fire"), EInputEvent::IE_Released, this, &APaperPlayerShip::EndFiring);
+	InputComponent->BindAction(TEXT("Nuke"), EInputEvent::IE_Pressed, this, &APaperPlayerShip::StartNuke);
+	InputComponent->BindAction(TEXT("Nuke"), EInputEvent::IE_Released, this, &APaperPlayerShip::EndNuke);
 
 }
 
@@ -51,7 +61,20 @@ void APaperPlayerShip::SetWeapon(AFlightWeapon* Weapon)
 	if(Weapon)
 		CurrentWeapon = Weapon;
 }
-void APaperPlayerShip::AddShields(float Sheilds)
+void APaperPlayerShip::AddShields(float Shields)
 {
-	//Need to make a player state for out players for their health, score shields and other tracked information.
+	AFlightPlayerState* playerState = Cast<AFlightPlayerState>(PlayerState);
+
+	if (playerState)
+	{
+		playerState->Shields += Shields;
+		if (playerState->Shields > playerState->MaxShields)
+		{
+			playerState->Shields = playerState->MaxShields;
+		}
+	}
+}
+void APaperPlayerShip::GetNuke()
+{
+	NukeWeapon->AddAmmo();
 }
