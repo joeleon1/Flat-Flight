@@ -40,6 +40,7 @@ void ANukeWeapon::Fire()
 		}*/
 		TimeSinceShot = 0;
 		check(GetOwner());
+		Ammo--;
 		GetWorld()->SpawnActor<ANukeBullet>(ProjectileClass, this->GetOwner()->GetActorLocation(), FRotator(0, 90, 0));
 	}
 }
