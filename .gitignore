@@ -56,3 +56,11 @@ Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+Flight/Intermediate/
+Flight/Saved/AutoScreenshot.png
+Flight/Saved/Backup/MapWithPowerUps_2016-03-14-18-10-40.umap
+Flight/Saved/Backup/NukePowerUp_BP_2016-03-14-18-09-16.uasset
+Flight/Saved/Config/Windows/Editor.ini
+Flight/Saved/Config/Windows/EditorPerProjectUserSettings.ini
+Flight/Saved/Config/Windows/Engine.ini
+Flight/Saved/Config/WorldState/498767229.json
