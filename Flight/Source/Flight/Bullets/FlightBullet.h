@@ -19,10 +19,9 @@ public:
 	UPROPERTY(EditAnywhere)
 		float TimeTillDeath;
 
-private:
-	float timeAlive;
-protected:
 	
+protected:
+	float timeAlive;
 	UPROPERTY(VisibleAnywhere)
 	UProjectileMovementComponent* MovementComponent;
 
