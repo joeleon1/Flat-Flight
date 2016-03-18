@@ -23,7 +23,7 @@ ANukeWeapon::ANukeWeapon():Ammo(MAX_AMMO/2),FireRate(1),TimeSinceShot(0)
 		ProjectileClass = Cast<UClass>(ConstructorStatistics.ProjectileClass.Object->GeneratedClass);
 	}
 }
-
+#undef MAX_AMMO
 void ANukeWeapon::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
