@@ -9,6 +9,7 @@
 AWeaponPowerUp::AWeaponPowerUp()
 {
 	OnActorBeginOverlap.AddDynamic(this, &AWeaponPowerUp::OnBeginOverlap);
+	
 }
 
 void AWeaponPowerUp::OnBeginOverlap(AActor* OtherActor)
@@ -17,10 +18,19 @@ void AWeaponPowerUp::OnBeginOverlap(AActor* OtherActor)
 
 	if (Player)
 	{
-		if (Weapon)
+		if (Weapon != nullptr)
 		{
-			Weapon->SetOwner(Player);
-			Player->SetWeapon(Weapon);
+			if (Player->HasWeapon(Weapon->GetClass()))
+			{
+				Player->LevelUpWeapon(Weapon->GetClass());
+				Weapon->Destroy();
+			}
+			else
+			{
+				Weapon->SetOwner(Player);
+				Player->AddWeapon(Weapon);
+			}
+			
 			
 		}
 		Destroy();
