@@ -5,14 +5,21 @@
 #include "../PlayerShip.h"
 
 // Sets default values
-AFlightPowerUp::AFlightPowerUp()
+AFlightPowerUp::AFlightPowerUp():TimeAlive(10),TimeSinceSpawn(0)
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = false;
+	PrimaryActorTick.bCanEverTick = true;
 	Collider = CreateDefaultSubobject<USphereComponent>(TEXT("Collider"));
 	RootComponent = Collider;
 	Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
 	Mesh->AttachTo(RootComponent);
 }
 
+
+void AFlightPowerUp::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+	TimeSinceSpawn += DeltaTime;
+	if (TimeSinceSpawn >= TimeAlive)
+		Destroy();
+}
 

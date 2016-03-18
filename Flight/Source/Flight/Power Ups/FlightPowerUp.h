@@ -20,11 +20,17 @@ public:
 	
 	AFlightPowerUp();
 	
+	virtual void Tick(float DeltaTime) override;
+
 protected:
 	UPROPERTY(VisibleAnywhere)
 	UStaticMeshComponent* Mesh;
 	UPROPERTY(VisibleAnywhere)
 	USphereComponent* Collider;
+
+	UPROPERTY(EditDefaultsOnly)
+	float TimeAlive;
+	float TimeSinceSpawn;
 
 	
 };
