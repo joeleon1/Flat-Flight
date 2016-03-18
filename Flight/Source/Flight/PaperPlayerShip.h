@@ -9,6 +9,8 @@
 /**
  * 
  */
+
+#define NUMBER_OF_POSSIBLE_WEAPONS 5
 UCLASS()
 class FLIGHT_API APaperPlayerShip : public APaperCharacter
 {
@@ -26,19 +28,36 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
 
-	void SetWeapon(AFlightWeapon* NewWeapon);
+	void AddWeapon(AFlightWeapon* NewWeapon);
+	FORCEINLINE AFlightWeapon* GetWeapon() { return CurrentWeapon; }
+	bool HasWeapon(UClass* WeaponClass);
+	void LevelUpWeapon(UClass* WeaponToLevel);
 	void AddShields(float Sheilds);
 	void GetNuke();
+
+	void CycleWeaponsUp();
+	void CycleWeaponsDown();
+	void EquipBasicWeapon();
+	void EquipWeaponOne();
+	void EquipWeaponTwo();
+	void EquipWeaponThree();
+	void EquipWeaponFour();
 private:
 	FORCEINLINE void StartFiring() { bIsFiring = true; }
 	FORCEINLINE void EndFiring() { bIsFiring = false; }
 	FORCEINLINE void StartNuke() { bIsNuke = true; }
 	FORCEINLINE void EndNuke() { bIsNuke = false; }
 
+	void EquipWeaponAtSlot(int8 Slot);
+	void RemoveWeaponAtCurrentSlot();
+
+
 	bool bIsFiring,bIsNuke;
 	AFlightWeapon* CurrentWeapon;
-	AFlightWeapon* BasicWeapon;
+	AFlightWeapon* StoredWeapons[NUMBER_OF_POSSIBLE_WEAPONS];
+	int8 CurrentSlot;
 	ANukeWeapon* NukeWeapon;
+
 	
 	
 };

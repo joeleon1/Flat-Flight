@@ -14,23 +14,43 @@ APaperPlayerShip::APaperPlayerShip() :bIsFiring(false),bIsNuke(false)
 void APaperPlayerShip::BeginPlay()
 {
 	Super::BeginPlay();
-	BasicWeapon = GetWorld()->SpawnActor<ABasicWeapon>();
-	BasicWeapon->SetOwner(this);
-	CurrentWeapon = BasicWeapon;
-
+	for (int i = 0;i < NUMBER_OF_POSSIBLE_WEAPONS;i++)
+	{
+		StoredWeapons[i] = nullptr;
+	}
+	StoredWeapons[0] = GetWorld()->SpawnActor<ABasicWeapon>();
+	CurrentWeapon = StoredWeapons[0];
+	CurrentWeapon->SetOwner(this);
+	CurrentSlot = 0;
 	NukeWeapon = GetWorld()->SpawnActor<ANukeWeapon>();
 	NukeWeapon->SetOwner(this);
 }
-
+void APaperPlayerShip::RemoveWeaponAtCurrentSlot()
+{	
+	GEngine->AddOnScreenDebugMessage(1, 1, FColor::Red, "Weapon Destroyed");
+	CurrentWeapon->Destroy();
+	for (int i = CurrentSlot;i < NUMBER_OF_POSSIBLE_WEAPONS;i++)
+	{
+		if (i + 1 == NUMBER_OF_POSSIBLE_WEAPONS)
+		{
+			StoredWeapons[i] = nullptr;
+		}
+		else
+		{
+			StoredWeapons[i] = StoredWeapons[i + 1];
+		}
+		
+	}
+}
 // Called every frame
 void APaperPlayerShip::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	if (!CurrentWeapon->IsAlive())
+	if (!CurrentWeapon->HasAmmo())
 	{
-		GEngine->AddOnScreenDebugMessage(1, 1, FColor::Red, "Weapon power up over");
-		CurrentWeapon->Destroy();
-		CurrentWeapon = BasicWeapon;
+		RemoveWeaponAtCurrentSlot();
+		CurrentWeapon = StoredWeapons[0];
+		CurrentSlot = 0;
 	}
 	if (bIsFiring)
 	{
@@ -53,14 +73,139 @@ void APaperPlayerShip::SetupPlayerInputComponent(class UInputComponent* InputCom
 	InputComponent->BindAction(TEXT("Fire"), EInputEvent::IE_Released, this, &APaperPlayerShip::EndFiring);
 	InputComponent->BindAction(TEXT("Nuke"), EInputEvent::IE_Pressed, this, &APaperPlayerShip::StartNuke);
 	InputComponent->BindAction(TEXT("Nuke"), EInputEvent::IE_Released, this, &APaperPlayerShip::EndNuke);
-
+	InputComponent->BindAction(TEXT("CycleDownWeapons"), EInputEvent::IE_Released, this, &APaperPlayerShip::CycleWeaponsDown);
+	InputComponent->BindAction(TEXT("CycleUpWeapons"), EInputEvent::IE_Released, this, &APaperPlayerShip::CycleWeaponsUp);
+	InputComponent->BindAction(TEXT("Basic"), EInputEvent::IE_Released, this, &APaperPlayerShip::EquipBasicWeapon);
+	InputComponent->BindAction(TEXT("WeaponSlot1"), EInputEvent::IE_Released, this, &APaperPlayerShip::EquipWeaponOne);
+	InputComponent->BindAction(TEXT("WeaponSlot2"), EInputEvent::IE_Released, this, &APaperPlayerShip::EquipWeaponTwo);
+	InputComponent->BindAction(TEXT("WeaponSlot3"), EInputEvent::IE_Released, this, &APaperPlayerShip::EquipWeaponThree);
+	InputComponent->BindAction(TEXT("WeaponSlot4"), EInputEvent::IE_Released, this, &APaperPlayerShip::EquipWeaponFour);
 }
-
-void APaperPlayerShip::SetWeapon(AFlightWeapon* Weapon)
+void APaperPlayerShip::EquipBasicWeapon()
 {
-	if(Weapon)
-		CurrentWeapon = Weapon;
+	GEngine->AddOnScreenDebugMessage(1, 1, FColor::Red, "Weapon Set To Basic");
+	CurrentSlot = 0;
+	CurrentWeapon = StoredWeapons[0];
 }
+void APaperPlayerShip::EquipWeaponOne()
+{
+	GEngine->AddOnScreenDebugMessage(1, 1, FColor::Red, "Weapon tried Set To slot 1");
+	EquipWeaponAtSlot(1);
+}
+
+void APaperPlayerShip::EquipWeaponTwo()
+{
+	GEngine->AddOnScreenDebugMessage(1, 1, FColor::Red, "Weapon tried Set To slot 2");
+	EquipWeaponAtSlot(2);
+}
+void APaperPlayerShip::EquipWeaponThree()
+{
+	GEngine->AddOnScreenDebugMessage(1, 1, FColor::Red, "Weapon tried Set To slot 3");
+	EquipWeaponAtSlot(3);
+}
+void APaperPlayerShip::EquipWeaponFour()
+{
+	GEngine->AddOnScreenDebugMessage(1, 1, FColor::Red, "Weapon tried Set To slot 4");
+	EquipWeaponAtSlot(4);
+}
+void APaperPlayerShip::EquipWeaponAtSlot(int8 Slot)
+{
+	if (StoredWeapons[Slot] != nullptr)
+	{
+		CurrentSlot = Slot;
+		CurrentWeapon = StoredWeapons[Slot];
+	}
+}
+void APaperPlayerShip::CycleWeaponsDown()
+{
+	GEngine->AddOnScreenDebugMessage(1, 1, FColor::Red, "Weapon tried to cycle down");
+	for (int i = 0;i < NUMBER_OF_POSSIBLE_WEAPONS;i++)
+	{
+		CurrentSlot--;
+		if (CurrentSlot == -1)
+			CurrentSlot = 4;
+		if (StoredWeapons[CurrentSlot] != nullptr)
+		{
+			FString message = "Found Weapon at Slot : ";
+			message += FString::FromInt(CurrentSlot);
+			GEngine->AddOnScreenDebugMessage(1, 1, FColor::Red, message);
+			CurrentWeapon = StoredWeapons[CurrentSlot];
+			return;
+		}
+	}
+}
+void APaperPlayerShip::CycleWeaponsUp()
+{
+	GEngine->AddOnScreenDebugMessage(1, 1, FColor::Red, "Weapon tried to cycle up");
+	for (int i = 0;i < NUMBER_OF_POSSIBLE_WEAPONS;i++)
+	{
+		CurrentSlot++;
+		if (CurrentSlot == 5)
+			CurrentSlot = 0;
+		if (StoredWeapons[CurrentSlot] != nullptr)
+		{
+			FString message = "Found Weapon at Slot : ";
+			message += FString::FromInt(CurrentSlot);
+			GEngine->AddOnScreenDebugMessage(1, 1, FColor::Red, message);
+			CurrentWeapon = StoredWeapons[CurrentSlot];
+			return;
+		}
+	}
+}
+bool APaperPlayerShip::HasWeapon(UClass* WeaponClass)
+{
+	for (int i = 0;i < NUMBER_OF_POSSIBLE_WEAPONS;i++)
+	{
+		if (StoredWeapons[i] != nullptr)
+		{
+			if (StoredWeapons[i]->GetClass() == WeaponClass)
+			{
+				return true;
+			}
+		}
+	}
+	return false;
+}
+void APaperPlayerShip::LevelUpWeapon(UClass* WeaponClass)
+{
+	//The only time it gets passed nullptr is if its the basic weapon
+	if (WeaponClass == nullptr)
+	{
+		StoredWeapons[0]->LevelUp();
+	}
+	else
+	{
+		for (int i = 0;i < NUMBER_OF_POSSIBLE_WEAPONS;i++)
+		{
+			if (StoredWeapons[i] != nullptr)
+			{
+				if (StoredWeapons[i]->GetClass() == WeaponClass)
+				{
+					StoredWeapons[i]->LevelUp();
+				}
+			}
+		}
+
+	}
+}
+void APaperPlayerShip::AddWeapon(AFlightWeapon* Weapon)
+{
+	if (Weapon)
+	{
+		for (int i = 0;i < NUMBER_OF_POSSIBLE_WEAPONS;i++)
+		{
+			if (StoredWeapons[i] == nullptr)
+			{
+				StoredWeapons[i] = Weapon;
+				CurrentWeapon = Weapon;
+				CurrentSlot = i;
+				return;
+			}
+		}
+	}
+}
+
+#undef NUMBER_OF_POSSIBLE_WEAPONS
 void APaperPlayerShip::AddShields(float Shields)
 {
 	AFlightPlayerState* playerState = Cast<AFlightPlayerState>(PlayerState);
