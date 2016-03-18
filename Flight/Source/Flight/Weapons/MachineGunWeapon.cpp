@@ -6,7 +6,7 @@
 AMachineGunWeapon::AMachineGunWeapon()
 {
 	FireRate = 0.1f;
-	TimeTillDeath = 10.f;
+	SetMaxAmmo(500);
 	struct FConstructorStatistics
 	{
 		ConstructorHelpers::FObjectFinder<UBlueprint> ProjectileClass;

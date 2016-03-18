@@ -8,7 +8,7 @@
 AFlamethrowerWeapon::AFlamethrowerWeapon()
 {
 	FireRate = 0.2f;
-	TimeTillDeath = 10.0f;
+	SetMaxAmmo(200);
 	struct FConstructorStatistics
 	{
 		ConstructorHelpers::FObjectFinder<UBlueprint> ProjectileClass;

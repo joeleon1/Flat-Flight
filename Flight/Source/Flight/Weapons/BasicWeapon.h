@@ -14,6 +14,4 @@ class FLIGHT_API ABasicWeapon : public AFlightWeapon
 	GENERATED_BODY()
 public:
 	ABasicWeapon();
-	//Update Timers
-	virtual void Tick(float DeltaTime) override;
 };

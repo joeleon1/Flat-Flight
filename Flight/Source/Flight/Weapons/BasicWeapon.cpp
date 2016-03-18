@@ -8,7 +8,7 @@
 ABasicWeapon::ABasicWeapon()
 {
 	FireRate = 1.0f;
-	TimeTillDeath = 9999.f;
+	Ammo = -1;
 	struct FConstructorStatistics
 	{
 		ConstructorHelpers::FObjectFinder<UBlueprint> ProjectileClass;
@@ -26,13 +26,6 @@ ABasicWeapon::ABasicWeapon()
 		ProjectileClass = Cast<UClass>(ConstructorStatistics.ProjectileClass.Object->GeneratedClass);
 	}
 
-}
-
-void ABasicWeapon::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-
-	TimeAlive -= DeltaTime;
 }
 
 

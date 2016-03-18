@@ -9,7 +9,7 @@
 ALaserCannonWeapon::ALaserCannonWeapon()
 {
 	FireRate = 0.5f;
-	TimeTillDeath = 10.f;
+	SetMaxAmmo(100);
 	struct FConstructorStatistics
 	{
 		ConstructorHelpers::FObjectFinder<UBlueprint> ProjectileClass;

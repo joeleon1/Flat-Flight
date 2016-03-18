@@ -7,6 +7,8 @@
 /**
  * 
  */
+
+#define MAX_WEAPON_LEVEL 3
 UCLASS(abstract)
 class FLIGHT_API AFlightWeapon: public AActor
 {
@@ -18,24 +20,27 @@ public:
 
 	//Set Deafults
 	AFlightWeapon();
-
-	//Update Timers
 	virtual void Tick(float DeltaTime) override;
-
 	//Called to have the gun fire its weapon
 	virtual void Fire();
 
-	FORCEINLINE bool IsAlive() { return TimeAlive <= TimeTillDeath; }
+	FORCEINLINE bool HasAmmo() { return Ammo != 0; }
+	void LevelUp();
 protected:
+
+	//used by classes inherited from this to set the ammo
+	FORCEINLINE void SetMaxAmmo(const uint16 value) { MaxAmmo = value;Ammo = MaxAmmo; }
 
 	//The type of bullet that will get spawned
 	UPROPERTY()
 	TSubclassOf<AFlightBullet> ProjectileClass;
+	//Used for fire rates
 	UPROPERTY(EditDefaultsOnly)
 	float FireRate;
 	float TimeSinceShot;
-	//used for power up weapons to determine if they need to be replaced by the basic weapon
-	float TimeTillDeath;
-	//used to count how long it has existed;
-	float TimeAlive;
+	//Used for weapons that can run out of ammo
+	uint16 MaxAmmo;
+	int16 Ammo;
+	//Used to determine what level of bullets should fire
+	int8 WeaponLevel = 0;
 };
