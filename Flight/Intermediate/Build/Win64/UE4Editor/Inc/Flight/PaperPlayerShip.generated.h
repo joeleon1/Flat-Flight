@@ -13,9 +13,9 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define FLIGHT_PaperPlayerShip_generated_h
 
-#define Flight_Source_Flight_PaperPlayerShip_h_15_RPC_WRAPPERS
-#define Flight_Source_Flight_PaperPlayerShip_h_15_RPC_WRAPPERS_NO_PURE_DECLS
-#define Flight_Source_Flight_PaperPlayerShip_h_15_INCLASS_NO_PURE_DECLS \
+#define Flight_Source_Flight_PaperPlayerShip_h_17_RPC_WRAPPERS
+#define Flight_Source_Flight_PaperPlayerShip_h_17_RPC_WRAPPERS_NO_PURE_DECLS
+#define Flight_Source_Flight_PaperPlayerShip_h_17_INCLASS_NO_PURE_DECLS \
 	private: \
 	static void StaticRegisterNativesAPaperPlayerShip(); \
 	friend FLIGHT_API class UClass* Z_Construct_UClass_APaperPlayerShip(); \
@@ -26,7 +26,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	virtual UObject* _getUObject() const override { return const_cast<APaperPlayerShip*>(this); }
 
 
-#define Flight_Source_Flight_PaperPlayerShip_h_15_INCLASS \
+#define Flight_Source_Flight_PaperPlayerShip_h_17_INCLASS \
 	private: \
 	static void StaticRegisterNativesAPaperPlayerShip(); \
 	friend FLIGHT_API class UClass* Z_Construct_UClass_APaperPlayerShip(); \
@@ -37,7 +37,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	virtual UObject* _getUObject() const override { return const_cast<APaperPlayerShip*>(this); }
 
 
-#define Flight_Source_Flight_PaperPlayerShip_h_15_STANDARD_CONSTRUCTORS \
+#define Flight_Source_Flight_PaperPlayerShip_h_17_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API APaperPlayerShip(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(APaperPlayerShip) \
@@ -49,7 +49,7 @@ private: \
 public:
 
 
-#define Flight_Source_Flight_PaperPlayerShip_h_15_ENHANCED_CONSTRUCTORS \
+#define Flight_Source_Flight_PaperPlayerShip_h_17_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private copy-constructor, should never be used */ \
 	NO_API APaperPlayerShip(const APaperPlayerShip& InCopy); \
@@ -59,23 +59,23 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(APaperPlayerShip); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(APaperPlayerShip)
 
 
-#define Flight_Source_Flight_PaperPlayerShip_h_12_PROLOG
-#define Flight_Source_Flight_PaperPlayerShip_h_15_GENERATED_BODY_LEGACY \
+#define Flight_Source_Flight_PaperPlayerShip_h_14_PROLOG
+#define Flight_Source_Flight_PaperPlayerShip_h_17_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Flight_Source_Flight_PaperPlayerShip_h_15_RPC_WRAPPERS \
-	Flight_Source_Flight_PaperPlayerShip_h_15_INCLASS \
-	Flight_Source_Flight_PaperPlayerShip_h_15_STANDARD_CONSTRUCTORS \
+	Flight_Source_Flight_PaperPlayerShip_h_17_RPC_WRAPPERS \
+	Flight_Source_Flight_PaperPlayerShip_h_17_INCLASS \
+	Flight_Source_Flight_PaperPlayerShip_h_17_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define Flight_Source_Flight_PaperPlayerShip_h_15_GENERATED_BODY \
+#define Flight_Source_Flight_PaperPlayerShip_h_17_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Flight_Source_Flight_PaperPlayerShip_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	Flight_Source_Flight_PaperPlayerShip_h_15_INCLASS_NO_PURE_DECLS \
-	Flight_Source_Flight_PaperPlayerShip_h_15_ENHANCED_CONSTRUCTORS \
+	Flight_Source_Flight_PaperPlayerShip_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
+	Flight_Source_Flight_PaperPlayerShip_h_17_INCLASS_NO_PURE_DECLS \
+	Flight_Source_Flight_PaperPlayerShip_h_17_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
