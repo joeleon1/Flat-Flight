@@ -15,12 +15,13 @@ public:
 	AFlightBullet();
 	// Called every frame
 	virtual void Tick( float DeltaSeconds ) override;
+	
+	FORCEINLINE void SetLevel(uint8 value) { Damage *= value; }
+	
+protected:
 	//When the bullet will kill its self
 	UPROPERTY(EditAnywhere)
 		float TimeTillDeath;
-
-	
-protected:
 	float timeAlive;
 	UPROPERTY(VisibleAnywhere)
 	UProjectileMovementComponent* MovementComponent;
