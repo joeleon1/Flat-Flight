@@ -42,6 +42,35 @@ void APaperPlayerShip::RemoveWeaponAtCurrentSlot()
 		
 	}
 }
+float APaperPlayerShip::TakeDamage(float Damage, struct FDamageEvent const & DamageEvent, AController * EventInstigator, AActor * DamageCauser)
+{
+	Super::TakeDamage(Damage, DamageEvent, EventInstigator, DamageCauser);
+	AFlightPlayerState* playerState = Cast<AFlightPlayerState>(PlayerState);
+
+	if (playerState)
+	{
+		playerState->CurrentCombo = 0;
+		if (playerState->Shields != 0)
+		{
+			float DamageLeft = Damage;
+			if (playerState->Shields >= DamageLeft)
+			{
+				playerState->Shields -= DamageLeft;
+			}
+			else
+			{
+				DamageLeft -= playerState->Shields;
+				playerState->Shields = 0;
+				playerState->Health -= DamageLeft;
+			}
+		}
+		else
+		{
+			playerState->Health -= Damage;
+		}
+	}
+	return 0;
+}
 // Called every frame
 void APaperPlayerShip::Tick(float DeltaTime)
 {

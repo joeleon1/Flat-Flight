@@ -28,6 +28,8 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
 
+	virtual float TakeDamage(float DamageAmount,struct FDamageEvent const & DamageEvent,AController * EventInstigator, AActor * DamageCauser)override;
+
 	void AddWeapon(AFlightWeapon* NewWeapon);
 	FORCEINLINE AFlightWeapon* GetWeapon() { return CurrentWeapon; }
 	bool HasWeapon(UClass* WeaponClass);
