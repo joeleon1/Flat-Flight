@@ -37,16 +37,16 @@ void AFlightWeapon::Fire()
 		}
 		if (WeaponLevel == 3)
 		{
-			Location.Y += 20;
+			Location.Y += 50;
 			MakeBullet(Location,FRotator(90,90,0));
-			Location.Y -= 40;
+			Location.Y -= 100;
 			MakeBullet(Location,FRotator(90,90,0));
 		}
 
-	/*	FString AmmoCount(TEXT("Ammo : "));
+		FString AmmoCount(TEXT("Ammo : "));
 		AmmoCount += FString::FromInt(Ammo);
 		if(Ammo  >=0 )
-			GEngine->AddOnScreenDebugMessage(1, 1, FColor::Red, AmmoCount);*/
+			GEngine->AddOnScreenDebugMessage(1, 1, FColor::Red, AmmoCount);
 	}
 	
 }
