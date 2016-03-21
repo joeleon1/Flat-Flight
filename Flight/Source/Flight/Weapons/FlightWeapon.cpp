@@ -3,7 +3,7 @@
 #include "Flight.h"
 #include "FlightWeapon.h"
 
-AFlightWeapon::AFlightWeapon()
+AFlightWeapon::AFlightWeapon():WeaponLevel(1)
 {
 	PrimaryActorTick.bCanEverTick = true;
 }
@@ -14,31 +14,51 @@ void AFlightWeapon::Tick(float DeltaTime)
 
 	TimeSinceShot+= DeltaTime;
 }
-
+void AFlightWeapon::MakeBullet(FVector Vector, FRotator Rotator)
+{
+	AFlightBullet* Bullet;
+	Bullet = GetWorld()->SpawnActor<AFlightBullet>(ProjectileClass, Vector, Rotator);
+	Bullet->SetLevel(WeaponLevel);
+}
 void AFlightWeapon::Fire()
 {
 	if (TimeSinceShot > FireRate && HasAmmo())
 	{
 		TimeSinceShot = 0;
-	//	check(GetWorld());
-		//check(ProjectileClass);
 		Ammo--;
 		check(GetOwner());
-		GetWorld()->SpawnActor<AFlightBullet>(ProjectileClass, this->GetOwner()->GetActorLocation(), FRotator(0, 90, 0));
-		GetWorld()->SpawnActor<AFlightBullet>(ProjectileClass, this->GetOwner()->GetActorLocation(), FRotator(0, -90, 0));
+		FVector Location = GetOwner()->GetActorLocation();
+		MakeBullet(Location, FRotator(0, 90, 0));
+		MakeBullet(Location, FRotator(0, -90, 0));
+		if (WeaponLevel >= 2)
+		{
+			MakeBullet(Location, FRotator(45, 90, 0));
+			MakeBullet(Location, FRotator(45, -90, 0));
+		}
+		if (WeaponLevel == 3)
+		{
+			Location.Y += 20;
+			MakeBullet(Location,FRotator(90,90,0));
+			Location.Y -= 40;
+			MakeBullet(Location,FRotator(90,90,0));
+		}
 
-		FString AmmoCount(TEXT("Ammo : "));
+	/*	FString AmmoCount(TEXT("Ammo : "));
 		AmmoCount += FString::FromInt(Ammo);
 		if(Ammo  >=0 )
-			GEngine->AddOnScreenDebugMessage(1, 1, FColor::Red, AmmoCount);
+			GEngine->AddOnScreenDebugMessage(1, 1, FColor::Red, AmmoCount);*/
 	}
 	
 }
 
 void AFlightWeapon::LevelUp()
 {
+	FString Message = "Weapon Level Is ";
+	Message += FString::FromInt(WeaponLevel);
+	GEngine->AddOnScreenDebugMessage(1, 1, FColor::Red, Message);
 	if (WeaponLevel != MAX_WEAPON_LEVEL)
 	{
+		GEngine->AddOnScreenDebugMessage(1, 1, FColor::Red, "Leveled");
 		WeaponLevel++;
 		if (Ammo > 0)
 		{

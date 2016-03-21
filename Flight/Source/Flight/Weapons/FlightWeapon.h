@@ -43,4 +43,6 @@ protected:
 	int16 Ammo;
 	//Used to determine what level of bullets should fire
 	int8 WeaponLevel = 0;
+private:
+	void MakeBullet(FVector Vector, FRotator Rotator = FRotator( 0,0,0 ));
 };
