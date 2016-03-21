@@ -17,8 +17,13 @@ public:
 	float Health = 100;
 	UPROPERTY()
 	float Shields = 0;
-
+	UPROPERTY()
+	int8 CurrentCombo = 0;
 	UPROPERTY()
 	float MaxShields = 50;
+	UPROPERTY()
+	int16 ShotsFired = 0;
+	UPROPERTY()
+	int16 EnemiesKilled= 0;
 
 };
