@@ -16,14 +16,12 @@ AenemyController::AenemyController()
 void AenemyController::BeginPlay()
 {
 	Super::BeginPlay();
-	
 }
 
 // Called every frame
-void AenemyController::Tick( float DeltaTime )
+void AenemyController::Tick(float DeltaTime)
 {
-	Super::Tick( DeltaTime );
-	
-	strafe(DeltaTime);
+	Super::Tick(DeltaTime);
+	move(DeltaTime);
 }
 

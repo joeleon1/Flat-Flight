@@ -25,9 +25,11 @@ public:
 	float strafingTime;
 
 	// The enemy's downward speed.
+	UPROPERTY(EditAnywhere)
 	float downSpeed;
 
 	// How far the enemy will strafe from side to side. Note that the enemy will go from one end to the other in the same amount of time. The wider it can weave, the faster it goes.
+	UPROPERTY(EditAnywhere)
 	float horBound;
 
 	// How fast the enemy will fire.
@@ -41,11 +43,16 @@ public:
 
 	
 	// This function will cause the enemy ship to strafe. Pass to it deltaTime.
-	void strafe(float timePassed)
+	void move(float timePassed)
 	{
 		FVector strafeLocation = GetActorLocation();
+
+		// This returns a number between -1 and 1, to be used as a scalar for where the enemy ship is.
 		float horDeviation = (FMath::Sin(strafingTime + timePassed) - FMath::Sin(strafingTime));
-		strafeLocation.Y = horDeviation * horBound;
+
+		// Set the y location to be somewhere in the horizontal boundary, scaled by the horDeviation.
+		strafeLocation.Y += horDeviation * horBound;
+		strafeLocation.Z -= downSpeed;
 		strafingTime += timePassed;
 		SetActorLocation(strafeLocation);
 	}
