@@ -46,6 +46,8 @@ void AFlightPlayer::Tick( float DeltaTime )
 	{
 		RemoveWeaponAtCurrentSlot();
 		CurrentWeapon = StoredWeapons[0];
+		if (SoundOnWeaponSwitch)
+			UGameplayStatics::PlaySoundAtLocation(this, SoundOnWeaponSwitch, GetActorLocation(), FRotator(0, 0, 0), 0.1, 1.0, 0, nullptr);
 		CurrentSlot = 0;
 	}
 	if (bIsFiring)
@@ -123,7 +125,7 @@ float AFlightPlayer::TakeDamage(float Damage, struct FDamageEvent const & Damage
 		if (playerState->Shields != 0)
 		{
 			float DamageLeft = Damage;
-			if (playerState->Shields >= DamageLeft)
+			if (playerState->Shields > DamageLeft)
 			{
 				playerState->Shields -= DamageLeft;
 			}
@@ -131,6 +133,10 @@ float AFlightPlayer::TakeDamage(float Damage, struct FDamageEvent const & Damage
 			{
 				DamageLeft -= playerState->Shields;
 				playerState->Shields = 0;
+				if (ShieldsFadeSound)
+				{
+					UGameplayStatics::PlaySoundAtLocation(this, ShieldsFadeSound, GetActorLocation(), FRotator(0, 0, 0), 0.1, 1.0, 0, nullptr);
+				}
 				playerState->Health -= DamageLeft;
 			}
 		}
@@ -158,6 +164,8 @@ void AFlightPlayer::EquipBasicWeapon()
 	GEngine->AddOnScreenDebugMessage(1, 1, FColor::Red, "Weapon Set To Basic");
 	CurrentSlot = 0;
 	CurrentWeapon = StoredWeapons[0];
+	if (SoundOnWeaponSwitch)
+		UGameplayStatics::PlaySoundAtLocation(this, SoundOnWeaponSwitch, GetActorLocation(), FRotator(0, 0, 0), 0.1, 1.0, 0, nullptr);
 
 	
 }
@@ -188,6 +196,8 @@ void AFlightPlayer::EquipWeaponAtSlot(int8 Slot)
 	{
 		CurrentSlot = Slot;
 		CurrentWeapon = StoredWeapons[Slot];
+		if (SoundOnWeaponSwitch)
+			UGameplayStatics::PlaySoundAtLocation(this, SoundOnWeaponSwitch, GetActorLocation(), FRotator(0, 0, 0), 0.1, 1.0, 0, nullptr);
 	}
 }
 void AFlightPlayer::CycleWeaponsDown()
@@ -198,12 +208,14 @@ void AFlightPlayer::CycleWeaponsDown()
 		CurrentSlot--;
 		if (CurrentSlot == -1)
 			CurrentSlot = 4;
-		if (StoredWeapons[CurrentSlot] != nullptr)
+		if (StoredWeapons[CurrentSlot] != nullptr && CurrentWeapon != StoredWeapons[CurrentSlot])
 		{
 			FString message = "Found Weapon at Slot : ";
 			message += FString::FromInt(CurrentSlot);
 			GEngine->AddOnScreenDebugMessage(1, 1, FColor::Red, message);
 			CurrentWeapon = StoredWeapons[CurrentSlot];
+			if (SoundOnWeaponSwitch)
+				UGameplayStatics::PlaySoundAtLocation(this, SoundOnWeaponSwitch, GetActorLocation(), FRotator(0, 0, 0), 0.1, 1.0, 0, nullptr);
 			return;
 		}
 	}
@@ -216,12 +228,14 @@ void AFlightPlayer::CycleWeaponsUp()
 		CurrentSlot++;
 		if (CurrentSlot == 5)
 			CurrentSlot = 0;
-		if (StoredWeapons[CurrentSlot] != nullptr)
+		if (StoredWeapons[CurrentSlot] != nullptr && CurrentWeapon != StoredWeapons[CurrentSlot])
 		{
 			FString message = "Found Weapon at Slot : ";
 			message += FString::FromInt(CurrentSlot);
 			GEngine->AddOnScreenDebugMessage(1, 1, FColor::Red, message);
 			CurrentWeapon = StoredWeapons[CurrentSlot];
+			if (SoundOnWeaponSwitch)
+				UGameplayStatics::PlaySoundAtLocation(this, SoundOnWeaponSwitch, GetActorLocation(), FRotator(0, 0, 0), 0.1, 1.0, 0, nullptr);
 			return;
 		}
 	}
@@ -273,6 +287,8 @@ void AFlightPlayer::AddWeapon(AFlightWeapon* Weapon)
 				StoredWeapons[i] = Weapon;
 				CurrentWeapon = Weapon;
 				CurrentSlot = i;
+				if (SoundOnWeaponSwitch)
+					UGameplayStatics::PlaySoundAtLocation(this, SoundOnWeaponSwitch, GetActorLocation(), FRotator(0, 0, 0), 0.1, 1.0, 0, nullptr);
 				return;
 			}
 		}

@@ -14,6 +14,8 @@ void ANukePowerUp::OnBeginOverlap(AActor* OtherActor)
 
 	if (Player)
 	{
+		if(SoundOnPickUp)
+			UGameplayStatics::PlaySoundAtLocation(this, SoundOnPickUp, GetActorLocation(), FRotator(0, 0, 0), 0.1, 1.0, 0, nullptr);
 		Player->GetNuke();
 	}
 	Destroy();

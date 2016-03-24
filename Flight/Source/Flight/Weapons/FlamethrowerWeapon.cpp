@@ -9,7 +9,6 @@ AFlamethrowerWeapon::AFlamethrowerWeapon()
 {
 	FireRate = 0.2f;
 	SetMaxAmmo(200);
-	//Need Flamethrower sound
 	static ConstructorHelpers::FObjectFinder<USoundBase>SoundOB(TEXT("SoundWave'/Game/Audio/Flamethrower.Flamethrower'"));
 	FireSound = (USoundBase*)SoundOB.Object;
 

@@ -54,6 +54,10 @@ protected:
 		UCapsuleComponent* Collider;
 	UPROPERTY(VisibleAnywhere)
 		UFlightPlayerMovementComponent* MovementComponent;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
+		USoundBase* SoundOnWeaponSwitch;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
+		USoundBase* ShieldsFadeSound;
 private:
 	FORCEINLINE void StartFiring() { bIsFiring = true; }
 	FORCEINLINE void EndFiring() { bIsFiring = false; }
