@@ -4,7 +4,7 @@
 #include "FlightPlayer.h"
 #include "Weapons/BasicWeapon.h"
 #include "FlightPlayerState.h"
-
+#include "FlightGameMode.h"
 // Sets default values
 AFlightPlayer::AFlightPlayer() :bIsFiring(false), bIsNuke(false)
 {
@@ -77,6 +77,8 @@ void AFlightPlayer::SetupPlayerInputComponent(class UInputComponent* InputCompon
 	InputComponent->BindAction(TEXT("WeaponSlot4"), EInputEvent::IE_Released, this, &AFlightPlayer::EquipWeaponFour);
 	InputComponent->BindAxis(TEXT("Vertical"), this, &AFlightPlayer::MoveVertical);
 	InputComponent->BindAxis(TEXT("Horizontal"), this, &AFlightPlayer::MoveHorizontal);
+
+	InputComponent->BindAction(TEXT("TakeDamage"), EInputEvent::IE_Released,this, &AFlightPlayer::Damage);
 }
 
 UPawnMovementComponent* AFlightPlayer::GetMovementComponent() const
@@ -136,7 +138,17 @@ float AFlightPlayer::TakeDamage(float Damage, struct FDamageEvent const & Damage
 		{
 			playerState->Health -= Damage;
 		}
+
+		if (playerState->Health <= 0)
+		{
+			//playerState->Health = 100;
+			playerState->Lives--;
+			GetWorld()->GetAuthGameMode()->RestartPlayer(GetWorld()->GetFirstPlayerController());
+			
+		}
 	}
+
+	
 	return 0;
 }
 

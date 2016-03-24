@@ -59,7 +59,7 @@ private:
 	FORCEINLINE void EndFiring() { bIsFiring = false; }
 	FORCEINLINE void StartNuke() { bIsNuke = true; }
 	FORCEINLINE void EndNuke() { bIsNuke = false; }
-	
+	FORCEINLINE void Damage() { FDamageEvent Event;TakeDamage(10, Event, nullptr, nullptr); }
 
 	void EquipWeaponAtSlot(int8 Slot);
 	void RemoveWeaponAtCurrentSlot();
