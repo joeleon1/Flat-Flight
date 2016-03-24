@@ -2,7 +2,6 @@
 
 #include "Flight.h"
 #include "FlightPowerUp.h"
-#include "../PlayerShip.h"
 
 // Sets default values
 AFlightPowerUp::AFlightPowerUp():TimeAlive(10),TimeSinceSpawn(0)

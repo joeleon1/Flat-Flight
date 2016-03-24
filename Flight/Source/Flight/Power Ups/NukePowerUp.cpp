@@ -2,7 +2,7 @@
 
 #include "Flight.h"
 #include "NukePowerUp.h"
-#include "../PaperPlayerShip.h"
+#include "../FlightPlayer.h"
 ANukePowerUp::ANukePowerUp()
 {
 	OnActorBeginOverlap.AddDynamic(this, &ANukePowerUp::OnBeginOverlap);
@@ -10,7 +10,7 @@ ANukePowerUp::ANukePowerUp()
 
 void ANukePowerUp::OnBeginOverlap(AActor* OtherActor)
 {
-	APaperPlayerShip* Player = Cast<APaperPlayerShip>(OtherActor);
+	AFlightPlayer* Player = Cast<AFlightPlayer>(OtherActor);
 
 	if (Player)
 	{

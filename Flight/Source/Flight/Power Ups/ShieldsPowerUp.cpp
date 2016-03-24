@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "Flight.h"
-#include "../PaperPlayerShip.h"
+#include "../FlightPlayer.h"
 #include "ShieldsPowerUp.h"
 
 
@@ -13,7 +13,7 @@ AShieldsPowerUp::AShieldsPowerUp() :Shields(50)
 
 void AShieldsPowerUp::OnBeginOverlap(AActor* OtherActor)
 {
-	APaperPlayerShip* Player = Cast<APaperPlayerShip>(OtherActor);
+	AFlightPlayer* Player = Cast<AFlightPlayer>(OtherActor);
 
 	if (Player)
 	{

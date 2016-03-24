@@ -13,7 +13,7 @@ AFlightGameMode::AFlightGameMode(const FObjectInitializer& ObjectInitializer):Su
 	{
 		ConstructorHelpers::FObjectFinder<UBlueprint> CharacterClass;
 		//This is where you the reference for the player blueprint
-		FConstructorStatics() :CharacterClass(TEXT("Blueprint'/Game/MyPaperPlayerShip.MyPaperPlayerShip'"))
+		FConstructorStatics() :CharacterClass(TEXT("Blueprint'/Game/Blueprints/Players/FlightPlayer_BP.FlightPlayer_BP'"))
 		{
 		}
 	};

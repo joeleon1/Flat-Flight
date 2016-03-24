@@ -2,7 +2,7 @@
 
 #include "Flight.h"
 #include "BasicWeaponPowerUp.h"
-#include "../PaperPlayerShip.h"
+#include "../FlightPlayer.h"
 #include "../Weapons/BasicWeapon.h"
 
 
@@ -17,7 +17,7 @@ ABasicWeaponPowerUp::ABasicWeaponPowerUp()
 
 void ABasicWeaponPowerUp::OnBeginOverlap(AActor* OtherActor)
 {
-	APaperPlayerShip* Player = Cast<APaperPlayerShip>(OtherActor);
+	AFlightPlayer* Player = Cast<AFlightPlayer>(OtherActor);
 
 	if (Player)
 	{

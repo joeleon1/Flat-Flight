@@ -3,7 +3,7 @@
 #include "Flight.h"
 #include "FlightWeapon.h"
 #include "FlightPlayerState.h"
-#include "PaperPlayerShip.h"
+#include "FlightPlayer.h"
 AFlightWeapon::AFlightWeapon():WeaponLevel(1)
 {
 	PrimaryActorTick.bCanEverTick = true;
@@ -25,7 +25,7 @@ void AFlightWeapon::Fire()
 {
 	if (TimeSinceShot > FireRate && HasAmmo())
 	{
-		APaperPlayerShip* Player = Cast<APaperPlayerShip>(GetOwner());
+		AFlightPlayer* Player = Cast<AFlightPlayer>(GetOwner());
 		if (Player)
 		{
 			AFlightPlayerState* State = Cast<AFlightPlayerState>(Player->PlayerState);
