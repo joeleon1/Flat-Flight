@@ -3,6 +3,7 @@
 #include "Flight.h"
 #include "FlightGameMode.h"
 #include "FlightPlayerState.h"
+#include "PlayerHUD.h"
 
 
 
@@ -28,6 +29,7 @@ AFlightGameMode::AFlightGameMode(const FObjectInitializer& ObjectInitializer):Su
 	}
 	PlayerStateClass = AFlightPlayerState::StaticClass();
 	//Any other setting of game mode stuff goes here e.g. AI, HUD etc
+	HUDClass = APlayerHUD::StaticClass();
 }
 
 void AFlightGameMode::BeginPlay()
