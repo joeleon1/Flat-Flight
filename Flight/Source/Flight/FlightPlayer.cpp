@@ -158,6 +158,8 @@ void AFlightPlayer::EquipBasicWeapon()
 	GEngine->AddOnScreenDebugMessage(1, 1, FColor::Red, "Weapon Set To Basic");
 	CurrentSlot = 0;
 	CurrentWeapon = StoredWeapons[0];
+
+	
 }
 void AFlightPlayer::EquipWeaponOne()
 {
