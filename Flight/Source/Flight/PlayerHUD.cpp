@@ -39,18 +39,19 @@ void APlayerHUD::DrawHUD()
 	APlayerController* PlayerController1 = UGameplayStatics::GetPlayerController(GetWorld(), 0);
 
 	FString currentWep;
-	int ammoCount = 0;
+	int16 ammoCount = 0;
 	int health = 0;
 	int maxHealth = 100;
 	int shields = 0;
 	int combo = 0;
 
-	if (PlayerController1) {
+	if (PlayerController1 && Player1) {
 		//get playerstate
 		AFlightPlayerState* PlayerState1 = Cast<AFlightPlayerState>(PlayerController1->PlayerState);
 		currentWep = Player1->GetWeapon()->GetName();
 		int32 underScore = currentWep.Find((FString)"_");
 		currentWep.RemoveAt(underScore, currentWep.Len() - underScore);
+		ammoCount = Player1->GetWeapon()->GetAmmo();
 		health = PlayerState1->Health;
 		shields = PlayerState1->Shields;
 		combo = PlayerState1->CurrentCombo;

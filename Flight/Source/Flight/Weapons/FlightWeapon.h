@@ -25,6 +25,7 @@ public:
 	virtual void Fire();
 
 	FORCEINLINE bool HasAmmo() { return Ammo != 0; }
+	FORCEINLINE int16 GetAmmo() { return Ammo; }
 	void LevelUp();
 protected:
 
@@ -32,7 +33,7 @@ protected:
 
 	//used by classes inherited from this to set the ammo
 	FORCEINLINE void SetMaxAmmo(const uint16 value) { MaxAmmo = value;Ammo = MaxAmmo; }
-
+	
 	//The type of bullet that will get spawned
 	UPROPERTY()
 	TSubclassOf<AFlightBullet> ProjectileClass;
