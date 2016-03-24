@@ -9,4 +9,5 @@ void AFlamethrowerPowerUp::BeginPlay()
 {
 	Super::BeginPlay();
 	Weapon = GetWorld()->SpawnActor<AFlamethrowerWeapon>();
+
 }

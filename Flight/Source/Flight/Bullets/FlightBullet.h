@@ -15,7 +15,7 @@ public:
 	AFlightBullet();
 	// Called every frame
 	virtual void Tick( float DeltaSeconds ) override;
-	
+
 	FORCEINLINE void SetLevel(uint8 value) { Damage *= value; }
 	
 protected:

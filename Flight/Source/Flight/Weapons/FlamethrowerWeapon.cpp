@@ -9,6 +9,10 @@ AFlamethrowerWeapon::AFlamethrowerWeapon()
 {
 	FireRate = 0.2f;
 	SetMaxAmmo(200);
+	//Need Flamethrower sound
+	/*static ConstructorHelpers::FObjectFinder<USoundBase>SoundOB(TEXT("SoundWave'/Game/Audio/CannonFire.CannonFire'"));
+	FireSound = (USoundBase*)SoundOB.Object;*/
+
 	struct FConstructorStatistics
 	{
 		ConstructorHelpers::FObjectFinder<UBlueprint> ProjectileClass;

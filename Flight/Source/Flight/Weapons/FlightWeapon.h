@@ -28,6 +28,8 @@ public:
 	void LevelUp();
 protected:
 
+
+
 	//used by classes inherited from this to set the ammo
 	FORCEINLINE void SetMaxAmmo(const uint16 value) { MaxAmmo = value;Ammo = MaxAmmo; }
 
@@ -43,6 +45,11 @@ protected:
 	int16 Ammo;
 	//Used to determine what level of bullets should fire
 	int8 WeaponLevel = 0;
+
+	//The sound that plays on fire and is pulled through the constructor of each weapon
+	UPROPERTY()
+	USoundBase* FireSound;
+
 private:
 	void MakeBullet(FVector Vector, FRotator Rotator = FRotator( 0,0,0 ));
 };

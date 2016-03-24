@@ -7,6 +7,10 @@ AMachineGunWeapon::AMachineGunWeapon()
 {
 	FireRate = 0.1f;
 	SetMaxAmmo(500);
+
+	static ConstructorHelpers::FObjectFinder<USoundBase>SoundOB(TEXT("SoundWave'/Game/Audio/MachineGun.MachineGun'"));
+	FireSound = (USoundBase*)SoundOB.Object;
+
 	struct FConstructorStatistics
 	{
 		ConstructorHelpers::FObjectFinder<UBlueprint> ProjectileClass;

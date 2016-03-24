@@ -20,6 +20,7 @@ void AWeaponPowerUp::OnBeginOverlap(AActor* OtherActor)
 	{
 		if (Weapon != nullptr)
 		{
+			UGameplayStatics::PlaySoundAtLocation(this, SoundOnPickUp, GetActorLocation(), FRotator(0, 0, 0), 0.1, 1.0, 0, nullptr);
 			if (Player->HasWeapon(Weapon->GetClass()))
 			{
 				Player->LevelUpWeapon(Weapon->GetClass());

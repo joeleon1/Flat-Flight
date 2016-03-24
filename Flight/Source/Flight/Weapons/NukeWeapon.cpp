@@ -6,6 +6,10 @@
 ANukeWeapon::ANukeWeapon():Ammo(MAX_AMMO/2),FireRate(1),TimeSinceShot(0)
 {
 	PrimaryActorTick.bCanEverTick = true;
+
+	static ConstructorHelpers::FObjectFinder<USoundBase>SoundOB(TEXT("SoundWave'/Game/Audio/Time_Bomb_Short-SoundBible_com-1562499525.Time_Bomb_Short-SoundBible_com-1562499525'"));
+	FireSound = (USoundBase*)SoundOB.Object;
+
 	struct FConstructorStatistics
 	{
 		ConstructorHelpers::FObjectFinder<UBlueprint> ProjectileClass;
@@ -34,6 +38,8 @@ void ANukeWeapon::Fire()
 {
 	if (HasAmmo() && TimeSinceShot > FireRate)
 	{
+		if(FireSound)
+			UGameplayStatics::PlaySoundAtLocation(this, FireSound, GetActorLocation(), FRotator(0, 0, 0), 0.1, 1.0, 1, nullptr);
 		//iterate through all enemies and apply damage
 		/*for (TActorIterator<AFlightEnemy> ActorItr(WorldRef); ActorItr; ++ActorItr)
 		{

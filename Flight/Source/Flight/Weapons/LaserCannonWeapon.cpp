@@ -10,6 +10,9 @@ ALaserCannonWeapon::ALaserCannonWeapon()
 {
 	FireRate = 0.5f;
 	SetMaxAmmo(100);
+
+	static ConstructorHelpers::FObjectFinder<USoundBase>SoundOB(TEXT("SoundWave'/Game/Audio/Laser.Laser'"));
+	FireSound = (USoundBase*)SoundOB.Object;
 	struct FConstructorStatistics
 	{
 		ConstructorHelpers::FObjectFinder<UBlueprint> ProjectileClass;

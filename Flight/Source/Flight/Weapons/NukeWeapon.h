@@ -25,6 +25,8 @@ public:
 	
 private:
 	TSubclassOf<ANukeBullet> ProjectileClass;
+	UPROPERTY()
+	USoundBase* FireSound;
 	int8 Ammo;
 	float FireRate;
 	float TimeSinceShot;

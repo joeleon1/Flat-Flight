@@ -9,10 +9,12 @@ ABasicWeapon::ABasicWeapon()
 {
 	FireRate = 1.0f;
 	Ammo = -1;
+
+	static ConstructorHelpers::FObjectFinder<USoundBase>SoundOB(TEXT("SoundWave'/Game/Audio/CannonFire.CannonFire'"));
+	FireSound = (USoundBase*)SoundOB.Object;
 	struct FConstructorStatistics
 	{
 		ConstructorHelpers::FObjectFinder<UBlueprint> ProjectileClass;
-
 		FConstructorStatistics():ProjectileClass(TEXT("Blueprint'/Game/Blueprints/Bullets/CannonBullet_BP.CannonBullet_BP'"))
 		{
 

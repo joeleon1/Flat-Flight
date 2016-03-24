@@ -27,7 +27,8 @@ protected:
 	UStaticMeshComponent* Mesh;
 	UPROPERTY(VisibleAnywhere)
 	USphereComponent* Collider;
-
+	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite)
+	USoundBase* SoundOnPickUp;
 	UPROPERTY(EditDefaultsOnly)
 	float TimeAlive;
 	float TimeSinceSpawn;

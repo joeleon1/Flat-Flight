@@ -36,6 +36,9 @@ void AFlightWeapon::Fire()
 		}
 		TimeSinceShot = 0;
 		Ammo--;
+		if(FireSound)
+			UGameplayStatics::PlaySoundAtLocation(this,FireSound , GetOwner()->GetActorLocation(), FRotator(0, 0, 0), 0.1, 1.0, 0, nullptr);
+
 		check(GetOwner());
 		FVector Location = GetOwner()->GetActorLocation();
 		MakeBullet(Location, FRotator(0, 90, 0));
