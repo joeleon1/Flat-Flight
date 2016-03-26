@@ -58,6 +58,10 @@ protected:
 		USoundBase* SoundOnWeaponSwitch;
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
 		USoundBase* ShieldsFadeSound;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
+		USoundBase* PlayerDeathSound;
+
+		APlayerStart* PlayerStart;
 private:
 	FORCEINLINE void StartFiring() { bIsFiring = true; }
 	FORCEINLINE void EndFiring() { bIsFiring = false; }
@@ -65,6 +69,7 @@ private:
 	FORCEINLINE void EndNuke() { bIsNuke = false; }
 	FORCEINLINE void Damage() { FDamageEvent Event;TakeDamage(10, Event, nullptr, nullptr); }
 
+	void SetDefaults();
 	void EquipWeaponAtSlot(int8 Slot);
 	void RemoveWeaponAtCurrentSlot();
 
@@ -72,6 +77,7 @@ private:
 	AFlightWeapon* CurrentWeapon;
 	AFlightWeapon* StoredWeapons[NUMBER_OF_POSSIBLE_WEAPONS];
 	int8 CurrentSlot;
+	float FlashTimer;
 	ANukeWeapon* NukeWeapon;
 
 

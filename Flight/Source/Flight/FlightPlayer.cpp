@@ -6,7 +6,7 @@
 #include "FlightPlayerState.h"
 #include "FlightGameMode.h"
 // Sets default values
-AFlightPlayer::AFlightPlayer() :bIsFiring(false), bIsNuke(false)
+AFlightPlayer::AFlightPlayer() :bIsFiring(false), bIsNuke(false),FlashTimer(99)
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
@@ -25,22 +25,56 @@ AFlightPlayer::AFlightPlayer() :bIsFiring(false), bIsNuke(false)
 void AFlightPlayer::BeginPlay()
 {
 	Super::BeginPlay();
+
+	for (TActorIterator<APlayerStart> ActorItr(GetWorld()); ActorItr; ++ActorItr)
+	{
+		PlayerStart = *ActorItr;
+	}
+	SetDefaults();
+}
+void AFlightPlayer::SetDefaults()
+{
 	for (int i = 0;i < NUMBER_OF_POSSIBLE_WEAPONS;i++)
 	{
-		StoredWeapons[i] = nullptr;
+		if (StoredWeapons[i])
+		{
+			StoredWeapons[i]->Destroy();
+			StoredWeapons[i] = nullptr;
+		}
+
 	}
 	StoredWeapons[0] = GetWorld()->SpawnActor<ABasicWeapon>();
 	CurrentWeapon = StoredWeapons[0];
 	CurrentWeapon->SetOwner(this);
 	CurrentSlot = 0;
+	if (NukeWeapon)
+	{
+		NukeWeapon->Destroy();
+		NukeWeapon = nullptr;
+	}
+
 	NukeWeapon = GetWorld()->SpawnActor<ANukeWeapon>();
 	NukeWeapon->SetOwner(this);
+	if(PlayerStart)
+		SetActorLocation(PlayerStart->GetActorLocation());
+
+
 }
 
 // Called every frame
 void AFlightPlayer::Tick( float DeltaTime )
 {
 	Super::Tick( DeltaTime );
+	FlashTimer += DeltaTime;
+	if (FlashTimer < 2)
+	{
+		if((int)(FlashTimer*10) % 2 == 0)
+			ShipMesh->SetVisibility(!ShipMesh->bVisible);
+	}
+	if (FlashTimer > 2 && !ShipMesh->bVisible)
+	{
+		ShipMesh->SetVisibility(true);
+	}
 
 	if (!CurrentWeapon->HasAmmo())
 	{
@@ -114,6 +148,7 @@ void AFlightPlayer::RemoveWeaponAtCurrentSlot()
 
 	}
 }
+
 float AFlightPlayer::TakeDamage(float Damage, struct FDamageEvent const & DamageEvent, AController * EventInstigator, AActor * DamageCauser)
 {
 	Super::TakeDamage(Damage, DamageEvent, EventInstigator, DamageCauser);
@@ -147,8 +182,15 @@ float AFlightPlayer::TakeDamage(float Damage, struct FDamageEvent const & Damage
 
 		if (playerState->Health <= 0)
 		{
-			//playerState->Health = 100;
+			playerState->Health = 100;
 			playerState->Lives--;
+			SetDefaults();
+			FlashTimer = 0;
+			//play death sound and make a timer to respawn.
+			if (PlayerDeathSound)
+			{
+				UGameplayStatics::PlaySoundAtLocation(this, PlayerDeathSound, GetActorLocation(), FRotator(0, 0, 0), 0.1, 1.0, 0, nullptr);
+			}
 			GetWorld()->GetAuthGameMode()->RestartPlayer(GetWorld()->GetFirstPlayerController());
 			
 		}
