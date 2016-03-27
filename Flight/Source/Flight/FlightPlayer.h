@@ -37,6 +37,12 @@ public:
 	void AddShields(float Sheilds);
 	void GetNuke();
 
+	UFUNCTION(BlueprintCallable, Category = "Widget")
+		void ShowDamageEffect();
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+		bool isShowingDmgEffect = false;
+
 	void CycleWeaponsUp();
 	void CycleWeaponsDown();
 	void EquipBasicWeapon();

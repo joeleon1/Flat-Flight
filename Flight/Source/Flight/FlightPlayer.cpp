@@ -151,6 +151,8 @@ void AFlightPlayer::RemoveWeaponAtCurrentSlot()
 
 float AFlightPlayer::TakeDamage(float Damage, struct FDamageEvent const & DamageEvent, AController * EventInstigator, AActor * DamageCauser)
 {
+	isShowingDmgEffect = true;
+
 	Super::TakeDamage(Damage, DamageEvent, EventInstigator, DamageCauser);
 	AFlightPlayerState* playerState = Cast<AFlightPlayerState>(PlayerState);
 
@@ -200,6 +202,9 @@ float AFlightPlayer::TakeDamage(float Damage, struct FDamageEvent const & Damage
 	return 0;
 }
 
+void AFlightPlayer::ShowDamageEffect() {
+
+}
 
 void AFlightPlayer::EquipBasicWeapon()
 {
