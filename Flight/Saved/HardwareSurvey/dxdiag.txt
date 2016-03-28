@@ -1,8 +1,8 @@
 ------------------
 System Information
 ------------------
-Time of this report: 2/17/2016, 10:20:13
-       Machine name: C401IT32
+Time of this report: 3/28/2016, 09:19:44
+       Machine name: C401IT41
    Operating System: Windows 7 Enterprise 64-bit (6.1, Build 7601) Service Pack 1 (7601.win7sp1_gdr.150722-0600)
            Language: English (Regional Setting: English)
 System Manufacturer: Dell Inc.
@@ -11,7 +11,7 @@ System Manufacturer: Dell Inc.
           Processor: Intel(R) Core(TM) i7-4790 CPU @ 3.60GHz (8 CPUs), ~3.6GHz
              Memory: 16384MB RAM
 Available OS Memory: 16326MB RAM
-          Page File: 4744MB used, 27905MB available
+          Page File: 4750MB used, 27899MB available
         Windows Dir: C:\Windows
     DirectX Version: DirectX 11
 DX Setup Parameters: Not found
@@ -47,8 +47,8 @@ Display Devices
            DAC type: Integrated RAMDAC
          Device Key: Enum\PCI\VEN_10DE&DEV_13BB&SUBSYS_109810DE&REV_A2
      Display Memory: 4095 MB
-   Dedicated Memory: 1974 MB
-      Shared Memory: 2121 MB
+   Dedicated Memory: 1993 MB
+      Shared Memory: 2102 MB
        Current Mode: 1920 x 1080 (32 bit) (60Hz)
        Monitor Name: Alienware AW2210 (Digital)
       Monitor Model: Alienware2210
@@ -56,21 +56,21 @@ Display Devices
         Native Mode: 1920 x 1080(p) (60.000Hz)
         Output Type: DVI
         Driver Name: nvd3dumx.dll,nvwgf2umx.dll,nvwgf2umx.dll,nvd3dum,nvwgf2um,nvwgf2um
-Driver File Version: 9.18.0013.4066 (English)
-     Driver Version: 9.18.13.4066
+Driver File Version: 10.18.0013.6191 (English)
+     Driver Version: 10.18.13.6191
         DDI Version: 11
        Driver Model: WDDM 1.1
   Driver Attributes: Final Retail
-   Driver Date/Size: 8/4/2014 17:17:50, 17562848 bytes
+   Driver Date/Size: 2/9/2016 04:39:50, 16995576 bytes
         WHQL Logo'd: Yes
     WHQL Date Stamp: 
-  Device Identifier: {D7B71E3E-50FB-11CF-8C7C-95301FC2C435}
+  Device Identifier: {D7B71E3E-50FB-11CF-416B-95301FC2C735}
           Vendor ID: 0x10DE
           Device ID: 0x13BB
           SubSys ID: 0x109810DE
         Revision ID: 0x00A2
- Driver Strong Name: oem10.inf:NVIDIA_SetA_Devices.NTamd64.6.1:Section053:9.18.13.4066:pci\ven_10de&dev_13bb&subsys_109810de
-     Rank Of Driver: 00E00001
+ Driver Strong Name: oem34.inf:NVIDIA_Devices.NTamd64.6.1:Section138:10.18.13.6191:pci\ven_10de&dev_13bb
+     Rank Of Driver: 00E62001
         Video Accel: 
    Deinterlace Caps: {6CB69578-7617-4637-91E5-1C02DB810285}: Format(In/Out)=(YUY2,YUY2) Frames(Prev/Fwd/Back)=(0,0,0) Caps=VideoProcess_YUV2RGB VideoProcess_StretchX VideoProcess_StretchY DeinterlaceTech_PixelAdaptive 
                      {F9F19DA5-3B09-4B2F-9D89-C64753E3EAAB}: Format(In/Out)=(YUY2,YUY2) Frames(Prev/Fwd/Back)=(0,0,0) Caps=VideoProcess_YUV2RGB VideoProcess_StretchX VideoProcess_StretchY 
@@ -132,7 +132,7 @@ Sound Devices
          Driver Version: 6.00.0001.6068 (English)
       Driver Attributes: Final Retail
             WHQL Logo'd: Yes
-          Date and Size: 4/7/2015 21:20:02, 2740056 bytes
+          Date and Size: 4/7/2015 22:20:02, 2740056 bytes
             Other Files: 
         Driver Provider: Realtek Semiconductor Corp.
          HW Accel Level: Basic
@@ -211,7 +211,7 @@ PS/2 Devices
 Disk & DVD/CD-ROM Drives
 ------------------------
       Drive: C:
- Free Space: 6.2 GB
+ Free Space: 76.0 GB
 Total Space: 244.1 GB
 File System: NTFS
       Model: Disk drive
