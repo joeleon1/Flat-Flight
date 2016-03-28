@@ -56,4 +56,14 @@ public:
 		strafingTime += timePassed;
 		SetActorLocation(strafeLocation);
 	}
+
+	// This function will cause the enemy ship to fire.
+	void fire()
+	{
+		FVector playerLocation;
+		FVector enemyLocation = GetActorLocation();
+		FVector fireDirection = playerLocation - enemyLocation;
+		fireDirection.Normalize();
+
+	}
 };
