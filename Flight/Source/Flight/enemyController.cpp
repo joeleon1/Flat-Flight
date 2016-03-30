@@ -10,6 +10,11 @@ AenemyController::AenemyController()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	Collider = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Collider"));
+	RootComponent = Collider;
+
+	ShipMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ShipMesh"));
+	ShipMesh->AttachTo(RootComponent);
 }
 
 // Called when the game starts or when spawned

@@ -20,6 +20,7 @@ public:
 	// Called every frame
 	virtual void Tick( float DeltaSeconds ) override;
 
+	virtual float TakeDamage(float DamageAmount, struct FDamageEvent const & DamageEvent, AController * EventInstigator, AActor * DamageCauser)override;
 	
 	// This will be used for calculating the strafing displacement.
 	float strafingTime;
@@ -66,4 +67,10 @@ public:
 		fireDirection.Normalize();
 
 	}
+
+protected:
+	UPROPERTY(VisibleAnywhere)
+		UStaticMeshComponent* ShipMesh;
+	UPROPERTY(VisibleAnywhere)
+		UCapsuleComponent* Collider;
 };
