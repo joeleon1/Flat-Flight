@@ -6,7 +6,7 @@
 #include "FlightPlayerState.h"
 #include "FlightGameMode.h"
 // Sets default values
-AFlightPlayer::AFlightPlayer() :bIsFiring(false), bIsNuke(false),FlashTimer(99)
+AFlightPlayer::AFlightPlayer() :bIsFiring(false), bIsNuke(false),FlashTimer(99),DamageMultiplier(0),DefenceMultiplier(0)
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
@@ -161,7 +161,7 @@ float AFlightPlayer::TakeDamage(float Damage, struct FDamageEvent const & Damage
 		playerState->CurrentCombo = 0;
 		if (playerState->Shields != 0)
 		{
-			float DamageLeft = Damage;
+			float DamageLeft = Damage*DamageMultiplier;
 			if (playerState->Shields > DamageLeft)
 			{
 				playerState->Shields -= DamageLeft;

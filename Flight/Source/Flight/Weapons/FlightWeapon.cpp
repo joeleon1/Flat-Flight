@@ -18,8 +18,10 @@ void AFlightWeapon::Tick(float DeltaTime)
 void AFlightWeapon::MakeBullet(FVector Vector, FRotator Rotator)
 {
 	AFlightBullet* Bullet;
+	
 	Bullet = GetWorld()->SpawnActor<AFlightBullet>(ProjectileClass, Vector, Rotator);
 	Bullet->SetLevel(WeaponLevel);
+	Bullet->SetOwner(GetOwner());
 }
 void AFlightWeapon::Fire()
 {
@@ -55,11 +57,6 @@ void AFlightWeapon::Fire()
 			Location.Y -= 100;
 			MakeBullet(Location,FRotator(90,90,0));
 		}
-
-		FString AmmoCount(TEXT("Ammo : "));
-		AmmoCount += FString::FromInt(Ammo);
-		if(Ammo  >=0 )
-			GEngine->AddOnScreenDebugMessage(1, 1, FColor::Red, AmmoCount);
 	}
 	
 }

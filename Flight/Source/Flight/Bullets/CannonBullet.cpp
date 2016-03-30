@@ -18,6 +18,7 @@ void ACannonBullet::OnBeginOverlap(AActor* OtherActor)
 	
 	if(Enemy)
 	{
+	
 		Enemy->TakeDamge(Damage);
 		Destroy();
 	}*/

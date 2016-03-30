@@ -66,6 +66,11 @@ protected:
 		USoundBase* ShieldsFadeSound;
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
 		USoundBase* PlayerDeathSound;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
+		float DamageMultiplier;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
+		float DefenceMultiplier;
+
 
 		APlayerStart* PlayerStart;
 private:
@@ -74,6 +79,7 @@ private:
 	FORCEINLINE void StartNuke() { bIsNuke = true; }
 	FORCEINLINE void EndNuke() { bIsNuke = false; }
 	FORCEINLINE void Damage() { FDamageEvent Event;TakeDamage(10, Event, nullptr, nullptr); }
+	FORCEINLINE float GetDamageMultiplier() { return DamageMultiplier; }
 
 	void SetDefaults();
 	void EquipWeaponAtSlot(int8 Slot);

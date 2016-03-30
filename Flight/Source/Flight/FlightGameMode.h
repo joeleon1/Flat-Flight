@@ -15,7 +15,21 @@ class FLIGHT_API AFlightGameMode : public AGameMode
 
 public:
 	AFlightGameMode(const FObjectInitializer& ObjectInitializer);
+	//Sets the Player pawn to what ever is selected by the PlayerClass static variable
+	void SetPlayerPawn();
+	enum PLAYER_CLASS
+	{
+		BASIC, ATTACK, SPEED, DEFENCE,
+	};
+
+
 
 	virtual void BeginPlay() override;
 	
+	static PLAYER_CLASS PlayerClass;
+private:
+	TSubclassOf<APawn> BasicPlayerClass;
+	TSubclassOf<APawn> AttackPlayerClass;
+	TSubclassOf<APawn> DefencePlayerClass;
+	TSubclassOf<APawn> SpeedPlayerClass;
 };
