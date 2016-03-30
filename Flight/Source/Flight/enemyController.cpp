@@ -30,3 +30,7 @@ void AenemyController::Tick(float DeltaTime)
 	move(DeltaTime);
 }
 
+float AenemyController::TakeDamage(float DamageAmount, struct FDamageEvent const & DamageEvent, AController * EventInstigator, AActor * DamageCauser)
+{
+	return Super::TakeDamage(DamageAmount, DamageEvent, EventInstigator, DamageCauser);
+}
