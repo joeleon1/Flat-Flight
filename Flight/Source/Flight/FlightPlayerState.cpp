@@ -2,7 +2,3 @@
 
 #include "Flight.h"
 #include "FlightPlayerState.h"
-
-
-
-
