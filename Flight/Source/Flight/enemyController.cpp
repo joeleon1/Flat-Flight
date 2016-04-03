@@ -2,7 +2,7 @@
 
 #include "Flight.h"
 #include "enemyController.h"
-
+#include "FlightPlayer.h"
 
 // Sets default values
 AenemyController::AenemyController()
@@ -15,6 +15,7 @@ AenemyController::AenemyController()
 
 	ShipMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ShipMesh"));
 	ShipMesh->AttachTo(RootComponent);
+	Score = 1000;
 }
 
 // Called when the game starts or when spawned
@@ -40,6 +41,13 @@ float AenemyController::TakeDamage(float DamageAmount, struct FDamageEvent const
 		// If the damage depletes our health set our lifespan to zero - which will destroy the actor  
 		if (health <= 0.f)
 		{
+			AFlightPlayer* Player = Cast<AFlightPlayer>(DamageCauser);
+			
+			if (Player)
+			{
+				Player->AddScore(Score, this);
+			}
+
 			SetLifeSpan(0.001f);
 		}
 	}

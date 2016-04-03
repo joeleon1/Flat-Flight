@@ -40,6 +40,7 @@ public:
 	float fireDamage;
 
 	// Enemy's health
+	UPROPERTY(BlueprintReadWrite,EditDefaultsOnly)
 	float health;
 
 	
@@ -73,4 +74,8 @@ protected:
 		UStaticMeshComponent* ShipMesh;
 	UPROPERTY(VisibleAnywhere)
 		UCapsuleComponent* Collider;
+
+	//The score awarded to the player on death
+	UPROPERTY(BlueprintReadWrite,EditDefaultsOnly)
+	int32 Score;
 };
