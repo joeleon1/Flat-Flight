@@ -17,9 +17,8 @@ void ACannonBullet::OnBeginOverlap(AActor* OtherActor)
 	
 	if(Enemy)
 	{	
-		//Enemy->TakeDamge(Damage);
 		UGameplayStatics::ApplyDamage(Enemy, Damage, 
-			Instigator->GetController(), this, UDamageType::StaticClass());
+			NULL, GetOwner(), UDamageType::StaticClass());
 		Destroy();
 	}
 }

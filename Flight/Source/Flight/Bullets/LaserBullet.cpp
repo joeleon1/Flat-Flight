@@ -18,7 +18,7 @@ void ALaserBullet::OnBeginOverlap(AActor* OtherActor)
 	{
 		//Enemy->TakeDamge(Damage);
 		UGameplayStatics::ApplyDamage(Enemy, Damage,
-			Instigator->GetController(), this, UDamageType::StaticClass());
+			NULL, GetOwner(), UDamageType::StaticClass());
 		Destroy();
 	}
 }
