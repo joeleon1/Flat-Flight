@@ -9,6 +9,9 @@ AFlightGameMode::PLAYER_CLASS AFlightGameMode::PlayerClass = BASIC;
 
 AFlightGameMode::AFlightGameMode(const FObjectInitializer& ObjectInitializer):Super(ObjectInitializer)
 {
+
+	this->PrimaryActorTick.bCanEverTick = true;
+
 	//Used to pull blueprints from the content directory
 	struct FConstructorStatics
 	{
@@ -85,4 +88,28 @@ void AFlightGameMode::BeginPlay()
 {
 	Super::BeginPlay();
 	//Anything that needs to be done after the world exists
+}
+void AFlightGameMode::Tick(float DeltaSeconds)
+{
+	Super::Tick(DeltaSeconds);
+
+	for (int32 i = 0;i != ScoresAdded.Num();++i)
+	{
+		if (ScoresAdded.Num() == 0)
+			return;
+		ScoresAdded[i].TimeOnScreen += DeltaSeconds;
+		if (ScoresAdded[i].TimeOnScreen > 2)
+			ScoresAdded.RemoveAt(i);
+	}
+}
+void AFlightGameMode::AddDisplayScore(int32 Score, FVector ActorLocation)
+{
+	FScoreToDisplay NewScore;
+
+	NewScore.Score = Score;
+	//Since our game is being played on the Y Z axis I used those values
+	NewScore.XPos = ActorLocation.Y / SCREEN_WIDTH;
+	NewScore.YPos = 1 - (ActorLocation.Z / SCREEN_HEIGHT);
+
+	ScoresAdded.Add(NewScore);
 }
