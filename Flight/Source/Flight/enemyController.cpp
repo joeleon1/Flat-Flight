@@ -50,6 +50,10 @@ float AenemyController::TakeDamage(float DamageAmount, struct FDamageEvent const
 
 			SetLifeSpan(0.001f);
 		}
+		if (EnemyDeathSound)
+		{
+			UGameplayStatics::PlaySoundAtLocation(this, EnemyDeathSound, GetActorLocation(), FRotator(0, 0, 0), 0.1, 1.0, 0, nullptr);
+		}
 	}
 
 	return ActualDamage;

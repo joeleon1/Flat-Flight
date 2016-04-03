@@ -2,6 +2,7 @@
 
 #include "Flight.h"
 #include "MachineGunBullet.h"
+#include "enemyController.h"
 
 
 AMachineGunBullet::AMachineGunBullet()
@@ -11,12 +12,14 @@ AMachineGunBullet::AMachineGunBullet()
 
 void AMachineGunBullet::OnBeginOverlap(AActor* OtherActor)
 {
-	/*FlightEnemy* Enemy = Cast<FlightEnemy>(OtherActor);
+	AenemyController* Enemy = Cast<AenemyController>(OtherActor);
 
-	if(Enemy)
+	if (Enemy)
 	{
-	Enemy->TakeDamge(Damage);
-	Destroy();
-	}*/
+		//Enemy->TakeDamge(Damage);
+		UGameplayStatics::ApplyDamage(Enemy, Damage,
+			Instigator->GetController(), this, UDamageType::StaticClass());
+		Destroy();
+	}
 }
 
