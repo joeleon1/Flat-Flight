@@ -32,5 +32,17 @@ void AenemyController::Tick(float DeltaTime)
 
 float AenemyController::TakeDamage(float DamageAmount, struct FDamageEvent const & DamageEvent, AController * EventInstigator, AActor * DamageCauser)
 {
-	return Super::TakeDamage(DamageAmount, DamageEvent, EventInstigator, DamageCauser);
+	// Call the base class - this will tell us how much damage to apply  
+	const float ActualDamage = Super::TakeDamage(DamageAmount, DamageEvent, EventInstigator, DamageCauser);
+	if (ActualDamage > 0.f)
+	{
+		health -= ActualDamage;
+		// If the damage depletes our health set our lifespan to zero - which will destroy the actor  
+		if (health <= 0.f)
+		{
+			SetLifeSpan(0.001f);
+		}
+	}
+
+	return ActualDamage;
 }
