@@ -2,6 +2,8 @@
 
 #include "Flight.h"
 #include "FlamethrowerBullet.h"
+#include "enemyController.h"
+
 
 AFlamethrowerBullet::AFlamethrowerBullet()
 {
@@ -10,13 +12,14 @@ AFlamethrowerBullet::AFlamethrowerBullet()
 
 void AFlamethrowerBullet::OnBeginOverlap(AActor* OtherActor)
 {
-	//uncomment when we have an enemy class
-	/*FlightEnemy* Enemy = Cast<FlightEnemy>(OtherActor);
+	AenemyController* Enemy = Cast<AenemyController>(OtherActor);
 
-	if(Enemy)
+	if (Enemy)
 	{
-	Enemy->TakeDamge(Damage);
-	Destroy();
-	}*/
+		//Enemy->TakeDamge(Damage);
+		UGameplayStatics::ApplyDamage(Enemy, Damage,
+			Instigator->GetController(), this, UDamageType::StaticClass());
+		Destroy();
+	}
 }
 

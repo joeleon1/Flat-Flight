@@ -2,7 +2,7 @@
 
 #include "Flight.h"
 #include "CannonBullet.h"
-
+#include "enemyController.h"
 
 
 
@@ -13,13 +13,13 @@ ACannonBullet::ACannonBullet()
 
 void ACannonBullet::OnBeginOverlap(AActor* OtherActor)
 {
-	//uncomment when we have an enemy class
-	/*FlightEnemy* Enemy = Cast<FlightEnemy>(OtherActor);
+	AenemyController* Enemy = Cast<AenemyController>(OtherActor);
 	
 	if(Enemy)
-	{
-	
-		Enemy->TakeDamge(Damage);
+	{	
+		//Enemy->TakeDamge(Damage);
+		UGameplayStatics::ApplyDamage(Enemy, Damage, 
+			Instigator->GetController(), this, UDamageType::StaticClass());
 		Destroy();
-	}*/
+	}
 }

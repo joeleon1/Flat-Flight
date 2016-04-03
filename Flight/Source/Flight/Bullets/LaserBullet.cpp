@@ -2,6 +2,8 @@
 
 #include "Flight.h"
 #include "LaserBullet.h"
+#include "enemyController.h"
+
 
 ALaserBullet::ALaserBullet()
 {
@@ -10,12 +12,14 @@ ALaserBullet::ALaserBullet()
 
 void ALaserBullet::OnBeginOverlap(AActor* OtherActor)
 {
-	//uncomment when we have an enemy class
-	/*FlightEnemy* Enemy = Cast<FlightEnemy>(OtherActor);
+	AenemyController* Enemy = Cast<AenemyController>(OtherActor);
 
-	if(Enemy)
+	if (Enemy)
 	{
-	Enemy->TakeDamge(Damage);
-	}*/
+		//Enemy->TakeDamge(Damage);
+		UGameplayStatics::ApplyDamage(Enemy, Damage,
+			Instigator->GetController(), this, UDamageType::StaticClass());
+		Destroy();
+	}
 }
 
