@@ -51,6 +51,10 @@ float AenemyController::TakeDamage(float DamageAmount, struct FDamageEvent const
 			}
 
 			SetLifeSpan(0.001f);
+			if (EnemyDeathSound)
+			{
+				UGameplayStatics::PlaySoundAtLocation(this, EnemyDeathSound, GetActorLocation(), FRotator(0, 0, 0), 0.1, 1.0, 0, nullptr);
+			}
 		}
 		
 	}
@@ -66,10 +70,6 @@ void AenemyController::OnBeginOverlap(AActor* OtherActor)
 	{
 		FDamageEvent Event;
 		Player->TakeDamage(CollisionDamage, Event, NULL, this);
-		Destroy();
-		if (EnemyDeathSound)
-		{
-			UGameplayStatics::PlaySoundAtLocation(this, EnemyDeathSound, GetActorLocation(), FRotator(0, 0, 0), 0.1, 1.0, 0, nullptr);
-		}
+		TakeDamage(health, Event, NULL, this);
 	}
 }
