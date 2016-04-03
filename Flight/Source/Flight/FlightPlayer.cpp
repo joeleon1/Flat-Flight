@@ -149,6 +149,25 @@ void AFlightPlayer::RemoveWeaponAtCurrentSlot()
 	}
 }
 
+void AFlightPlayer::AddScore(int32 Score, AActor* Actor)
+{
+	AFlightPlayerState* playerState = Cast<AFlightPlayerState>(PlayerState);
+
+	if (playerState)
+	{
+		AFlightGameMode* GameMode = Cast<AFlightGameMode>(GetWorld()->GetAuthGameMode());
+		if (GameMode)
+		{
+			GameMode->AddDisplayScore(Score*playerState->CurrentCombo, Actor->GetActorLocation());
+		}
+		playerState->ActualScore += Score*playerState->CurrentCombo;
+		playerState->CurrentCombo++;
+		
+
+		
+	}
+}
+
 float AFlightPlayer::TakeDamage(float Damage, struct FDamageEvent const & DamageEvent, AController * EventInstigator, AActor * DamageCauser)
 {
 	isShowingDmgEffect = true;
@@ -158,7 +177,7 @@ float AFlightPlayer::TakeDamage(float Damage, struct FDamageEvent const & Damage
 
 	if (playerState)
 	{
-		playerState->CurrentCombo = 0;
+		playerState->CurrentCombo = 1;
 		if (playerState->Shields != 0)
 		{
 			float DamageLeft = Damage*DamageMultiplier;

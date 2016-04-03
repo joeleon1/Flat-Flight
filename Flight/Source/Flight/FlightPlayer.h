@@ -37,6 +37,9 @@ public:
 	void AddShields(float Sheilds);
 	void GetNuke();
 
+	void AddScore(int32 Score, AActor* CallingActor);
+
+
 	UFUNCTION(BlueprintCallable, Category = "Widget")
 		void ShowDamageEffect();
 
