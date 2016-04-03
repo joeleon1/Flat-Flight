@@ -16,6 +16,8 @@ AenemyController::AenemyController()
 	ShipMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ShipMesh"));
 	ShipMesh->AttachTo(RootComponent);
 	Score = 1000;
+
+	OnActorBeginOverlap.AddDynamic(this, &AenemyController::OnBeginOverlap);
 }
 
 // Called when the game starts or when spawned
@@ -57,4 +59,16 @@ float AenemyController::TakeDamage(float DamageAmount, struct FDamageEvent const
 	}
 
 	return ActualDamage;
+}
+
+void AenemyController::OnBeginOverlap(AActor* OtherActor)
+{
+	AFlightPlayer* Player = Cast<AFlightPlayer>(OtherActor);
+
+	if (Player)
+	{
+		FDamageEvent Event;
+		Player->TakeDamage(CollisionDamage, Event, NULL, this);
+		Destroy();
+	}
 }

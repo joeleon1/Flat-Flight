@@ -21,7 +21,12 @@ public:
 	virtual void Tick( float DeltaSeconds ) override;
 
 	virtual float TakeDamage(float DamageAmount, struct FDamageEvent const & DamageEvent, AController * EventInstigator, AActor * DamageCauser)override;
-	
+	//used when the enemy collides with the player
+	UFUNCTION()
+	void OnBeginOverlap(AActor* OtherActor);
+
+
+
 	// This will be used for calculating the strafing displacement.
 	float strafingTime;
 
@@ -81,4 +86,6 @@ protected:
 
 	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly)
 		USoundBase* EnemyDeathSound;
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly)
+		float CollisionDamage;
 };
