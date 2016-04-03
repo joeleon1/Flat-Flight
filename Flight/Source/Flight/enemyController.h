@@ -78,4 +78,7 @@ protected:
 	//The score awarded to the player on death
 	UPROPERTY(BlueprintReadWrite,EditDefaultsOnly)
 	int32 Score;
+
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly)
+		USoundBase* EnemyDeathSound;
 };
