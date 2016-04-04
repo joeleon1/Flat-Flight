@@ -6,62 +6,17 @@
 
 
 // Sets default values
-AEnemyBullet::AEnemyBullet()
-{
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
-
-	Collider = CreateDefaultSubobject<USphereComponent>(TEXT("Collider"));
-	RootComponent = Collider;
-
-	ShipMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("BulletMesh"));
-	ShipMesh->AttachTo(RootComponent);
-
-	OnActorBeginOverlap.AddDynamic(this, &AEnemyBullet::onPlayerHit);
-}
-
-// Called when the game starts or when spawned
 void AEnemyBullet::BeginPlay()
 {
 	Super::BeginPlay();
-	
+	OnActorBeginOverlap.AddDynamic(this, &AEnemyBullet::OnBeginOverlap);
 }
-
-// Called every frame
-void AEnemyBullet::Tick( float DeltaTime )
+void AEnemyBullet::OnBeginOverlap(AActor* OtherActor)
 {
-	Super::Tick( DeltaTime );
-	timePassed += DeltaTime;
-
-	if (timePassed >= deathTimer)
-	{
-		die();
-	}
-}
-
-// Handles collision with player
-void AEnemyBullet::onPlayerHit(AActor* otherActor)
-{
-	AFlightPlayer* Player = Cast<AFlightPlayer>(otherActor);
-
+	AFlightPlayer* Player = Cast<AFlightPlayer>(OtherActor);
 	if (Player)
 	{
-		FDamageEvent Event;
-		Player->TakeDamage(damage, Event, NULL, this);
-		die();
+		UGameplayStatics::ApplyDamage(Player, Damage, NULL, this, UDamageType::StaticClass());
+		Destroy();
 	}
 }
-
-// Handles death 
-void AEnemyBullet::die()
-{
-	Destroy();
-}
-
-// Sets an initial velocity to the bullet.
-void AEnemyBullet::move()
-{
-	ShipMesh->ComponentVelocity = direction * speed;
-}
-
-

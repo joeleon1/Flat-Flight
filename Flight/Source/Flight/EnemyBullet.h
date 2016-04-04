@@ -2,54 +2,19 @@
 
 #pragma once
 
-#include "GameFramework/Actor.h"
+#include "Bullets/FlightBullet.h"
 #include "EnemyBullet.generated.h"
 
-
+/*This uses the flight bullet class that has all the functionality for bullets included and the specific bullet related properties 
+are located in the blueprint implementation of this class under the projectile movement component*/
 
 UCLASS()
-class FLIGHT_API AEnemyBullet : public AActor
+class FLIGHT_API AEnemyBullet : public AFlightBullet
 {
 	GENERATED_BODY()
-	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FActorBeginOverlapSignature, class AActor*, otherActor);
-public:	
-	// Sets default values for this actor's properties
-	AEnemyBullet();
-
-	// Called when the game starts or when spawned
+public:
 	virtual void BeginPlay() override;
-	
-	// Called every frame
-	virtual void Tick( float DeltaSeconds ) override;
-
-	UPROPERTY(VisibleAnywhere)
-		UStaticMeshComponent* ShipMesh;
-	UPROPERTY(VisibleAnywhere)
-		USphereComponent* Collider;
-
-	// This will determine how fast the bullet travels.
-	UPROPERTY(EditAnywhere)
-	float speed;
-
-	// This will determine how long the bullet exists.
-	UPROPERTY (EditAnywhere)
-	float deathTimer;
-
-	// This will record how much time has passed.
-	float timePassed;
-
-	// This will determine how much damage to do.
-	float damage;
-
-	// This will determine which direction the bullet travels.
-	FVector direction;
-
 	UFUNCTION()
-	void onPlayerHit(AActor* otherActor);
-
-	// This kills the bullet.
-	void die();
-
-	// This moves the bullet.
-	void move();
+	void OnBeginOverlap(AActor* OtherActor);
+	void SetDamage(float value) { Damage = value; }
 };

@@ -3,6 +3,7 @@
 #pragma once
 
 #include "GameFramework/Actor.h"
+#include "EnemyBullet.h"
 #include "enemyController.generated.h"
 
 UCLASS()
@@ -59,14 +60,7 @@ public:
 	void move(float deltaTime);
 
 	// This function will cause the enemy ship to fire.
-	void fire()
-	{
-		FVector playerLocation;
-		FVector enemyLocation = GetActorLocation();
-		FVector fireDirection = playerLocation - enemyLocation;
-		fireDirection.Normalize();
-
-	}
+	void fire();
 
 protected:
 	UPROPERTY(VisibleAnywhere)
@@ -82,9 +76,8 @@ protected:
 		USoundBase* EnemyDeathSound;
 	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly)
 		float CollisionDamage;
-<<<<<<< HEAD
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly)
+		TSubclassOf<AEnemyBullet> ProjectileClass;
 
 	void makeBullet(FVector Vector, FRotator Rotator, float damage);
-=======
->>>>>>> origin/master
 };

@@ -105,12 +105,13 @@ void AenemyController::OnBeginOverlap(AActor* OtherActor)
 		TakeDamage(health, Event, NULL, this);
 	}
 }
-<<<<<<< HEAD
 
 void AenemyController::fire ()
 {
 	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, "Trying to shoot.");
-	ACharacter* player = UGameplayStatics::GetPlayerCharacter(GetWorld(), 0);
+	//ACharacter* player = UGameplayStatics::GetPlayerCharacter(GetWorld(), 0);
+	APlayerController* Controller = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+	APawn* player = Controller->GetPawn();
 	if (player)
 	{
 		
@@ -126,10 +127,12 @@ void AenemyController::fire ()
 void AenemyController::makeBullet(FVector Vector, FRotator Rotator, float damage)
 {
 	AEnemyBullet* Bullet;
-
-	Bullet = GetWorld()->SpawnActor<AEnemyBullet>(this->GetActorLocation(), Rotator);
-	Bullet->direction = Vector;
-	Bullet->damage = damage;
+	if (ProjectileClass)
+	{
+		//Spawn the blueprint version linked through the enemy blueprint ( Otherwise nothing will really happen)
+		Bullet = GetWorld()->SpawnActor<AEnemyBullet>(ProjectileClass,this->GetActorLocation(), Vector.Rotation());
+		Bullet->SetDamage(damage);
+	}
+	
+	
 }
-=======
->>>>>>> origin/master
