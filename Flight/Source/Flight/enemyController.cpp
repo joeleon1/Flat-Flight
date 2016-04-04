@@ -11,6 +11,8 @@ AenemyController::AenemyController()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	fired = false;
+
 	Collider = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Collider"));
 	RootComponent = Collider;
 
@@ -32,6 +34,37 @@ void AenemyController::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 	move(DeltaTime);
+
+	
+	// Checks if it's firing time. If it is, fire.
+	if (FGenericPlatformMath::Frac(timePassed / fireRate) < 0.1 && !fired)
+	{
+		fire();
+
+		// Set this so we're not constantly firing during this time.
+		fired = true;
+	}
+
+	// If it's been a second since we fired, we set fired to false.
+	if (FGenericPlatformMath::Frac(timePassed / fireRate) > 0.5 && fired)
+	{
+		// We are ready to fire again.
+		fired = false;
+	}
+}
+
+void AenemyController::move(float deltaTime)
+{
+	FVector strafeLocation = GetActorLocation();
+
+	// This returns a number between -1 and 1, to be used as a scalar for where the enemy ship is.
+	float horDeviation = (FMath::Sin(deltaTime + timePassed) - FMath::Sin(timePassed));
+
+	// Set the y location to be somewhere in the horizontal boundary, scaled by the horDeviation.
+	strafeLocation.Y += horDeviation * horBound;
+	strafeLocation.Z -= downSpeed;
+	timePassed += deltaTime;
+	SetActorLocation(strafeLocation);
 }
 
 float AenemyController::TakeDamage(float DamageAmount, struct FDamageEvent const & DamageEvent, AController * EventInstigator, AActor * DamageCauser)
@@ -76,17 +109,25 @@ void AenemyController::OnBeginOverlap(AActor* OtherActor)
 
 void AenemyController::fire ()
 {
-	FVector playerLocation;
-	FVector enemyLocation = GetActorLocation();
-	FVector fireDirection = playerLocation - enemyLocation;
-	fireDirection.Normalize();
+	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, "Trying to shoot.");
+	ACharacter* player = UGameplayStatics::GetPlayerCharacter(GetWorld(), 0);
+	if (player)
+	{
+		
+		FVector playerLocation = player->GetActorLocation();
+		FVector enemyLocation = GetActorLocation();
+		FVector fireDirection = playerLocation - enemyLocation;
+		fireDirection.Normalize();
+		makeBullet(fireDirection, this->GetActorRotation(), fireDamage);
+	}
+	
+} 
 
-}
-
-void AenemyController::makeBullet(FVector Vector, FRotator Rotator)
+void AenemyController::makeBullet(FVector Vector, FRotator Rotator, float damage)
 {
 	AEnemyBullet* Bullet;
 
-	Bullet = GetWorld()->SpawnActor<AEnemyBullet>(Vector, Rotator);
-	
+	Bullet = GetWorld()->SpawnActor<AEnemyBullet>(this->GetActorLocation(), Rotator);
+	Bullet->direction = Vector;
+	Bullet->damage = damage;
 }

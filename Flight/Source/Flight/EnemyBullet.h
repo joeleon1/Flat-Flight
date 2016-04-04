@@ -22,13 +22,34 @@ public:
 	// Called every frame
 	virtual void Tick( float DeltaSeconds ) override;
 
+	UPROPERTY(VisibleAnywhere)
+		UStaticMeshComponent* ShipMesh;
+	UPROPERTY(VisibleAnywhere)
+		USphereComponent* Collider;
+
 	// This will determine how fast the bullet travels.
 	UPROPERTY(EditAnywhere)
 	float speed;
+
+	// This will determine how long the bullet exists.
+	UPROPERTY (EditAnywhere)
+	float deathTimer;
+
+	// This will record how much time has passed.
+	float timePassed;
+
+	// This will determine how much damage to do.
+	float damage;
 
 	// This will determine which direction the bullet travels.
 	FVector direction;
 
 	UFUNCTION()
 	void onPlayerHit(AActor* otherActor);
+
+	// This kills the bullet.
+	void die();
+
+	// This moves the bullet.
+	void move();
 };

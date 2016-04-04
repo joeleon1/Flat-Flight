@@ -20,15 +20,16 @@ public:
 	// Called every frame
 	virtual void Tick( float DeltaSeconds ) override;
 
-	virtual float TakeDamage(float DamageAmount, struct FDamageEvent const & DamageEvent, AController * EventInstigator, AActor * DamageCauser)override;
 	//used when the enemy collides with the player
+	virtual float TakeDamage(float DamageAmount, struct FDamageEvent const & DamageEvent, AController * EventInstigator, AActor * DamageCauser)override;
+	
 	UFUNCTION()
 	void OnBeginOverlap(AActor* OtherActor);
 
 
 
-	// This will be used for calculating the strafing displacement.
-	float strafingTime;
+	// This will be used for calculating effects over time.
+	float timePassed;
 
 	// The enemy's downward speed.
 	UPROPERTY(EditAnywhere)
@@ -39,10 +40,15 @@ public:
 	float horBound;
 
 	// How fast the enemy will fire.
+	UPROPERTY(EditAnywhere)
 	float fireRate;
 
 	// Enemy's fire damage
+	UPROPERTY(EditAnywhere)
 	float fireDamage;
+
+	// Shows whether enemy has already fired.
+	bool fired;
 
 	// Enemy's health
 	UPROPERTY(BlueprintReadWrite,EditDefaultsOnly)
@@ -50,19 +56,7 @@ public:
 
 	
 	// This function will cause the enemy ship to strafe. Pass to it deltaTime.
-	void move(float timePassed)
-	{
-		FVector strafeLocation = GetActorLocation();
-
-		// This returns a number between -1 and 1, to be used as a scalar for where the enemy ship is.
-		float horDeviation = (FMath::Sin(strafingTime + timePassed) - FMath::Sin(strafingTime));
-
-		// Set the y location to be somewhere in the horizontal boundary, scaled by the horDeviation.
-		strafeLocation.Y += horDeviation * horBound;
-		strafeLocation.Z -= downSpeed;
-		strafingTime += timePassed;
-		SetActorLocation(strafeLocation);
-	}
+	void move(float deltaTime);
 
 	// This function will cause the enemy ship to fire.
 	void fire();
@@ -82,5 +76,5 @@ protected:
 	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly)
 		float CollisionDamage;
 
-	void makeBullet(FVector Vector, FRotator Rotator);
+	void makeBullet(FVector Vector, FRotator Rotator, float damage);
 };

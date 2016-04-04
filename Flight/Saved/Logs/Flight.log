@@ -1,360 +1,674 @@
-﻿[2016.04.04-13.06.50:731][  0]Log file open, 04/04/16 09:06:50
-[2016.04.04-13.06.50:731][  0]LogInit:Display: Running engine for game: Flight
-[2016.04.04-13.06.50:731][  0]LogPlatformFile: Not using cached read wrapper
-[2016.04.04-13.06.50:731][  0]LogInit:Display: RandInit(1610160483) SRandInit(1610160484).
-[2016.04.04-13.06.50:731][  0]LogTaskGraph: Started task graph with 4 named threads and 7 total threads.
-[2016.04.04-13.06.50:731][  0]LogStats: Stats thread started at 0.075383
-[2016.04.04-13.06.50:731][  0]LogInit: Version: 4.10.2-2818068+++depot+UE4-Releases+4.10
-[2016.04.04-13.06.50:731][  0]LogInit: API Version: 2758231
-[2016.04.04-13.06.50:731][  0]LogInit: Compiled (64-bit): Jan  6 2016 17:36:42
-[2016.04.04-13.06.50:731][  0]LogInit: Compiled with Visual C++: 19.00.23026.00
-[2016.04.04-13.06.50:731][  0]LogInit: Build Configuration: Development
-[2016.04.04-13.06.50:731][  0]LogInit: Branch Name: ++depot+UE4-Releases+4.10
-[2016.04.04-13.06.50:731][  0]LogInit: Command line: 
-[2016.04.04-13.06.50:731][  0]LogInit: Base directory: C:/Program Files/Epic Games/4.10/Engine/Binaries/Win64/
-[2016.04.04-13.06.50:731][  0]LogInit: Rocket: 1
-[2016.04.04-13.06.50:736][  0]LogInit: Using libcurl 7.41.0
-[2016.04.04-13.06.50:736][  0]LogInit:  - built for x86_64-pc-win32
-[2016.04.04-13.06.50:736][  0]LogInit:  - supports SSL with WinSSL
-[2016.04.04-13.06.50:736][  0]LogInit:  - other features:
-[2016.04.04-13.06.50:736][  0]LogInit:      CURL_VERSION_SSL
-[2016.04.04-13.06.50:736][  0]LogInit:      CURL_VERSION_IPV6
-[2016.04.04-13.06.50:736][  0]LogInit:      CURL_VERSION_ASYNCHDNS
-[2016.04.04-13.06.50:736][  0]LogInit:      CURL_VERSION_LARGEFILE
-[2016.04.04-13.06.50:736][  0]LogInit:      CURL_VERSION_IDN
-[2016.04.04-13.06.50:736][  0]LogInit:  CurlRequestOptions (configurable via config and command line):
-[2016.04.04-13.06.50:736][  0]LogInit:  - bVerifyPeer = true  - Libcurl will verify peer certificate
-[2016.04.04-13.06.50:736][  0]LogInit:  - bUseHttpProxy = false  - Libcurl will NOT use HTTP proxy
-[2016.04.04-13.06.50:736][  0]LogInit:  - bDontReuseConnections = false  - Libcurl will reuse connections
-[2016.04.04-13.06.50:736][  0]LogInit:  - CertBundlePath = nullptr  - Libcurl will use whatever was configured at build time.
-[2016.04.04-13.06.50:743][  0]LogInit: Presizing for 0 objects not considered by GC, pre-allocating 0 bytes.
-[2016.04.04-13.06.50:751][  0]LogInit: Object subsystem initialized
-[2016.04.04-13.06.50:753][  0]LogInit: Selected Device Profile: [Windows]
-[2016.04.04-13.06.50:753][  0]LogInit: Applying CVar settings loaded from the selected device profile: [Windows]
-[2016.04.04-13.06.50:762][  0]LogInit: Computer: C401IT08
-[2016.04.04-13.06.50:762][  0]LogInit: User: Tech
-[2016.04.04-13.06.50:762][  0]LogInit: CPU Page size=4096, Cores=4
-[2016.04.04-13.06.50:762][  0]LogInit: High frequency timer resolution =3.312822 MHz
-[2016.04.04-13.06.50:762][  0]LogMemory: Memory total: Physical=15.9GB (16GB approx)
-[2016.04.04-13.06.50:762][  0]LogMemory: Platform Memory Stats for Windows
-[2016.04.04-13.06.50:762][  0]LogMemory: Process Physical Memory: 56.99 MB used, 56.99 MB peak
-[2016.04.04-13.06.50:762][  0]LogMemory: Process Virtual Memory: 58.81 MB used, 58.81 MB peak
-[2016.04.04-13.06.50:762][  0]LogMemory: Physical Memory: 6991.79 MB used, 16326.14 MB total
-[2016.04.04-13.06.50:762][  0]LogMemory: Virtual Memory: 349.00 MB used, 8388608.00 MB total
-[2016.04.04-13.06.50:790][  0]LogTextLocalizationManager: No specific translations for ('en-CA') exist, so ('en') translations will be used.
-[2016.04.04-13.06.51:190][  0]LogD3D11RHI: Found D3D11 adapter 0: NVIDIA Quadro K600 (Feature Level 11_0)
-[2016.04.04-13.06.51:190][  0]LogD3D11RHI: Adapter has 971MB of dedicated video memory, 0MB of dedicated system memory, and 7907MB of shared system memory, 1 output[s]
-[2016.04.04-13.06.51:190][  0]LogD3D11RHI: Chosen D3D11 Adapter Id = 0
-[2016.04.04-13.06.51:194][  0]LogD3D11RHI: !Direct3DDevice
-[2016.04.04-13.06.51:195][  0]LogRHI: Texture pool is 680 MB (70% of 971 MB)
-[2016.04.04-13.06.51:204][  0]LogD3D11RHI: Async texture creation enabled
-[2016.04.04-13.06.51:217][  0]LogShaderCompilers: Guid format shader working directory is -19 characters bigger than the processId version (../../../../../../Users/C401ITxx/Documents/GitHub/Flat-Flight/Flight/Intermediate/Shaders/WorkingDirectory/6928/).
-[2016.04.04-13.06.51:217][  0]LogShaderCompilers: Cleaned the shader compiler working directory 'C:/Users/C401ITxx/AppData/Local/Temp/UnrealShaderWorkingDir/E669B9C5492CA802B792B58D00E2E3E3/'.
-[2016.04.04-13.06.51:217][  0]LogShaderCompilers:Display: Using Local Shader Compiler.
-[2016.04.04-13.06.51:924][  0]LogTemp:Display: Loaded TP AllDesktopTargetPlatform
-[2016.04.04-13.06.51:930][  0]LogTemp:Display: Loaded TP WindowsClientTargetPlatform
-[2016.04.04-13.06.51:934][  0]LogTemp:Display: Loaded TP WindowsNoEditorTargetPlatform
-[2016.04.04-13.06.51:937][  0]LogTemp:Display: Loaded TP WindowsServerTargetPlatform
-[2016.04.04-13.06.51:941][  0]LogTemp:Display: Loaded TP WindowsTargetPlatform
-[2016.04.04-13.06.51:943][  0]LogTemp:Display: Loaded TP AndroidTargetPlatform
-[2016.04.04-13.06.51:946][  0]LogTemp:Display: Loaded TP Android_ASTCTargetPlatform
-[2016.04.04-13.06.51:949][  0]LogTemp:Display: Loaded TP Android_ATCTargetPlatform
-[2016.04.04-13.06.51:952][  0]LogTemp:Display: Loaded TP Android_DXTTargetPlatform
-[2016.04.04-13.06.51:954][  0]LogTemp:Display: Loaded TP Android_ETC1TargetPlatform
-[2016.04.04-13.06.51:957][  0]LogTemp:Display: Loaded TP Android_ETC2TargetPlatform
-[2016.04.04-13.06.51:963][  0]LogTemp:Display: Loaded TP Android_MultiTargetPlatform
-[2016.04.04-13.06.51:963][  0]LogTemp:Display: Loaded TP Android_PVRTCTargetPlatform
-[2016.04.04-13.06.51:964][  0]LogTemp:Display: Loaded TP HTML5TargetPlatform
-[2016.04.04-13.06.51:980][  0]LogTemp:Display: Loaded TP IOSTargetPlatform
-[2016.04.04-13.06.51:982][  0]LogTemp:Display: Loaded TP LinuxNoEditorTargetPlatform
-[2016.04.04-13.06.51:984][  0]LogTemp:Display: Loaded TP LinuxServerTargetPlatform
-[2016.04.04-13.06.51:987][  0]LogTemp:Display: Loaded TP LinuxTargetPlatform
-[2016.04.04-13.06.51:987][  0]LogTargetPlatformManager:Display: Building Assets For Windows
-[2016.04.04-13.06.52:046][  0]LogDerivedDataCache:Display: Max Cache Size: 512 MB
-[2016.04.04-13.06.52:188][  0]LogDerivedDataCache: Loaded boot cache 0.14s 162MB C:/Users/C401ITxx/AppData/Local/UnrealEngine/4.10/DerivedDataCache/Boot.ddc.
-[2016.04.04-13.06.52:188][  0]LogDerivedDataCache:Display: Loaded Boot cache: C:/Users/C401ITxx/AppData/Local/UnrealEngine/4.10/DerivedDataCache/Boot.ddc
-[2016.04.04-13.06.52:188][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  Pak pak cache file ../../../../../../Users/C401ITxx/Documents/GitHub/Flat-Flight/Flight/DerivedDataCache/DDC.ddp not found, will not use a pak cache.
-[2016.04.04-13.06.52:188][  0]LogDerivedDataCache: Unable to find inner node Pak for hierarchical cache Hierarchy.
-[2016.04.04-13.06.52:188][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  CompressedPak pak cache file ../../../../../../Users/C401ITxx/Documents/GitHub/Flat-Flight/Flight/DerivedDataCache/Compressed.ddp not found, will not use a pak cache.
-[2016.04.04-13.06.52:188][  0]LogDerivedDataCache: Unable to find inner node CompressedPak for hierarchical cache Hierarchy.
-[2016.04.04-13.06.52:244][  0]LogDerivedDataCache:Display: Pak cache opened for reading ../../../Engine/DerivedDataCache/Compressed.ddp.
-[2016.04.04-13.06.52:255][  0]LogDerivedDataCache: Using Local data cache path C:/Users/C401ITxx/AppData/Local/UnrealEngine/Common/DerivedDataCache: Writable
-[2016.04.04-13.06.52:398][  0]LogCollisionProfile:Warning: Profile (PickUps) - Custom Channel Name = 'GameTraceChannel5' hasn't been found
-[2016.04.04-13.06.52:398][  0]LogCollisionProfile:Warning: Profile (PickUps) - Custom Channel Name = 'GameTraceChannel6' hasn't been found
-[2016.04.04-13.06.52:398][  0]LogCollisionProfile:Warning: Profile (EnemyBullets) - Custom Channel Name = 'GameTraceChannel6' hasn't been found
-[2016.04.04-13.06.52:401][  0]LogInit: Selected Device Profile: [Windows]
-[2016.04.04-13.06.52:402][  0]LogContentStreaming: Texture pool size is 0.000000MB
-[2016.04.04-13.06.52:436][  0]LogMeshUtilities: No automatic mesh reduction module available
-[2016.04.04-13.06.52:436][  0]LogMeshUtilities: No automatic mesh merging module available
-[2016.04.04-13.06.52:747][  0]LogInit: WinSock: version 1.1 (2.2), MaxSocks=32767, MaxUdp=65467
-[2016.04.04-13.06.53:404][  0]UdpMessaging: Initializing bridge on interface 0.0.0.0:0 to multicast group 230.0.0.1:6666.
-[2016.04.04-13.06.54:315][  0]LogAssetRegistry: FAssetRegistry took 0.0099 seconds to start up
-[2016.04.04-13.06.54:480][  0]SourceControl: Info Source control is disabled
-[2016.04.04-13.06.54:510][  0]SourceControl: Info Source control is disabled
-[2016.04.04-13.06.54:521][  0]SourceControl: Info Source control is disabled
-[2016.04.04-13.06.54:532][  0]SourceControl: Info Source control is disabled
-[2016.04.04-13.06.54:734][  0]LogObj: 31056 objects as part of root set at end of initial load.
-[2016.04.04-13.06.54:734][  0]LogUObjectAllocator: 7307216 out of 0 bytes used by permanent object pool.
-[2016.04.04-13.06.54:787][  0]LogEngine: Initializing Engine...
-[2016.04.04-13.06.54:788][  0]OCULUS: Info: 04/04/16 13:06:54: [CAPI] LibOVR module is located at C:\Windows\system32\LibOVRRT64_0_8.dll
+﻿[2016.04.04-16.54.27:999][  0]Log file open, 04/04/16 12:54:27
+[2016.04.04-16.54.27:999][  0]LogInit:Display: Running engine for game: Flight
+[2016.04.04-16.54.27:999][  0]LogPlatformFile: Not using cached read wrapper
+[2016.04.04-16.54.27:999][  0]LogInit:Display: RandInit(-393593047) SRandInit(-393593046).
+[2016.04.04-16.54.27:999][  0]LogTaskGraph: Started task graph with 4 named threads and 7 total threads.
+[2016.04.04-16.54.27:999][  0]LogStats: Stats thread started at 0.062325
+[2016.04.04-16.54.27:999][  0]LogInit: Version: 4.10.2-2818068+++depot+UE4-Releases+4.10
+[2016.04.04-16.54.27:999][  0]LogInit: API Version: 2758231
+[2016.04.04-16.54.27:999][  0]LogInit: Compiled (64-bit): Jan  6 2016 17:36:42
+[2016.04.04-16.54.27:999][  0]LogInit: Compiled with Visual C++: 19.00.23026.00
+[2016.04.04-16.54.27:999][  0]LogInit: Build Configuration: Development
+[2016.04.04-16.54.27:999][  0]LogInit: Branch Name: ++depot+UE4-Releases+4.10
+[2016.04.04-16.54.27:999][  0]LogInit: Command line:  
+[2016.04.04-16.54.27:999][  0]LogInit: Base directory: C:/Program Files/Epic Games/4.10/Engine/Binaries/Win64/
+[2016.04.04-16.54.27:999][  0]LogInit: Rocket: 1
+[2016.04.04-16.54.27:999][  0]LogInit: Using libcurl 7.41.0
+[2016.04.04-16.54.27:999][  0]LogInit:  - built for x86_64-pc-win32
+[2016.04.04-16.54.27:999][  0]LogInit:  - supports SSL with WinSSL
+[2016.04.04-16.54.27:999][  0]LogInit:  - other features:
+[2016.04.04-16.54.27:999][  0]LogInit:      CURL_VERSION_SSL
+[2016.04.04-16.54.27:999][  0]LogInit:      CURL_VERSION_IPV6
+[2016.04.04-16.54.27:999][  0]LogInit:      CURL_VERSION_ASYNCHDNS
+[2016.04.04-16.54.27:999][  0]LogInit:      CURL_VERSION_LARGEFILE
+[2016.04.04-16.54.27:999][  0]LogInit:      CURL_VERSION_IDN
+[2016.04.04-16.54.27:999][  0]LogInit:  CurlRequestOptions (configurable via config and command line):
+[2016.04.04-16.54.27:999][  0]LogInit:  - bVerifyPeer = true  - Libcurl will verify peer certificate
+[2016.04.04-16.54.27:999][  0]LogInit:  - bUseHttpProxy = false  - Libcurl will NOT use HTTP proxy
+[2016.04.04-16.54.27:999][  0]LogInit:  - bDontReuseConnections = false  - Libcurl will reuse connections
+[2016.04.04-16.54.27:999][  0]LogInit:  - CertBundlePath = nullptr  - Libcurl will use whatever was configured at build time.
+[2016.04.04-16.54.28:009][  0]LogInit: Presizing for 0 objects not considered by GC, pre-allocating 0 bytes.
+[2016.04.04-16.54.28:009][  0]LogInit: Object subsystem initialized
+[2016.04.04-16.54.28:009][  0]LogInit: Selected Device Profile: [Windows]
+[2016.04.04-16.54.28:009][  0]LogInit: Applying CVar settings loaded from the selected device profile: [Windows]
+[2016.04.04-16.54.28:019][  0]LogInit: Computer: C401IT08
+[2016.04.04-16.54.28:019][  0]LogInit: User: Tech
+[2016.04.04-16.54.28:019][  0]LogInit: CPU Page size=4096, Cores=4
+[2016.04.04-16.54.28:019][  0]LogInit: High frequency timer resolution =3.312822 MHz
+[2016.04.04-16.54.28:019][  0]LogMemory: Memory total: Physical=15.9GB (16GB approx)
+[2016.04.04-16.54.28:019][  0]LogMemory: Platform Memory Stats for Windows
+[2016.04.04-16.54.28:019][  0]LogMemory: Process Physical Memory: 57.59 MB used, 57.59 MB peak
+[2016.04.04-16.54.28:019][  0]LogMemory: Process Virtual Memory: 57.73 MB used, 57.73 MB peak
+[2016.04.04-16.54.28:019][  0]LogMemory: Physical Memory: 3975.81 MB used, 16326.14 MB total
+[2016.04.04-16.54.28:019][  0]LogMemory: Virtual Memory: 347.93 MB used, 8388608.00 MB total
+[2016.04.04-16.54.28:030][  0]LogTextLocalizationManager: No specific translations for ('en-CA') exist, so ('en') translations will be used.
+[2016.04.04-16.54.28:369][  0]LogD3D11RHI: Found D3D11 adapter 0: NVIDIA Quadro K600 (Feature Level 11_0)
+[2016.04.04-16.54.28:369][  0]LogD3D11RHI: Adapter has 971MB of dedicated video memory, 0MB of dedicated system memory, and 7907MB of shared system memory, 1 output[s]
+[2016.04.04-16.54.28:369][  0]LogD3D11RHI: Chosen D3D11 Adapter Id = 0
+[2016.04.04-16.54.28:372][  0]LogD3D11RHI: !Direct3DDevice
+[2016.04.04-16.54.28:372][  0]LogRHI: Texture pool is 680 MB (70% of 971 MB)
+[2016.04.04-16.54.28:381][  0]LogD3D11RHI: Async texture creation enabled
+[2016.04.04-16.54.28:394][  0]LogShaderCompilers: Guid format shader working directory is -18 characters bigger than the processId version (../../../../../../Users/C401ITxx/Documents/GitHub/Flat-Flight/Flight/Intermediate/Shaders/WorkingDirectory/272/).
+[2016.04.04-16.54.28:394][  0]LogShaderCompilers: Cleaned the shader compiler working directory 'C:/Users/C401ITxx/AppData/Local/Temp/UnrealShaderWorkingDir/9EF37129462BB3B9B0D280A980093973/'.
+[2016.04.04-16.54.28:394][  0]LogShaderCompilers:Display: Using Local Shader Compiler.
+[2016.04.04-16.54.29:047][  0]LogTemp:Display: Loaded TP AllDesktopTargetPlatform
+[2016.04.04-16.54.29:051][  0]LogTemp:Display: Loaded TP WindowsClientTargetPlatform
+[2016.04.04-16.54.29:054][  0]LogTemp:Display: Loaded TP WindowsNoEditorTargetPlatform
+[2016.04.04-16.54.29:058][  0]LogTemp:Display: Loaded TP WindowsServerTargetPlatform
+[2016.04.04-16.54.29:061][  0]LogTemp:Display: Loaded TP WindowsTargetPlatform
+[2016.04.04-16.54.29:064][  0]LogTemp:Display: Loaded TP AndroidTargetPlatform
+[2016.04.04-16.54.29:066][  0]LogTemp:Display: Loaded TP Android_ASTCTargetPlatform
+[2016.04.04-16.54.29:068][  0]LogTemp:Display: Loaded TP Android_ATCTargetPlatform
+[2016.04.04-16.54.29:070][  0]LogTemp:Display: Loaded TP Android_DXTTargetPlatform
+[2016.04.04-16.54.29:073][  0]LogTemp:Display: Loaded TP Android_ETC1TargetPlatform
+[2016.04.04-16.54.29:075][  0]LogTemp:Display: Loaded TP Android_ETC2TargetPlatform
+[2016.04.04-16.54.29:080][  0]LogTemp:Display: Loaded TP Android_MultiTargetPlatform
+[2016.04.04-16.54.29:080][  0]LogTemp:Display: Loaded TP Android_PVRTCTargetPlatform
+[2016.04.04-16.54.29:081][  0]LogTemp:Display: Loaded TP HTML5TargetPlatform
+[2016.04.04-16.54.29:095][  0]LogTemp:Display: Loaded TP IOSTargetPlatform
+[2016.04.04-16.54.29:097][  0]LogTemp:Display: Loaded TP LinuxNoEditorTargetPlatform
+[2016.04.04-16.54.29:099][  0]LogTemp:Display: Loaded TP LinuxServerTargetPlatform
+[2016.04.04-16.54.29:102][  0]LogTemp:Display: Loaded TP LinuxTargetPlatform
+[2016.04.04-16.54.29:102][  0]LogTargetPlatformManager:Display: Building Assets For Windows
+[2016.04.04-16.54.29:164][  0]LogDerivedDataCache:Display: Max Cache Size: 512 MB
+[2016.04.04-16.54.29:298][  0]LogDerivedDataCache: Loaded boot cache 0.13s 162MB C:/Users/C401ITxx/AppData/Local/UnrealEngine/4.10/DerivedDataCache/Boot.ddc.
+[2016.04.04-16.54.29:298][  0]LogDerivedDataCache:Display: Loaded Boot cache: C:/Users/C401ITxx/AppData/Local/UnrealEngine/4.10/DerivedDataCache/Boot.ddc
+[2016.04.04-16.54.29:298][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  Pak pak cache file ../../../../../../Users/C401ITxx/Documents/GitHub/Flat-Flight/Flight/DerivedDataCache/DDC.ddp not found, will not use a pak cache.
+[2016.04.04-16.54.29:298][  0]LogDerivedDataCache: Unable to find inner node Pak for hierarchical cache Hierarchy.
+[2016.04.04-16.54.29:298][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  CompressedPak pak cache file ../../../../../../Users/C401ITxx/Documents/GitHub/Flat-Flight/Flight/DerivedDataCache/Compressed.ddp not found, will not use a pak cache.
+[2016.04.04-16.54.29:298][  0]LogDerivedDataCache: Unable to find inner node CompressedPak for hierarchical cache Hierarchy.
+[2016.04.04-16.54.29:344][  0]LogDerivedDataCache:Display: Pak cache opened for reading ../../../Engine/DerivedDataCache/Compressed.ddp.
+[2016.04.04-16.54.29:355][  0]LogDerivedDataCache: Using Local data cache path C:/Users/C401ITxx/AppData/Local/UnrealEngine/Common/DerivedDataCache: Writable
+[2016.04.04-16.54.29:472][  0]LogCollisionProfile:Warning: Profile (PickUps) - Custom Channel Name = 'GameTraceChannel5' hasn't been found
+[2016.04.04-16.54.29:472][  0]LogCollisionProfile:Warning: Profile (PickUps) - Custom Channel Name = 'GameTraceChannel6' hasn't been found
+[2016.04.04-16.54.29:472][  0]LogCollisionProfile:Warning: Profile (EnemyBullets) - Custom Channel Name = 'GameTraceChannel6' hasn't been found
+[2016.04.04-16.54.29:475][  0]LogInit: Selected Device Profile: [Windows]
+[2016.04.04-16.54.29:476][  0]LogContentStreaming: Texture pool size is 0.000000MB
+[2016.04.04-16.54.29:503][  0]LogMeshUtilities: No automatic mesh reduction module available
+[2016.04.04-16.54.29:503][  0]LogMeshUtilities: No automatic mesh merging module available
+[2016.04.04-16.54.29:764][  0]LogInit: WinSock: version 1.1 (2.2), MaxSocks=32767, MaxUdp=65467
+[2016.04.04-16.54.30:341][  0]UdpMessaging: Initializing bridge on interface 0.0.0.0:0 to multicast group 230.0.0.1:6666.
+[2016.04.04-16.54.31:171][  0]LogAssetRegistry: FAssetRegistry took 0.0102 seconds to start up
+[2016.04.04-16.54.31:327][  0]SourceControl: Info Source control is disabled
+[2016.04.04-16.54.31:352][  0]SourceControl: Info Source control is disabled
+[2016.04.04-16.54.31:359][  0]SourceControl: Info Source control is disabled
+[2016.04.04-16.54.31:366][  0]SourceControl: Info Source control is disabled
+[2016.04.04-16.54.31:522][  0]LogObj: 31065 objects as part of root set at end of initial load.
+[2016.04.04-16.54.31:522][  0]LogUObjectAllocator: 7311248 out of 0 bytes used by permanent object pool.
+[2016.04.04-16.54.31:570][  0]LogEngine: Initializing Engine...
+[2016.04.04-16.54.31:571][  0]OCULUS: Info: 04/04/16 16:54:31: [CAPI] LibOVR module is located at C:\Windows\system32\LibOVRRT64_0_8.dll
 
-[2016.04.04-13.06.54:789][  0]OCULUS: Info: 04/04/16 13:06:54: [IPC] Call Stats for SetInitialState : x1: C2S=18.7152, S2C=4.226, Runtime=38.3359 (microseconds) C2Ssize=80, S2Csize=81 (bytes)
+[2016.04.04-16.54.31:572][  0]OCULUS: Info: 04/04/16 16:54:31: [IPC] Call Stats for SetInitialState : x1: C2S=15.0929, S2C=4.52786, Runtime=37.1285 (microseconds) C2Ssize=80, S2Csize=81 (bytes)
 
-[2016.04.04-13.06.54:789][  0]OCULUS: Info: 04/04/16 13:06:54: [IPC] Call Stats for IsLatencyTesterAvailable : x1: C2S=10.565, S2C=2.71672, Runtime=0.905572 (microseconds) C2Ssize=33, S2Csize=18 (bytes)
+[2016.04.04-16.54.31:572][  0]OCULUS: Info: 04/04/16 16:54:31: [IPC] Call Stats for IsLatencyTesterAvailable : x1: C2S=8.15015, S2C=4.52786, Runtime=0.603715 (microseconds) C2Ssize=33, S2Csize=18 (bytes)
 
-[2016.04.04-13.06.54:799][  0]LogHMD: SteamVR failed to initialize.  Err: 110
-[2016.04.04-13.06.54:913][  0]LogAIModule: Creating AISystem for world NewWorld
-[2016.04.04-13.06.54:916][  0]LogInit: XAudio2 using 'Speakers / Headphones (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
-[2016.04.04-13.06.54:925][  0]LogInit: FAudioDevice initialized.
-[2016.04.04-13.06.54:997][  0]LogDerivedDataCache: Saved boot cache 0.07s 162MB C:/Users/C401ITxx/AppData/Local/UnrealEngine/4.10/DerivedDataCache/Boot.ddc.
-[2016.04.04-13.06.55:008][  0]LogInit: Texture streaming: Enabled
-[2016.04.04-13.06.55:012][  0]LogAnalytics: Creating configured Analytics provider AnalyticsET
-[2016.04.04-13.06.55:012][  0]LogAnalytics: [UEEditor.Rocket.Release] APIServer = http://et2.epicgames.com/ET2/. AppVersion = 4.10.2-2818068+++depot+UE4-Releases+4.10
-[2016.04.04-13.06.55:012][  0]LogAnalytics: [UEEditor.Rocket.Release] SetUserId d90d73a240a36658074ac08ce7c56e1b|537452aed23647e4b8302495d8ec3407|b399840a-6214-4cdc-89af-39f57a6d8d1f
-[2016.04.04-13.06.55:012][  0]LogAnalytics: [UEEditor.Rocket.Release] AnalyticsET::StartSession
-[2016.04.04-13.06.55:019][  0]LogInit: Transaction tracking system initialized
-[2016.04.04-13.06.55:040][  0]BlueprintLog: New page: Editor Load
-[2016.04.04-13.06.55:113][  0]LocalizationService: Info Localization service is disabled
-[2016.04.04-13.06.55:176][  0]LogConsoleResponse:Display: 
-[2016.04.04-13.06.55:277][  0]LogCook:Display: Done creating registry. It took  0.00s.
-[2016.04.04-13.06.55:316][  0]LogFileCache: Scanning file cache for directory 'C:/Users/C401ITxx/Documents/GitHub/Flat-Flight/Flight/Content/' took 0.01s
-[2016.04.04-13.06.55:316][  0]SourceControl: Info Source control is disabled
-[2016.04.04-13.06.55:317][  0]Cmd: MAP LOAD FILE="../../../../../../Users/C401ITxx/Documents/GitHub/Flat-Flight/Flight/Content/Maps/MapWithPowerUps.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
-[2016.04.04-13.06.55:317][  0]LightingResults: New page: Lighting Build
-[2016.04.04-13.06.55:319][  0]MapCheck: New page: Map Check
-[2016.04.04-13.06.55:319][  0]LightingResults: New page: Lighting Build
-[2016.04.04-13.06.55:332][  0]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000003939B6A0
-[2016.04.04-13.06.55:693][  0]LogAIModule: Creating AISystem for world MapWithPowerUps
-[2016.04.04-13.06.55:699][  0]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
-[2016.04.04-13.06.55:699][  0]Cmd: MAP CHECKDEP NOCLEARLOG
-[2016.04.04-13.06.55:763][  0]MapCheck: Info Map check complete: 0 Error(s), 0 Warning(s), took 64.125ms to complete.
-[2016.04.04-13.06.55:763][  0]LogFileHelpers: Loading map 'MapWithPowerUps' took 0.447
-[2016.04.04-13.06.55:864][  0]LogCollectionManager: Loaded 0 collections in 0.002328 seconds
-[2016.04.04-13.06.55:900][  0]LogFileCache: Scanning file cache for directory 'C:/Users/C401ITxx/Documents/GitHub/Flat-Flight/Flight/Saved/Collections/' took 0.01s
-[2016.04.04-13.06.55:900][  0]LogFileCache: Scanning file cache for directory 'C:/Users/C401ITxx/Documents/GitHub/Flat-Flight/Flight/Content/Developers/Tech/Collections/' took 0.01s
-[2016.04.04-13.06.55:900][  0]LogFileCache: Scanning file cache for directory 'C:/Users/C401ITxx/Documents/GitHub/Flat-Flight/Flight/Content/Collections/' took 0.01s
-[2016.04.04-13.06.55:900][  0]LogCollectionManager: Rebuilt the GUID cache for 0 collections in 0.000002 seconds
-[2016.04.04-13.06.55:910][  0]LogContentBrowser: Native class hierarchy populated in 0.0099 seconds. Added 1926 classes and 343 folders.
-[2016.04.04-13.06.55:918][  0]LogContentBrowser: Native class hierarchy updated for 'WidgetCarousel' in 0.0023 seconds. Added 0 classes and 0 folders.
-[2016.04.04-13.06.55:956][  0]LogContentBrowser: Native class hierarchy updated for 'AddContentDialog' in 0.0027 seconds. Added 0 classes and 0 folders.
-[2016.04.04-13.06.55:962][  0]LogContentBrowser: Native class hierarchy updated for 'SceneOutliner' in 0.0028 seconds. Added 1 classes and 2 folders.
-[2016.04.04-13.06.55:974][  0]LogCrashTracker: Crashtracker disabled due to settings.
-[2016.04.04-13.06.55:978][  0]LogUObjectGlobals:Warning: Failed to find object 'Class None.'
-[2016.04.04-13.06.55:999][  0]LogLoad: Full Startup: 5.94 seconds (BP compile: 0.09 seconds)
-[2016.04.04-13.06.56:008][  0]LogOcInput: OculusInput is initialized. Init status 0. Runtime version: 0.8.0.0
-[2016.04.04-13.06.56:069][  0]LogContentStreaming: Texture pool size now 1000 MB
-[2016.04.04-13.06.56:193][  0]LogRenderer: Reallocating scene render targets to support 1208x572 (Frame:2).
-[2016.04.04-13.06.56:589][  4]LogAssetRegistry: Asset discovery search completed in 2.2829 seconds
-[2016.04.04-13.06.56:589][  4]LogCollectionManager: Rebuilt the object cache for 0 collections in 0.000001 seconds (found 0 objects)
-[2016.04.04-13.06.56:589][  4]LogCollectionManager: Fixed up redirectors for 0 collections in 0.000022 seconds (updated 0 objects)
-[2016.04.04-13.06.58:965][ 45]Cmd: QUIT_EDITOR
-[2016.04.04-13.06.59:071][ 45]LogExit: Preparing to exit.
-[2016.04.04-13.06.59:449][ 45]LogExit: Editor shut down
-[2016.04.04-13.06.59:449][ 45]LogExit: Transaction tracking system shut down
-[2016.04.04-13.06.59:450][ 45]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000000FE079C0
-[2016.04.04-13.06.59:450][ 45]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x00000000101CF880
-[2016.04.04-13.06.59:601][ 45]LogExit: Object subsystem successfully closed.
-[2016.04.04-13.06.59:619][ 45]LogD3D11RHI: Shutdown
-[2016.04.04-13.06.59:619][ 45]LogD3D11RHI: CleanupD3DDevice
-[2016.04.04-13.06.59:670][ 45]LogD3D11RHI: ~FD3D11DynamicRHI
-[2016.04.04-13.06.59:687][ 45]LogModuleManager: Shutting down and abandoning module CrashTracker (199)
-[2016.04.04-13.06.59:687][ 45]LogModuleManager: Shutting down and abandoning module SceneOutliner (198)
-[2016.04.04-13.06.59:687][ 45]LogModuleManager: Shutting down and abandoning module SuperSearch (197)
-[2016.04.04-13.06.59:687][ 45]LogModuleManager: Shutting down and abandoning module WidgetCarousel (196)
-[2016.04.04-13.06.59:687][ 45]LogModuleManager: Shutting down and abandoning module AddContentDialog (195)
-[2016.04.04-13.06.59:687][ 45]LogModuleManager: Shutting down and abandoning module EditorWidgets (194)
-[2016.04.04-13.06.59:687][ 45]LogModuleManager: Shutting down and abandoning module CollectionManager (193)
-[2016.04.04-13.06.59:688][ 45]LogModuleManager: Shutting down and abandoning module StatsViewer (192)
-[2016.04.04-13.06.59:688][ 45]LogModuleManager: Shutting down and abandoning module FoliageEdit (191)
-[2016.04.04-13.06.59:688][ 45]LogModuleManager: Shutting down and abandoning module LandscapeEditor (190)
-[2016.04.04-13.06.59:688][ 45]LogModuleManager: Shutting down and abandoning module ActorPickerMode (189)
-[2016.04.04-13.06.59:688][ 45]LogModuleManager: Shutting down and abandoning module GeometryMode (188)
-[2016.04.04-13.06.59:688][ 45]LogModuleManager: Shutting down and abandoning module TextureAlignMode (187)
-[2016.04.04-13.06.59:688][ 45]LogModuleManager: Shutting down and abandoning module BspMode (186)
-[2016.04.04-13.06.59:688][ 45]LogModuleManager: Shutting down and abandoning module PlacementMode (185)
-[2016.04.04-13.06.59:688][ 45]LogModuleManager: Shutting down and abandoning module AutomationWorker (184)
-[2016.04.04-13.06.59:688][ 45]LogModuleManager: Shutting down and abandoning module CharacterAI (183)
-[2016.04.04-13.06.59:688][ 45]LogModuleManager: Shutting down and abandoning module SmartSnapping (182)
-[2016.04.04-13.06.59:688][ 45]LogModuleManager: Shutting down and abandoning module ViewportSnapping (181)
-[2016.04.04-13.06.59:688][ 45]LogModuleManager: Shutting down and abandoning module LogVisualizer (180)
-[2016.04.04-13.06.59:688][ 45]LogModuleManager: Shutting down and abandoning module GameProjectGeneration (179)
-[2016.04.04-13.06.59:688][ 45]LogModuleManager: Shutting down and abandoning module IntroTutorials (178)
-[2016.04.04-13.06.59:688][ 45]LogModuleManager: Shutting down and abandoning module EditorLiveStreaming (177)
-[2016.04.04-13.06.59:688][ 45]LogModuleManager: Shutting down and abandoning module IOSPlatformEditor (176)
-[2016.04.04-13.06.59:688][ 45]LogModuleManager: Shutting down and abandoning module HTML5PlatformEditor (175)
-[2016.04.04-13.06.59:688][ 45]LogModuleManager: Shutting down and abandoning module AndroidDeviceDetection (174)
-[2016.04.04-13.07.00:147][ 45]LogModuleManager: Shutting down and abandoning module AndroidPlatformEditor (173)
-[2016.04.04-13.07.00:147][ 45]LogModuleManager: Shutting down and abandoning module IOSRuntimeSettings (172)
-[2016.04.04-13.07.00:147][ 45]LogModuleManager: Shutting down and abandoning module AndroidRuntimeSettings (171)
-[2016.04.04-13.07.00:147][ 45]LogModuleManager: Shutting down and abandoning module MergeActors (170)
-[2016.04.04-13.07.00:147][ 45]LogModuleManager: Shutting down and abandoning module SizeMap (169)
-[2016.04.04-13.07.00:147][ 45]LogModuleManager: Shutting down and abandoning module TreeMap (168)
-[2016.04.04-13.07.00:147][ 45]LogModuleManager: Shutting down and abandoning module ReferenceViewer (167)
-[2016.04.04-13.07.00:147][ 45]LogModuleManager: Shutting down and abandoning module LocalizationService (166)
-[2016.04.04-13.07.00:147][ 45]LogModuleManager: Shutting down and abandoning module LocalizationDashboard (165)
-[2016.04.04-13.07.00:147][ 45]LogModuleManager: Shutting down and abandoning module HardwareTargeting (164)
-[2016.04.04-13.07.00:147][ 45]LogModuleManager: Shutting down and abandoning module DeviceProfileEditor (163)
-[2016.04.04-13.07.00:147][ 45]LogModuleManager: Shutting down and abandoning module UndoHistory (162)
-[2016.04.04-13.07.00:147][ 45]LogModuleManager: Shutting down and abandoning module GameplayTagsEditor (161)
-[2016.04.04-13.07.00:147][ 45]LogModuleManager: Shutting down and abandoning module UserFeedback (160)
-[2016.04.04-13.07.00:147][ 45]LogModuleManager: Shutting down and abandoning module XmlParser (159)
-[2016.04.04-13.07.00:147][ 45]LogModuleManager: Shutting down and abandoning module Blutility (158)
-[2016.04.04-13.07.00:147][ 45]LogModuleManager: Shutting down and abandoning module ProjectTargetPlatformEditor (157)
-[2016.04.04-13.07.00:147][ 45]LogModuleManager: Shutting down and abandoning module ProjectSettingsViewer (156)
-[2016.04.04-13.07.00:147][ 45]LogModuleManager: Shutting down and abandoning module InputBindingEditor (155)
-[2016.04.04-13.07.00:148][ 45]LogModuleManager: Shutting down and abandoning module EditorSettingsViewer (154)
-[2016.04.04-13.07.00:148][ 45]LogModuleManager: Shutting down and abandoning module SettingsEditor (153)
-[2016.04.04-13.07.00:148][ 45]LogModuleManager: Shutting down and abandoning module ProjectLauncher (152)
-[2016.04.04-13.07.00:148][ 45]LogModuleManager: Shutting down and abandoning module SessionFrontend (151)
-[2016.04.04-13.07.00:148][ 45]LogModuleManager: Shutting down and abandoning module ProfilerClient (150)
-[2016.04.04-13.07.00:148][ 45]LogModuleManager: Shutting down and abandoning module TargetDeviceServices (149)
-[2016.04.04-13.07.00:148][ 45]LogModuleManager: Shutting down and abandoning module DeviceManager (148)
-[2016.04.04-13.07.00:148][ 45]LogModuleManager: Shutting down and abandoning module AutomationController (147)
-[2016.04.04-13.07.00:148][ 45]LogModuleManager: Shutting down and abandoning module AutomationWindow (146)
-[2016.04.04-13.07.00:148][ 45]LogModuleManager: Shutting down and abandoning module Layers (145)
-[2016.04.04-13.07.00:148][ 45]LogModuleManager: Shutting down and abandoning module ComponentVisualizers (144)
-[2016.04.04-13.07.00:148][ 45]LogModuleManager: Shutting down and abandoning module DetailCustomizations (143)
-[2016.04.04-13.07.00:148][ 45]LogModuleManager: Shutting down and abandoning module PackagesDialog (142)
-[2016.04.04-13.07.00:148][ 45]LogModuleManager: Shutting down and abandoning module Persona (141)
-[2016.04.04-13.07.00:148][ 45]LogModuleManager: Shutting down and abandoning module Kismet (140)
-[2016.04.04-13.07.00:148][ 45]LogModuleManager: Shutting down and abandoning module GraphEditor (139)
-[2016.04.04-13.07.00:148][ 45]LogModuleManager: Shutting down and abandoning module ClassViewer (138)
-[2016.04.04-13.07.00:148][ 45]LogModuleManager: Shutting down and abandoning module Toolbox (137)
-[2016.04.04-13.07.00:148][ 45]LogModuleManager: Shutting down and abandoning module ModuleUI (136)
-[2016.04.04-13.07.00:148][ 45]LogModuleManager: Shutting down and abandoning module MovieSceneTools (135)
-[2016.04.04-13.07.00:148][ 45]LogModuleManager: Shutting down and abandoning module OutputLog (134)
-[2016.04.04-13.07.00:148][ 45]LogModuleManager: Shutting down and abandoning module GammaUI (133)
-[2016.04.04-13.07.00:148][ 45]LogModuleManager: Shutting down and abandoning module Documentation (132)
-[2016.04.04-13.07.00:148][ 45]LogModuleManager: Shutting down and abandoning module GameLiveStreaming (131)
-[2016.04.04-13.07.00:148][ 45]LogModuleManager: Shutting down and abandoning module StreamingPauseRendering (130)
-[2016.04.04-13.07.00:148][ 45]LogModuleManager: Shutting down and abandoning module AnalyticsET (129)
-[2016.04.04-13.07.00:148][ 45]LogModuleManager: Shutting down and abandoning module Analytics (128)
-[2016.04.04-13.07.00:148][ 45]LogModuleManager: Shutting down and abandoning module AITestSuite (127)
-[2016.04.04-13.07.00:148][ 45]LogModuleManager: Shutting down and abandoning module GameplayDebugger (126)
-[2016.04.04-13.07.00:148][ 45]LogModuleManager: Shutting down and abandoning module AIModule (125)
-[2016.04.04-13.07.00:148][ 45]LogModuleManager: Shutting down and abandoning module ProfilerService (124)
-[2016.04.04-13.07.00:242][ 45]LogModuleManager: Shutting down and abandoning module TaskGraph (123)
-[2016.04.04-13.07.00:242][ 45]LogModuleManager: Shutting down and abandoning module SlateRemote (122)
-[2016.04.04-13.07.00:242][ 45]LogModuleManager: Shutting down and abandoning module SteamVRController (121)
-[2016.04.04-13.07.00:242][ 45]LogModuleManager: Shutting down and abandoning module SteamVR (120)
-[2016.04.04-13.07.00:242][ 45]LogModuleManager: Shutting down and abandoning module ProceduralMeshComponent (119)
-[2016.04.04-13.07.00:242][ 45]LogModuleManager: Shutting down and abandoning module OculusLibrary (118)
-[2016.04.04-13.07.00:242][ 45]LogModuleManager: Shutting down and abandoning module OculusInput (117)
-[2016.04.04-13.07.00:242][ 45]LogModuleManager: Shutting down and abandoning module LeapMotionController (116)
-[2016.04.04-13.07.00:248][ 45]LogModuleManager: Shutting down and abandoning module CustomMeshComponent (115)
-[2016.04.04-13.07.00:248][ 45]LogModuleManager: Shutting down and abandoning module CableComponent (114)
-[2016.04.04-13.07.00:248][ 45]LogModuleManager: Shutting down and abandoning module ArchVisCharacter (113)
-[2016.04.04-13.07.00:248][ 45]LogModuleManager: Shutting down and abandoning module MessagingDebugger (112)
-[2016.04.04-13.07.00:248][ 45]LogModuleManager: Shutting down and abandoning module MediaPlayerEditor (111)
-[2016.04.04-13.07.00:248][ 45]LogModuleManager: Shutting down and abandoning module HTML5Networking (110)
-[2016.04.04-13.07.00:248][ 45]LogModuleManager: Shutting down and abandoning module SpeedTreeImporter (109)
-[2016.04.04-13.07.00:248][ 45]LogModuleManager: Shutting down and abandoning module PluginBrowser (108)
-[2016.04.04-13.07.00:248][ 45]LogModuleManager: Shutting down and abandoning module EpicSurvey (107)
-[2016.04.04-13.07.00:248][ 45]LogModuleManager: Shutting down and abandoning module DesktopPlatform (106)
-[2016.04.04-13.07.00:248][ 45]LogModuleManager: Shutting down and abandoning module VisualStudioSourceCodeAccess (105)
-[2016.04.04-13.07.00:248][ 45]LogModuleManager: Shutting down and abandoning module UObjectPlugin (104)
-[2016.04.04-13.07.00:248][ 45]LogModuleManager: Shutting down and abandoning module SubversionSourceControl (103)
-[2016.04.04-13.07.00:248][ 45]LogModuleManager: Shutting down and abandoning module PerforceSourceControl (102)
-[2016.04.04-13.07.00:248][ 45]LogModuleManager: Shutting down and abandoning module SourceControl (101)
-[2016.04.04-13.07.00:248][ 45]LogModuleManager: Shutting down and abandoning module GitSourceControl (100)
-[2016.04.04-13.07.00:248][ 45]LogModuleManager: Shutting down and abandoning module LightPropagationVolumeEditor (99)
-[2016.04.04-13.07.00:248][ 45]LogModuleManager: Shutting down and abandoning module PaperTiledImporter (98)
-[2016.04.04-13.07.00:248][ 45]LogModuleManager: Shutting down and abandoning module PaperSpriteSheetImporter (97)
-[2016.04.04-13.07.00:248][ 45]LogModuleManager: Shutting down and abandoning module MeshPaint (96)
-[2016.04.04-13.07.00:248][ 45]LogModuleManager: Shutting down and abandoning module SlateReflector (95)
-[2016.04.04-13.07.00:249][ 45]LogModuleManager: Shutting down and abandoning module HotReload (94)
-[2016.04.04-13.07.00:249][ 45]LogModuleManager: Shutting down and abandoning module MainFrame (93)
-[2016.04.04-13.07.00:249][ 45]LogModuleManager: Shutting down and abandoning module LevelEditor (92)
-[2016.04.04-13.07.00:249][ 45]LogModuleManager: Shutting down and abandoning module DirectoryWatcher (91)
-[2016.04.04-13.07.00:250][ 45]LogModuleManager: Shutting down and abandoning module AssetRegistry (90)
-[2016.04.04-13.07.00:313][ 45]LogModuleManager: Shutting down and abandoning module ContentBrowser (89)
-[2016.04.04-13.07.00:314][ 45]LogModuleManager: Shutting down and abandoning module Paper2DEditor (88)
-[2016.04.04-13.07.00:314][ 45]LogModuleManager: Shutting down and abandoning module Flight (87)
-[2016.04.04-13.07.00:314][ 45]LogModuleManager: Shutting down and abandoning module UdpMessaging (86)
-[2016.04.04-13.07.00:414][ 45]LogModuleManager: Shutting down and abandoning module LightPropagationVolumeRuntime (85)
-[2016.04.04-13.07.00:414][ 45]LogModuleManager: Shutting down and abandoning module Paper2D (84)
-[2016.04.04-13.07.00:414][ 45]LogModuleManager: Shutting down and abandoning module WindowsMoviePlayer (83)
-[2016.04.04-13.07.00:418][ 45]LogModuleManager: Shutting down and abandoning module Media (82)
-[2016.04.04-13.07.00:418][ 45]LogModuleManager: Shutting down and abandoning module WmfMedia (81)
-[2016.04.04-13.07.00:419][ 45]LogModuleManager: Shutting down and abandoning module OnlineBlueprintSupport (80)
-[2016.04.04-13.07.00:419][ 45]LogModuleManager: Shutting down and abandoning module GameplayTasksEditor (79)
-[2016.04.04-13.07.00:419][ 45]LogModuleManager: Shutting down and abandoning module PropertyEditor (78)
-[2016.04.04-13.07.00:419][ 45]LogModuleManager: Shutting down and abandoning module BehaviorTreeEditor (77)
-[2016.04.04-13.07.00:419][ 45]LogModuleManager: Shutting down and abandoning module FunctionalTesting (76)
-[2016.04.04-13.07.00:419][ 45]LogModuleManager: Shutting down and abandoning module CollisionAnalyzer (75)
-[2016.04.04-13.07.00:419][ 45]LogModuleManager: Shutting down and abandoning module WorkspaceMenuStructure (74)
-[2016.04.04-13.07.00:419][ 45]LogModuleManager: Shutting down and abandoning module MessageLog (73)
-[2016.04.04-13.07.00:419][ 45]LogModuleManager: Shutting down and abandoning module Sequencer (72)
-[2016.04.04-13.07.00:419][ 45]LogModuleManager: Shutting down and abandoning module AssetTools (71)
-[2016.04.04-13.07.00:419][ 45]LogModuleManager: Shutting down and abandoning module UMGEditor (70)
-[2016.04.04-13.07.00:419][ 45]LogModuleManager: Shutting down and abandoning module UMG (69)
-[2016.04.04-13.07.00:419][ 45]LogModuleManager: Shutting down and abandoning module Slate (68)
-[2016.04.04-13.07.00:419][ 45]LogModuleManager: Shutting down and abandoning module EditorStyle (67)
-[2016.04.04-13.07.00:420][ 45]LogModuleManager: Shutting down and abandoning module SessionServices (66)
-[2016.04.04-13.07.00:420][ 45]LogModuleManager: Shutting down and abandoning module SourceCodeAccess (65)
-[2016.04.04-13.07.00:420][ 45]LogModuleManager: Shutting down and abandoning module HeadMountedDisplay (64)
-[2016.04.04-13.07.00:420][ 45]LogModuleManager: Shutting down and abandoning module XAudio2 (63)
-[2016.04.04-13.07.00:420][ 45]LogModuleManager: Shutting down and abandoning module Networking (61)
-[2016.04.04-13.07.00:420][ 45]LogModuleManager: Shutting down and abandoning module Core (60)
-[2016.04.04-13.07.00:421][ 45]LogModuleManager: Shutting down and abandoning module KismetCompiler (59)
-[2016.04.04-13.07.00:421][ 45]LogModuleManager: Shutting down and abandoning module PhysXFormats (58)
-[2016.04.04-13.07.00:421][ 45]LogModuleManager: Shutting down and abandoning module MeshUtilities (57)
-[2016.04.04-13.07.00:421][ 45]LogModuleManager: Shutting down and abandoning module DerivedDataCache (56)
-[2016.04.04-13.07.00:746][ 45]LogDerivedDataCache: Shutdown
-[2016.04.04-13.07.00:746][ 45]LogModuleManager: Shutting down and abandoning module ShaderFormatOpenGL (55)
-[2016.04.04-13.07.00:746][ 45]LogModuleManager: Shutting down and abandoning module ShaderFormatD3D (54)
-[2016.04.04-13.07.00:746][ 45]LogModuleManager: Shutting down and abandoning module MetalShaderFormat (53)
-[2016.04.04-13.07.00:746][ 45]LogModuleManager: Shutting down and abandoning module TextureFormatUncompressed (52)
-[2016.04.04-13.07.00:746][ 45]LogModuleManager: Shutting down and abandoning module TextureFormatPVR (51)
-[2016.04.04-13.07.00:746][ 45]LogModuleManager: Shutting down and abandoning module TextureFormatIntelISPCTexComp (50)
-[2016.04.04-13.07.00:746][ 45]LogModuleManager: Shutting down and abandoning module TextureFormatDXT (49)
-[2016.04.04-13.07.00:746][ 45]LogModuleManager: Shutting down and abandoning module ImageWrapper (48)
-[2016.04.04-13.07.00:746][ 45]LogModuleManager: Shutting down and abandoning module TextureFormatASTC (47)
-[2016.04.04-13.07.00:746][ 45]LogModuleManager: Shutting down and abandoning module TextureFormatAndroid (46)
-[2016.04.04-13.07.00:746][ 45]LogModuleManager: Shutting down and abandoning module AudioFormatOpus (45)
-[2016.04.04-13.07.00:746][ 45]LogModuleManager: Shutting down and abandoning module AudioFormatOgg (44)
-[2016.04.04-13.07.00:746][ 45]LogModuleManager: Shutting down and abandoning module AudioFormatADPCM (43)
-[2016.04.04-13.07.00:746][ 45]LogModuleManager: Shutting down and abandoning module LinuxTargetPlatform (42)
-[2016.04.04-13.07.00:746][ 45]LogModuleManager: Shutting down and abandoning module LinuxServerTargetPlatform (41)
-[2016.04.04-13.07.00:746][ 45]LogModuleManager: Shutting down and abandoning module LinuxNoEditorTargetPlatform (40)
-[2016.04.04-13.07.00:746][ 45]LogModuleManager: Shutting down and abandoning module Messaging (39)
-[2016.04.04-13.07.00:746][ 45]LogModuleManager: Shutting down and abandoning module IOSTargetPlatform (38)
-[2016.04.04-13.07.00:746][ 45]LogModuleManager: Shutting down and abandoning module HTML5TargetPlatform (37)
-[2016.04.04-13.07.00:746][ 45]LogModuleManager: Shutting down and abandoning module Android_PVRTCTargetPlatform (36)
-[2016.04.04-13.07.00:746][ 45]LogModuleManager: Shutting down and abandoning module Android_MultiTargetPlatform (35)
-[2016.04.04-13.07.00:746][ 45]LogModuleManager: Shutting down and abandoning module Android_ETC2TargetPlatform (34)
-[2016.04.04-13.07.00:746][ 45]LogModuleManager: Shutting down and abandoning module Android_ETC1TargetPlatform (33)
-[2016.04.04-13.07.00:746][ 45]LogModuleManager: Shutting down and abandoning module Android_DXTTargetPlatform (32)
-[2016.04.04-13.07.00:746][ 45]LogModuleManager: Shutting down and abandoning module Android_ATCTargetPlatform (31)
-[2016.04.04-13.07.00:746][ 45]LogModuleManager: Shutting down and abandoning module Android_ASTCTargetPlatform (30)
-[2016.04.04-13.07.00:746][ 45]LogModuleManager: Shutting down and abandoning module AndroidTargetPlatform (29)
-[2016.04.04-13.07.00:746][ 45]LogModuleManager: Shutting down and abandoning module WindowsTargetPlatform (28)
-[2016.04.04-13.07.00:746][ 45]LogModuleManager: Shutting down and abandoning module WindowsServerTargetPlatform (27)
-[2016.04.04-13.07.00:746][ 45]LogModuleManager: Shutting down and abandoning module WindowsNoEditorTargetPlatform (26)
-[2016.04.04-13.07.00:746][ 45]LogModuleManager: Shutting down and abandoning module WindowsClientTargetPlatform (25)
-[2016.04.04-13.07.00:746][ 45]LogModuleManager: Shutting down and abandoning module AllDesktopTargetPlatform (24)
-[2016.04.04-13.07.00:746][ 45]LogModuleManager: Shutting down and abandoning module TargetPlatform (23)
-[2016.04.04-13.07.00:746][ 45]LogModuleManager: Shutting down and abandoning module InputCore (22)
-[2016.04.04-13.07.00:746][ 45]LogModuleManager: Shutting down and abandoning module Settings (21)
-[2016.04.04-13.07.00:747][ 45]LogModuleManager: Shutting down and abandoning module OnlineSubsystem (19)
-[2016.04.04-13.07.00:747][ 45]LogModuleManager: Shutting down and abandoning module HTTP (18)
-[2016.04.04-13.07.02:747][ 45]LogModuleManager: Shutting down and abandoning module XMPP (17)
-[2016.04.04-13.07.02:747][ 45]LogModuleManager: Shutting down and abandoning module OculusRift (16)
-[2016.04.04-13.07.02:747][ 45]LogHMD: Oculus shutdown.
-[2016.04.04-13.07.02:747][ 45]LogModuleManager: Shutting down and abandoning module ExampleDeviceProfileSelector (15)
-[2016.04.04-13.07.02:747][ 45]LogModuleManager: Shutting down and abandoning module TextureCompressor (14)
-[2016.04.04-13.07.02:747][ 45]LogModuleManager: Shutting down and abandoning module ShaderCore (13)
-[2016.04.04-13.07.02:747][ 45]LogModuleManager: Shutting down and abandoning module Landscape (12)
-[2016.04.04-13.07.02:747][ 45]LogModuleManager: Shutting down and abandoning module SlateRHIRenderer (11)
-[2016.04.04-13.07.02:747][ 45]LogModuleManager: Shutting down and abandoning module OpenGLDrv (10)
-[2016.04.04-13.07.02:747][ 45]LogModuleManager: Shutting down and abandoning module D3D11RHI (9)
-[2016.04.04-13.07.02:747][ 45]LogModuleManager: Shutting down and abandoning module AnimGraphRuntime (8)
-[2016.04.04-13.07.02:747][ 45]LogModuleManager: Shutting down and abandoning module Renderer (7)
-[2016.04.04-13.07.02:747][ 45]LogModuleManager: Shutting down and abandoning module Engine (6)
-[2016.04.04-13.07.02:747][ 45]LogModuleManager: Shutting down and abandoning module CoreUObject (5)
-[2016.04.04-13.07.02:747][ 45]LogModuleManager: Shutting down and abandoning module NetworkFile (4)
-[2016.04.04-13.07.02:747][ 45]LogModuleManager: Shutting down and abandoning module StreamingFile (3)
-[2016.04.04-13.07.02:747][ 45]LogModuleManager: Shutting down and abandoning module SandboxFile (2)
-[2016.04.04-13.07.02:747][ 45]LogModuleManager: Shutting down and abandoning module PakFile (1)
-[2016.04.04-13.07.02:748][ 45]LogExit: Exiting.
-[2016.04.04-13.07.02:749][ 45]Log file closed, 04/04/16 09:07:02
+[2016.04.04-16.54.31:582][  0]LogHMD: SteamVR failed to initialize.  Err: 110
+[2016.04.04-16.54.31:709][  0]LogAIModule: Creating AISystem for world NewWorld
+[2016.04.04-16.54.31:712][  0]LogInit: XAudio2 using 'Speakers / Headphones (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2016.04.04-16.54.31:722][  0]LogInit: FAudioDevice initialized.
+[2016.04.04-16.54.31:794][  0]LogDerivedDataCache: Saved boot cache 0.07s 162MB C:/Users/C401ITxx/AppData/Local/UnrealEngine/4.10/DerivedDataCache/Boot.ddc.
+[2016.04.04-16.54.31:804][  0]LogInit: Texture streaming: Enabled
+[2016.04.04-16.54.31:808][  0]LogAnalytics: Creating configured Analytics provider AnalyticsET
+[2016.04.04-16.54.31:808][  0]LogAnalytics: [UEEditor.Rocket.Release] APIServer = http://et2.epicgames.com/ET2/. AppVersion = 4.10.2-2818068+++depot+UE4-Releases+4.10
+[2016.04.04-16.54.31:808][  0]LogAnalytics: [UEEditor.Rocket.Release] SetUserId d90d73a240a36658074ac08ce7c56e1b|537452aed23647e4b8302495d8ec3407|b399840a-6214-4cdc-89af-39f57a6d8d1f
+[2016.04.04-16.54.31:809][  0]LogAnalytics: [UEEditor.Rocket.Release] AnalyticsET::StartSession
+[2016.04.04-16.54.31:824][  0]LogInit: Transaction tracking system initialized
+[2016.04.04-16.54.31:846][  0]BlueprintLog: New page: Editor Load
+[2016.04.04-16.54.31:934][  0]LocalizationService: Info Localization service is disabled
+[2016.04.04-16.54.31:999][  0]LogConsoleResponse:Display: 
+[2016.04.04-16.54.32:115][  0]LogCook:Display: Done creating registry. It took  0.00s.
+[2016.04.04-16.54.32:158][  0]LogFileCache: Scanning file cache for directory 'C:/Users/C401ITxx/Documents/GitHub/Flat-Flight/Flight/Content/' took 0.01s
+[2016.04.04-16.54.32:158][  0]SourceControl: Info Source control is disabled
+[2016.04.04-16.54.32:158][  0]Cmd: MAP LOAD FILE="../../../../../../Users/C401ITxx/Documents/GitHub/Flat-Flight/Flight/Content/Maps/MapWithPowerUps.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
+[2016.04.04-16.54.32:158][  0]LightingResults: New page: Lighting Build
+[2016.04.04-16.54.32:160][  0]MapCheck: New page: Map Check
+[2016.04.04-16.54.32:160][  0]LightingResults: New page: Lighting Build
+[2016.04.04-16.54.32:169][  0]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x00000000393036A0
+[2016.04.04-16.54.32:448][  0]LogAIModule: Creating AISystem for world MapWithPowerUps
+[2016.04.04-16.54.32:453][  0]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2016.04.04-16.54.32:453][  0]Cmd: MAP CHECKDEP NOCLEARLOG
+[2016.04.04-16.54.32:512][  0]MapCheck: Info Map check complete: 0 Error(s), 0 Warning(s), took 58.89ms to complete.
+[2016.04.04-16.54.32:512][  0]LogFileHelpers: Loading map 'MapWithPowerUps' took 0.354
+[2016.04.04-16.54.32:608][  0]LogCollectionManager: Loaded 0 collections in 0.001822 seconds
+[2016.04.04-16.54.32:643][  0]LogFileCache: Scanning file cache for directory 'C:/Users/C401ITxx/Documents/GitHub/Flat-Flight/Flight/Saved/Collections/' took 0.01s
+[2016.04.04-16.54.32:643][  0]LogFileCache: Scanning file cache for directory 'C:/Users/C401ITxx/Documents/GitHub/Flat-Flight/Flight/Content/Developers/Tech/Collections/' took 0.01s
+[2016.04.04-16.54.32:643][  0]LogFileCache: Scanning file cache for directory 'C:/Users/C401ITxx/Documents/GitHub/Flat-Flight/Flight/Content/Collections/' took 0.01s
+[2016.04.04-16.54.32:643][  0]LogCollectionManager: Rebuilt the GUID cache for 0 collections in 0.000002 seconds
+[2016.04.04-16.54.32:651][  0]LogContentBrowser: Native class hierarchy populated in 0.0076 seconds. Added 1926 classes and 343 folders.
+[2016.04.04-16.54.32:660][  0]LogContentBrowser: Native class hierarchy updated for 'WidgetCarousel' in 0.0021 seconds. Added 0 classes and 0 folders.
+[2016.04.04-16.54.32:697][  0]LogContentBrowser: Native class hierarchy updated for 'AddContentDialog' in 0.0025 seconds. Added 0 classes and 0 folders.
+[2016.04.04-16.54.32:704][  0]LogContentBrowser: Native class hierarchy updated for 'SceneOutliner' in 0.0024 seconds. Added 1 classes and 2 folders.
+[2016.04.04-16.54.32:717][  0]LogCrashTracker: Crashtracker disabled due to settings.
+[2016.04.04-16.54.32:720][  0]LogUObjectGlobals:Warning: Failed to find object 'Class None.'
+[2016.04.04-16.54.32:741][  0]LogLoad: Full Startup: 5.28 seconds (BP compile: 0.07 seconds)
+[2016.04.04-16.54.32:750][  0]LogOcInput: OculusInput is initialized. Init status 0. Runtime version: 0.8.0.0
+[2016.04.04-16.54.32:817][  0]LogContentStreaming: Texture pool size now 1000 MB
+[2016.04.04-16.54.32:964][  0]LogRenderer: Reallocating scene render targets to support 1208x572 (Frame:2).
+[2016.04.04-16.54.33:132][  4]LogAssetRegistry: Asset discovery search completed in 1.9719 seconds
+[2016.04.04-16.54.33:132][  4]LogCollectionManager: Rebuilt the object cache for 0 collections in 0.000001 seconds (found 0 objects)
+[2016.04.04-16.54.33:132][  4]LogCollectionManager: Fixed up redirectors for 0 collections in 0.000024 seconds (updated 0 objects)
+[2016.04.04-16.54.38:012][136]LogFileCache: Retrieving MD5 hashes for directory 'C:/Users/C401ITxx/Documents/GitHub/Flat-Flight/Flight/Content/' took 5.25s
+[2016.04.04-16.54.42:710][273]LogVSAccessor:Warning: Couldn't goto line number '0' in 'C:/Users/C401ITxx/Documents/GitHub/Flat-Flight/Flight/Source/Flight/enemyController.h'
+[2016.04.04-16.54.42:751][273]LogVSAccessor:Warning: Couldn't goto line number '0' in 'C:/Users/C401ITxx/Documents/GitHub/Flat-Flight/Flight/Source/Flight/enemyController.cpp'
+[2016.04.04-16.56.14:439][549]LogHotReload: New module detected: UE4Editor-Flight-8694.dll
+[2016.04.04-16.56.14:784][551]LogHotReload: Starting Hot-Reload from IDE
+[2016.04.04-16.56.14:822][551]LogActorComponent: UnregisterComponent: (/Engine/Transient.MovementComponent) Not registered. Aborting.
+[2016.04.04-16.56.14:896][551]LogClass: ScoreToDisplay HotReload.
+[2016.04.04-16.56.14:908][551]LogContentBrowser: Native class hierarchy updated for 'Flight' in 0.0024 seconds. Added 33 classes and 5 folders.
+[2016.04.04-16.56.14:909][551]Warning: HotReload successful (13 functions remapped  1 scriptstructs remapped)
+[2016.04.04-16.56.15:043][551]LogContentBrowser: Native class hierarchy populated in 0.0110 seconds. Added 1927 classes and 345 folders.
+[2016.04.04-16.56.17:515][589]Recompiling Flight...
+[2016.04.04-16.56.17:515][589]Launching UnrealBuildTool... [C:/Program Files/Epic Games/4.10/Engine/Binaries/DotNET/UnrealBuildTool.exe Flight -ModuleWithSuffix Flight 8467 Win64 Development -editorrecompile -canskiplink "C:/Users/C401ITxx/Documents/GitHub/Flat-Flight/Flight/Flight.uproject" -rocket  -rocket -2015]
+[2016.04.04-16.56.17:516][589]Warning: Starting HotReload took  0.0s.
+[2016.04.04-16.56.21:772][760]CompilerResultsLog: New page: Compilation - Apr 4, 2016, 8:56:21 AM
+[2016.04.04-16.56.21:773][760]CompilerResultsLog: Info Creating makefile for hot reloading Flight (modules to compile have changed)
+[2016.04.04-16.56.21:773][760]CompilerResultsLog: Info Compiling game modules for hot reload
+[2016.04.04-16.56.21:773][760]CompilerResultsLog: Info Target is up to date.
+[2016.04.04-16.56.21:773][760]LogMainFrame: MainFrame: Module compiling took 4.259 seconds
+[2016.04.04-16.56.26:243][882]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-16.56.26:243][882]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2016.04.04-16.56.26:243][882]PIE: New page: PIE session: MapWithPowerUps (Apr 4, 2016, 8:56:26 AM)
+[2016.04.04-16.56.26:243][882]LogPlayLevel: Creating play world package: /Game/Maps/UEDPIE_0_MapWithPowerUps
+[2016.04.04-16.56.26:249][882]LogPlayLevel: PIE: StaticDuplicateObject took: (0.006319s)
+[2016.04.04-16.56.26:250][882]LogAIModule: Creating AISystem for world MapWithPowerUps
+[2016.04.04-16.56.26:250][882]LogPlayLevel: PIE: World Init took: (0.000771s)
+[2016.04.04-16.56.26:251][882]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Maps/MapWithPowerUps.MapWithPowerUps to /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps (0.007427s)
+[2016.04.04-16.56.26:268][882]LogInit: XAudio2 using 'Speakers / Headphones (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2016.04.04-16.56.26:277][882]LogInit: FAudioDevice initialized.
+[2016.04.04-16.56.26:324][882]LogWorld: Game class is 'FlightGameMode'
+[2016.04.04-16.56.26:326][882]LogWorld: Bringing World /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps up for play (max tick rate 0) at 2016.04.04-12.56.26
+[2016.04.04-16.56.26:326][882]LogActor:Warning: GameSession /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps:PersistentLevel.GameSession_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.04-16.56.26:326][882]LogActor:Warning: GameNetworkManager /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps:PersistentLevel.GameNetworkManager_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.04-16.56.26:327][882]LogWorld: Bringing up level for play took: 0.002120
+[2016.04.04-16.56.26:328][882]PIE: Info Play in editor start time for /Game/Maps/UEDPIE_0_MapWithPowerUps 0.575
+[2016.04.04-16.56.26:328][882]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-16.56.27:554][923]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-16.56.27:610][923]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-16.56.27:626][923]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x00000000199016C0
+[2016.04.04-16.56.34:373][112]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-16.56.34:373][112]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2016.04.04-16.56.34:373][112]PIE: New page: PIE session: MapWithPowerUps (Apr 4, 2016, 8:56:34 AM)
+[2016.04.04-16.56.34:374][112]LogPlayLevel: Creating play world package: /Game/Maps/UEDPIE_0_MapWithPowerUps
+[2016.04.04-16.56.34:380][112]LogPlayLevel: PIE: StaticDuplicateObject took: (0.006087s)
+[2016.04.04-16.56.34:380][112]LogAIModule: Creating AISystem for world MapWithPowerUps
+[2016.04.04-16.56.34:380][112]LogPlayLevel: PIE: World Init took: (0.000643s)
+[2016.04.04-16.56.34:381][112]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Maps/MapWithPowerUps.MapWithPowerUps to /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps (0.006955s)
+[2016.04.04-16.56.34:396][112]LogInit: XAudio2 using 'Speakers / Headphones (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2016.04.04-16.56.34:404][112]LogInit: FAudioDevice initialized.
+[2016.04.04-16.56.34:432][112]LogWorld: Game class is 'FlightGameMode'
+[2016.04.04-16.56.34:436][112]LogWorld: Bringing World /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps up for play (max tick rate 0) at 2016.04.04-12.56.34
+[2016.04.04-16.56.34:436][112]LogActor:Warning: GameSession /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps:PersistentLevel.GameSession_1 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.04-16.56.34:436][112]LogActor:Warning: GameNetworkManager /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps:PersistentLevel.GameNetworkManager_1 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.04-16.56.34:436][112]LogWorld: Bringing up level for play took: 0.003040
+[2016.04.04-16.56.34:438][112]PIE: Info Play in editor start time for /Game/Maps/UEDPIE_0_MapWithPowerUps 0.684
+[2016.04.04-16.56.34:438][112]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-16.56.46:049][507]LogSelection:Warning: PIE object was selected: "enemyController_Blueprint_C /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps:PersistentLevel.enemyController_Blueprint_C_1"
+[2016.04.04-16.56.49:814][637]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-16.56.49:863][637]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-16.56.49:898][638]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000001B958220
+[2016.04.04-16.56.50:925][671]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-16.56.50:925][671]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2016.04.04-16.56.50:925][671]PIE: New page: PIE session: MapWithPowerUps (Apr 4, 2016, 8:56:50 AM)
+[2016.04.04-16.56.50:925][671]LogPlayLevel: Creating play world package: /Game/Maps/UEDPIE_0_MapWithPowerUps
+[2016.04.04-16.56.50:931][671]LogPlayLevel: PIE: StaticDuplicateObject took: (0.005673s)
+[2016.04.04-16.56.50:931][671]LogAIModule: Creating AISystem for world MapWithPowerUps
+[2016.04.04-16.56.50:931][671]LogPlayLevel: PIE: World Init took: (0.000587s)
+[2016.04.04-16.56.50:932][671]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Maps/MapWithPowerUps.MapWithPowerUps to /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps (0.006493s)
+[2016.04.04-16.56.50:947][671]LogInit: XAudio2 using 'Speakers / Headphones (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2016.04.04-16.56.50:956][671]LogInit: FAudioDevice initialized.
+[2016.04.04-16.56.50:987][671]LogWorld: Game class is 'FlightGameMode'
+[2016.04.04-16.56.50:990][671]LogWorld: Bringing World /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps up for play (max tick rate 0) at 2016.04.04-12.56.50
+[2016.04.04-16.56.50:990][671]LogActor:Warning: GameSession /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps:PersistentLevel.GameSession_2 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.04-16.56.50:990][671]LogActor:Warning: GameNetworkManager /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps:PersistentLevel.GameNetworkManager_2 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.04-16.56.50:990][671]LogWorld: Bringing up level for play took: 0.002216
+[2016.04.04-16.56.50:991][671]PIE: Info Play in editor start time for /Game/Maps/UEDPIE_0_MapWithPowerUps -0.764
+[2016.04.04-16.56.50:992][671]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-16.56.54:238][782]LogSelection:Warning: PIE object was selected: "enemyController_Blueprint_C /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps:PersistentLevel.enemyController_Blueprint_C_1"
+[2016.04.04-16.56.59:834][971]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-16.56.59:882][971]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-16.56.59:912][972]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x00000000233AACA0
+[2016.04.04-16.58.33:493][282]LogHotReload: New module detected: UE4Editor-Flight-4352.dll
+[2016.04.04-16.58.34:170][285]LogHotReload: Starting Hot-Reload from IDE
+[2016.04.04-16.58.34:282][285]LogClass: ScoreToDisplay HotReload.
+[2016.04.04-16.58.34:296][285]LogContentBrowser: Native class hierarchy updated for 'Flight' in 0.0025 seconds. Added 33 classes and 5 folders.
+[2016.04.04-16.58.34:298][285]Warning: HotReload successful (13 functions remapped  1 scriptstructs remapped)
+[2016.04.04-16.58.34:446][285]LogContentBrowser: Native class hierarchy populated in 0.0086 seconds. Added 1927 classes and 345 folders.
+[2016.04.04-16.58.39:258][341]Recompiling Flight...
+[2016.04.04-16.58.39:258][341]Launching UnrealBuildTool... [C:/Program Files/Epic Games/4.10/Engine/Binaries/DotNET/UnrealBuildTool.exe Flight -ModuleWithSuffix Flight 6345 Win64 Development -editorrecompile -canskiplink "C:/Users/C401ITxx/Documents/GitHub/Flat-Flight/Flight/Flight.uproject" -rocket  -rocket -2015]
+[2016.04.04-16.58.39:259][341]Warning: Starting HotReload took  0.0s.
+[2016.04.04-16.58.43:657][513]CompilerResultsLog: New page: Compilation - Apr 4, 2016, 8:58:43 AM
+[2016.04.04-16.58.43:657][513]CompilerResultsLog: Info Creating makefile for hot reloading Flight (modules to compile have changed)
+[2016.04.04-16.58.43:657][513]CompilerResultsLog: Info Compiling game modules for hot reload
+[2016.04.04-16.58.43:657][513]CompilerResultsLog: Info Target is up to date.
+[2016.04.04-16.58.43:657][513]LogMainFrame: MainFrame: Module compiling took 4.403 seconds
+[2016.04.04-16.58.45:899][577]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-16.58.45:899][577]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2016.04.04-16.58.45:899][577]PIE: New page: PIE session: MapWithPowerUps (Apr 4, 2016, 8:58:45 AM)
+[2016.04.04-16.58.45:899][577]LogPlayLevel: Creating play world package: /Game/Maps/UEDPIE_0_MapWithPowerUps
+[2016.04.04-16.58.45:905][577]LogPlayLevel: PIE: StaticDuplicateObject took: (0.006212s)
+[2016.04.04-16.58.45:906][577]LogAIModule: Creating AISystem for world MapWithPowerUps
+[2016.04.04-16.58.45:906][577]LogPlayLevel: PIE: World Init took: (0.000649s)
+[2016.04.04-16.58.45:906][577]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Maps/MapWithPowerUps.MapWithPowerUps to /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps (0.007108s)
+[2016.04.04-16.58.45:924][577]LogInit: XAudio2 using 'Speakers / Headphones (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2016.04.04-16.58.45:933][577]LogInit: FAudioDevice initialized.
+[2016.04.04-16.58.45:969][577]LogWorld: Game class is 'FlightGameMode'
+[2016.04.04-16.58.45:971][577]LogWorld: Bringing World /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps up for play (max tick rate 0) at 2016.04.04-12.58.45
+[2016.04.04-16.58.45:971][577]LogActor:Warning: GameSession /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps:PersistentLevel.GameSession_3 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.04-16.58.45:971][577]LogActor:Warning: GameNetworkManager /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps:PersistentLevel.GameNetworkManager_3 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.04-16.58.45:971][577]LogWorld: Bringing up level for play took: 0.002007
+[2016.04.04-16.58.45:973][577]PIE: Info Play in editor start time for /Game/Maps/UEDPIE_0_MapWithPowerUps 0.206
+[2016.04.04-16.58.45:973][577]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-16.59.04:702][204]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-16.59.04:754][204]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-16.59.04:766][204]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000000018620400
+[2016.04.04-16.59.34:893][337]LogHotReload: New module detected: UE4Editor-Flight-8840.dll
+[2016.04.04-16.59.35:568][340]LogHotReload: Starting Hot-Reload from IDE
+[2016.04.04-16.59.35:664][340]LogClass: ScoreToDisplay HotReload.
+[2016.04.04-16.59.35:679][340]LogContentBrowser: Native class hierarchy updated for 'Flight' in 0.0023 seconds. Added 33 classes and 5 folders.
+[2016.04.04-16.59.35:681][340]Warning: HotReload successful (13 functions remapped  1 scriptstructs remapped)
+[2016.04.04-16.59.35:839][340]LogContentBrowser: Native class hierarchy populated in 0.0127 seconds. Added 1927 classes and 345 folders.
+[2016.04.04-16.59.38:627][393]Recompiling Flight...
+[2016.04.04-16.59.38:627][393]Launching UnrealBuildTool... [C:/Program Files/Epic Games/4.10/Engine/Binaries/DotNET/UnrealBuildTool.exe Flight -ModuleWithSuffix Flight 865 Win64 Development -editorrecompile -canskiplink "C:/Users/C401ITxx/Documents/GitHub/Flat-Flight/Flight/Flight.uproject" -rocket  -rocket -2015]
+[2016.04.04-16.59.38:628][393]Warning: Starting HotReload took  0.0s.
+[2016.04.04-16.59.42:991][562]CompilerResultsLog: New page: Compilation - Apr 4, 2016, 8:59:42 AM
+[2016.04.04-16.59.42:991][562]CompilerResultsLog: Info Creating makefile for hot reloading Flight (modules to compile have changed)
+[2016.04.04-16.59.42:991][562]CompilerResultsLog: Info Compiling game modules for hot reload
+[2016.04.04-16.59.42:991][562]CompilerResultsLog: Info Target is up to date.
+[2016.04.04-16.59.42:991][562]LogMainFrame: MainFrame: Module compiling took 4.369 seconds
+[2016.04.04-16.59.47:404][677]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-16.59.47:404][677]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2016.04.04-16.59.47:404][677]PIE: New page: PIE session: MapWithPowerUps (Apr 4, 2016, 8:59:47 AM)
+[2016.04.04-16.59.47:404][677]LogPlayLevel: Creating play world package: /Game/Maps/UEDPIE_0_MapWithPowerUps
+[2016.04.04-16.59.47:408][677]LogPlayLevel: PIE: StaticDuplicateObject took: (0.004228s)
+[2016.04.04-16.59.47:409][677]LogAIModule: Creating AISystem for world MapWithPowerUps
+[2016.04.04-16.59.47:409][677]LogPlayLevel: PIE: World Init took: (0.000529s)
+[2016.04.04-16.59.47:409][677]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Maps/MapWithPowerUps.MapWithPowerUps to /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps (0.004934s)
+[2016.04.04-16.59.47:425][677]LogInit: XAudio2 using 'Speakers / Headphones (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2016.04.04-16.59.47:433][677]LogInit: FAudioDevice initialized.
+[2016.04.04-16.59.47:460][677]LogWorld: Game class is 'FlightGameMode'
+[2016.04.04-16.59.47:462][677]LogWorld: Bringing World /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps up for play (max tick rate 0) at 2016.04.04-12.59.47
+[2016.04.04-16.59.47:462][677]LogActor:Warning: GameSession /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps:PersistentLevel.GameSession_4 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.04-16.59.47:462][677]LogActor:Warning: GameNetworkManager /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps:PersistentLevel.GameNetworkManager_4 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.04-16.59.47:462][677]LogWorld: Bringing up level for play took: 0.002009
+[2016.04.04-16.59.47:464][677]PIE: Info Play in editor start time for /Game/Maps/UEDPIE_0_MapWithPowerUps -0.309
+[2016.04.04-16.59.47:464][677]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-16.59.57:566][ 15]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-16.59.57:615][ 15]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-16.59.57:627][ 15]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000001C33C180
+[2016.04.04-17.00.51:160][212]LogHotReload: New module detected: UE4Editor-Flight-2810.dll
+[2016.04.04-17.00.51:503][214]LogHotReload: Starting Hot-Reload from IDE
+[2016.04.04-17.00.51:597][214]LogClass: ScoreToDisplay HotReload.
+[2016.04.04-17.00.51:609][214]LogContentBrowser: Native class hierarchy updated for 'Flight' in 0.0023 seconds. Added 33 classes and 5 folders.
+[2016.04.04-17.00.51:611][214]Warning: HotReload successful (13 functions remapped  1 scriptstructs remapped)
+[2016.04.04-17.00.51:771][214]LogContentBrowser: Native class hierarchy populated in 0.0143 seconds. Added 1927 classes and 345 folders.
+[2016.04.04-17.00.53:893][240]Recompiling Flight...
+[2016.04.04-17.00.53:894][240]Launching UnrealBuildTool... [C:/Program Files/Epic Games/4.10/Engine/Binaries/DotNET/UnrealBuildTool.exe Flight -ModuleWithSuffix Flight 1090 Win64 Development -editorrecompile -canskiplink "C:/Users/C401ITxx/Documents/GitHub/Flat-Flight/Flight/Flight.uproject" -rocket  -rocket -2015]
+[2016.04.04-17.00.53:894][240]Warning: Starting HotReload took  0.0s.
+[2016.04.04-17.00.58:173][407]CompilerResultsLog: New page: Compilation - Apr 4, 2016, 9:00:58 AM
+[2016.04.04-17.00.58:173][407]CompilerResultsLog: Info Creating makefile for hot reloading Flight (modules to compile have changed)
+[2016.04.04-17.00.58:173][407]CompilerResultsLog: Info Compiling game modules for hot reload
+[2016.04.04-17.00.58:173][407]CompilerResultsLog: Info Target is up to date.
+[2016.04.04-17.00.58:173][407]LogMainFrame: MainFrame: Module compiling took 4.287 seconds
+[2016.04.04-17.00.59:371][440]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-17.00.59:371][440]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2016.04.04-17.00.59:371][440]PIE: New page: PIE session: MapWithPowerUps (Apr 4, 2016, 9:00:59 AM)
+[2016.04.04-17.00.59:372][440]LogPlayLevel: Creating play world package: /Game/Maps/UEDPIE_0_MapWithPowerUps
+[2016.04.04-17.00.59:376][440]LogPlayLevel: PIE: StaticDuplicateObject took: (0.004880s)
+[2016.04.04-17.00.59:377][440]LogAIModule: Creating AISystem for world MapWithPowerUps
+[2016.04.04-17.00.59:377][440]LogPlayLevel: PIE: World Init took: (0.000577s)
+[2016.04.04-17.00.59:377][440]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Maps/MapWithPowerUps.MapWithPowerUps to /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps (0.005658s)
+[2016.04.04-17.00.59:391][440]LogInit: XAudio2 using 'Speakers / Headphones (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2016.04.04-17.00.59:400][440]LogInit: FAudioDevice initialized.
+[2016.04.04-17.00.59:434][440]LogWorld: Game class is 'FlightGameMode'
+[2016.04.04-17.00.59:437][440]LogWorld: Bringing World /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps up for play (max tick rate 0) at 2016.04.04-13.00.59
+[2016.04.04-17.00.59:438][440]LogActor:Warning: GameSession /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps:PersistentLevel.GameSession_5 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.04-17.00.59:438][440]LogActor:Warning: GameNetworkManager /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps:PersistentLevel.GameNetworkManager_5 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.04-17.00.59:438][440]LogWorld: Bringing up level for play took: 0.003267
+[2016.04.04-17.00.59:439][440]PIE: Info Play in editor start time for /Game/Maps/UEDPIE_0_MapWithPowerUps -0.34
+[2016.04.04-17.00.59:439][440]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-17.01.07:379][705]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-17.01.07:428][705]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-17.01.07:440][705]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000001AF6C2C0
+[2016.04.04-17.03.25:974][149]LogHotReload: New module detected: UE4Editor-Flight-4432.dll
+[2016.04.04-17.03.26:652][152]LogHotReload: Starting Hot-Reload from IDE
+[2016.04.04-17.03.26:756][152]LogClass: ScoreToDisplay HotReload.
+[2016.04.04-17.03.26:775][152]LogContentBrowser: Native class hierarchy updated for 'Flight' in 0.0037 seconds. Added 33 classes and 5 folders.
+[2016.04.04-17.03.26:778][152]Warning: HotReload successful (13 functions remapped  1 scriptstructs remapped)
+[2016.04.04-17.03.26:945][152]LogContentBrowser: Native class hierarchy populated in 0.0110 seconds. Added 1927 classes and 345 folders.
+[2016.04.04-17.03.29:247][188]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-17.03.29:248][188]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2016.04.04-17.03.29:248][188]PIE: New page: PIE session: MapWithPowerUps (Apr 4, 2016, 9:03:29 AM)
+[2016.04.04-17.03.29:248][188]LogPlayLevel: Creating play world package: /Game/Maps/UEDPIE_0_MapWithPowerUps
+[2016.04.04-17.03.29:252][188]LogPlayLevel: PIE: StaticDuplicateObject took: (0.004299s)
+[2016.04.04-17.03.29:253][188]LogAIModule: Creating AISystem for world MapWithPowerUps
+[2016.04.04-17.03.29:253][188]LogPlayLevel: PIE: World Init took: (0.001126s)
+[2016.04.04-17.03.29:253][188]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Maps/MapWithPowerUps.MapWithPowerUps to /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps (0.005614s)
+[2016.04.04-17.03.29:266][188]LogInit: XAudio2 using 'Speakers / Headphones (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2016.04.04-17.03.29:275][188]LogInit: FAudioDevice initialized.
+[2016.04.04-17.03.29:303][188]LogWorld: Game class is 'FlightGameMode'
+[2016.04.04-17.03.29:305][188]LogWorld: Bringing World /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps up for play (max tick rate 0) at 2016.04.04-13.03.29
+[2016.04.04-17.03.29:305][188]LogActor:Warning: GameSession /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps:PersistentLevel.GameSession_6 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.04-17.03.29:305][188]LogActor:Warning: GameNetworkManager /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps:PersistentLevel.GameNetworkManager_6 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.04-17.03.29:306][188]LogWorld: Bringing up level for play took: 0.001970
+[2016.04.04-17.03.29:307][188]PIE: Info Play in editor start time for /Game/Maps/UEDPIE_0_MapWithPowerUps -0.487
+[2016.04.04-17.03.29:307][188]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-17.03.39:921][544]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-17.03.39:970][544]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-17.03.39:982][544]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000003E23B740
+[2016.04.04-17.04.20:013][992]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-17.04.20:013][992]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2016.04.04-17.04.20:013][992]PIE: New page: PIE session: MapWithPowerUps (Apr 4, 2016, 9:04:20 AM)
+[2016.04.04-17.04.20:013][992]LogPlayLevel: Creating play world package: /Game/Maps/UEDPIE_0_MapWithPowerUps
+[2016.04.04-17.04.20:017][992]LogPlayLevel: PIE: StaticDuplicateObject took: (0.004101s)
+[2016.04.04-17.04.20:018][992]LogAIModule: Creating AISystem for world MapWithPowerUps
+[2016.04.04-17.04.20:018][992]LogPlayLevel: PIE: World Init took: (0.000515s)
+[2016.04.04-17.04.20:018][992]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Maps/MapWithPowerUps.MapWithPowerUps to /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps (0.004797s)
+[2016.04.04-17.04.20:035][992]LogInit: XAudio2 using 'Speakers / Headphones (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2016.04.04-17.04.20:044][992]LogInit: FAudioDevice initialized.
+[2016.04.04-17.04.20:075][992]LogWorld: Game class is 'FlightGameMode'
+[2016.04.04-17.04.20:077][992]LogWorld: Bringing World /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps up for play (max tick rate 0) at 2016.04.04-13.04.20
+[2016.04.04-17.04.20:077][992]LogActor:Warning: GameSession /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps:PersistentLevel.GameSession_7 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.04-17.04.20:077][992]LogActor:Warning: GameNetworkManager /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps:PersistentLevel.GameNetworkManager_7 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.04-17.04.20:078][992]LogWorld: Bringing up level for play took: 0.002022
+[2016.04.04-17.04.20:079][992]PIE: Info Play in editor start time for /Game/Maps/UEDPIE_0_MapWithPowerUps 0.279
+[2016.04.04-17.04.20:079][992]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-17.04.32:310][401]Set new viewmode: Wireframe
+[2016.04.04-17.04.33:882][517]Set new viewmode: Wireframe
+[2016.04.04-17.04.35:228][619]Set new viewmode: Wireframe
+[2016.04.04-17.04.39:511][932]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-17.04.39:565][932]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-17.04.39:596][933]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000001B369760
+[2016.04.04-17.04.41:765][990]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-17.04.41:765][990]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2016.04.04-17.04.41:765][990]PIE: New page: PIE session: MapWithPowerUps (Apr 4, 2016, 9:04:41 AM)
+[2016.04.04-17.04.41:766][990]LogPlayLevel: Creating play world package: /Game/Maps/UEDPIE_0_MapWithPowerUps
+[2016.04.04-17.04.41:770][990]LogPlayLevel: PIE: StaticDuplicateObject took: (0.004261s)
+[2016.04.04-17.04.41:770][990]LogAIModule: Creating AISystem for world MapWithPowerUps
+[2016.04.04-17.04.41:770][990]LogPlayLevel: PIE: World Init took: (0.000474s)
+[2016.04.04-17.04.41:770][990]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Maps/MapWithPowerUps.MapWithPowerUps to /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps (0.004913s)
+[2016.04.04-17.04.41:796][990]LogInit: XAudio2 using 'Speakers / Headphones (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2016.04.04-17.04.41:804][990]LogInit: FAudioDevice initialized.
+[2016.04.04-17.04.41:835][990]LogWorld: Game class is 'FlightGameMode'
+[2016.04.04-17.04.41:837][990]LogWorld: Bringing World /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps up for play (max tick rate 0) at 2016.04.04-13.04.41
+[2016.04.04-17.04.41:837][990]LogActor:Warning: GameSession /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps:PersistentLevel.GameSession_8 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.04-17.04.41:837][990]LogActor:Warning: GameNetworkManager /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps:PersistentLevel.GameNetworkManager_8 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.04-17.04.41:838][990]LogWorld: Bringing up level for play took: 0.001952
+[2016.04.04-17.04.41:839][990]PIE: Info Play in editor start time for /Game/Maps/UEDPIE_0_MapWithPowerUps 0.037
+[2016.04.04-17.04.41:839][990]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-17.05.02:341][684]LogSelection:Warning: PIE object was selected: "PlayerStart /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps:PersistentLevel.PlayerStart"
+[2016.04.04-17.05.04:141][741]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-17.05.04:191][741]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-17.05.04:219][742]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000000020445300
+[2016.04.04-17.05.06:843][927]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-17.05.06:843][927]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2016.04.04-17.05.06:843][927]PIE: New page: SIE session: MapWithPowerUps (Apr 4, 2016, 9:05:06 AM)
+[2016.04.04-17.05.06:843][927]LogPlayLevel: Creating play world package: /Game/Maps/UEDPIE_0_MapWithPowerUps
+[2016.04.04-17.05.06:847][927]LogPlayLevel: PIE: StaticDuplicateObject took: (0.003866s)
+[2016.04.04-17.05.06:848][927]LogAIModule: Creating AISystem for world MapWithPowerUps
+[2016.04.04-17.05.06:848][927]LogPlayLevel: PIE: World Init took: (0.000667s)
+[2016.04.04-17.05.06:848][927]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Maps/MapWithPowerUps.MapWithPowerUps to /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps (0.004711s)
+[2016.04.04-17.05.06:862][927]LogSelection:Warning: PIE object was selected: "enemyController_Blueprint_C /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps:PersistentLevel.enemyController_Blueprint_C_1"
+[2016.04.04-17.05.06:863][927]LogInit: XAudio2 using 'Speakers / Headphones (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2016.04.04-17.05.06:871][927]LogInit: FAudioDevice initialized.
+[2016.04.04-17.05.06:905][927]LogWorld: Game class is 'FlightGameMode'
+[2016.04.04-17.05.06:907][927]LogWorld: Bringing World /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps up for play (max tick rate 0) at 2016.04.04-13.05.06
+[2016.04.04-17.05.06:907][927]LogActor:Warning: GameSession /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps:PersistentLevel.GameSession_9 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.04-17.05.06:907][927]LogActor:Warning: GameNetworkManager /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps:PersistentLevel.GameNetworkManager_9 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.04-17.05.06:907][927]LogWorld: Bringing up level for play took: 0.002166
+[2016.04.04-17.05.06:908][927]PIE: Info Play in editor start time for /Game/Maps/UEDPIE_0_MapWithPowerUps -0.895
+[2016.04.04-17.05.06:926][927]LogSelection:Warning: PIE object was selected: "enemyController_Blueprint_C /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps:PersistentLevel.enemyController_Blueprint_C_1"
+[2016.04.04-17.05.06:926][927]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-17.05.20:414][244]Cmd: SELECT NONE
+[2016.04.04-17.05.21:330][268]Cmd: SELECT NONE
+[2016.04.04-17.05.22:521][299]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-17.05.22:569][299]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-17.05.22:601][300]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x0000000025432700
+[2016.04.04-17.05.28:317][550]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-17.05.28:317][550]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2016.04.04-17.05.28:318][550]PIE: New page: PIE session: MapWithPowerUps (Apr 4, 2016, 9:05:28 AM)
+[2016.04.04-17.05.28:318][550]LogPlayLevel: Creating play world package: /Game/Maps/UEDPIE_0_MapWithPowerUps
+[2016.04.04-17.05.28:322][550]LogPlayLevel: PIE: StaticDuplicateObject took: (0.004342s)
+[2016.04.04-17.05.28:322][550]LogAIModule: Creating AISystem for world MapWithPowerUps
+[2016.04.04-17.05.28:322][550]LogPlayLevel: PIE: World Init took: (0.000468s)
+[2016.04.04-17.05.28:323][550]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Maps/MapWithPowerUps.MapWithPowerUps to /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps (0.004990s)
+[2016.04.04-17.05.28:341][550]LogInit: XAudio2 using 'Speakers / Headphones (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2016.04.04-17.05.28:349][550]LogInit: FAudioDevice initialized.
+[2016.04.04-17.05.28:379][550]LogWorld: Game class is 'FlightGameMode'
+[2016.04.04-17.05.28:381][550]LogWorld: Bringing World /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps up for play (max tick rate 0) at 2016.04.04-13.05.28
+[2016.04.04-17.05.28:381][550]LogActor:Warning: GameSession /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps:PersistentLevel.GameSession_10 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.04-17.05.28:381][550]LogActor:Warning: GameNetworkManager /Game/Maps/UEDPIE_0_MapWithPowerUps.MapWithPowerUps:PersistentLevel.GameNetworkManager_10 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2016.04.04-17.05.28:381][550]LogWorld: Bringing up level for play took: 0.002068
+[2016.04.04-17.05.28:383][550]PIE: Info Play in editor start time for /Game/Maps/UEDPIE_0_MapWithPowerUps 0.577
+[2016.04.04-17.05.28:383][550]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-17.05.30:469][619]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-17.05.30:518][619]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps' with GeneratedClass '/Game/Maps/MapWithPowerUps.MapWithPowerUps_C' with ClassGeneratedBy '/Game/Maps/MapWithPowerUps.MapWithPowerUps:PersistentLevel.MapWithPowerUps'
+[2016.04.04-17.05.30:546][620]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000003466DB20
+[2016.04.04-17.05.36:597][787]LogAIModule: Creating AISystem for world JoeGymnasium
+[2016.04.04-17.05.37:784][787]Cmd: MAP LOAD FILE="../../../../../../Users/C401ITxx/Documents/GitHub/Flat-Flight/Flight/Content/Maps/JoeGymnasium.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
+[2016.04.04-17.05.37:784][787]LightingResults: New page: Lighting Build
+[2016.04.04-17.05.37:796][787]LoadErrors: New page: Loading map: JoeGymnasium.umap
+[2016.04.04-17.05.37:797][787]MapCheck: New page: Map Check
+[2016.04.04-17.05.37:797][787]LightingResults: New page: Lighting Build
+[2016.04.04-17.05.37:809][787]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000001B636E80
+[2016.04.04-17.05.37:813][787]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2016.04.04-17.05.37:838][787]Cmd: MAP CHECKDEP NOCLEARLOG
+[2016.04.04-17.05.37:893][787]MapCheck: Info Map check complete: 0 Error(s), 0 Warning(s), took 54.313ms to complete.
+[2016.04.04-17.05.37:893][787]LogFileHelpers: Loading map 'JoeGymnasium' took 0.110
+[2016.04.04-17.05.42:563][999]LogActorComponent: UnregisterComponent: (/Engine/Transient.MovementComponent) Not registered. Aborting.
+[2016.04.04-17.05.42:603][999]LogSavePackage: Save=12.871805ms
+[2016.04.04-17.05.42:603][999]LogSavePackage: Moving '../../../../../../Users/C401ITxx/Documents/GitHub/Flat-Flight/Flight/Saved/JoeGymnasium579A11974B2349FDAF8E8EA316BF5EE5.tmp' to '../../../../../../Users/C401ITxx/Documents/GitHub/Flat-Flight/Flight/Content/Maps/JoeGymnasium.umap'
+[2016.04.04-17.05.42:604][999]LogSavePackage: Total save time: 30.805156ms
+[2016.04.04-17.05.42:604][999]LogSavePackage:Display: Finished SavePackage ../../../../../../Users/C401ITxx/Documents/GitHub/Flat-Flight/Flight/Content/Maps/JoeGymnasium.umap
+[2016.04.04-17.05.46:292][ 99]Cmd: QUIT_EDITOR
+[2016.04.04-17.05.46:411][ 99]LogExit: Preparing to exit.
+[2016.04.04-17.05.47:468][ 99]LogExit: Editor shut down
+[2016.04.04-17.05.47:469][ 99]LogExit: Transaction tracking system shut down
+[2016.04.04-17.05.47:470][ 99]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000001B636DE0
+[2016.04.04-17.05.47:470][ 99]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000001A737880
+[2016.04.04-17.05.47:470][ 99]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000001253C720
+[2016.04.04-17.05.47:597][ 99]LogExit: Object subsystem successfully closed.
+[2016.04.04-17.05.47:608][ 99]LogD3D11RHI: Shutdown
+[2016.04.04-17.05.47:608][ 99]LogD3D11RHI: CleanupD3DDevice
+[2016.04.04-17.05.47:645][ 99]LogD3D11RHI: ~FD3D11DynamicRHI
+[2016.04.04-17.05.47:655][ 99]LogModuleManager: Shutting down and abandoning module CookingStats (200)
+[2016.04.04-17.05.47:655][ 99]LogModuleManager: Shutting down and abandoning module CrashTracker (199)
+[2016.04.04-17.05.47:655][ 99]LogModuleManager: Shutting down and abandoning module SceneOutliner (198)
+[2016.04.04-17.05.47:655][ 99]LogModuleManager: Shutting down and abandoning module SuperSearch (197)
+[2016.04.04-17.05.47:655][ 99]LogModuleManager: Shutting down and abandoning module WidgetCarousel (196)
+[2016.04.04-17.05.47:655][ 99]LogModuleManager: Shutting down and abandoning module AddContentDialog (195)
+[2016.04.04-17.05.47:655][ 99]LogModuleManager: Shutting down and abandoning module EditorWidgets (194)
+[2016.04.04-17.05.47:655][ 99]LogModuleManager: Shutting down and abandoning module CollectionManager (193)
+[2016.04.04-17.05.47:656][ 99]LogModuleManager: Shutting down and abandoning module StatsViewer (192)
+[2016.04.04-17.05.47:656][ 99]LogModuleManager: Shutting down and abandoning module FoliageEdit (191)
+[2016.04.04-17.05.47:656][ 99]LogModuleManager: Shutting down and abandoning module LandscapeEditor (190)
+[2016.04.04-17.05.47:656][ 99]LogModuleManager: Shutting down and abandoning module ActorPickerMode (189)
+[2016.04.04-17.05.47:656][ 99]LogModuleManager: Shutting down and abandoning module GeometryMode (188)
+[2016.04.04-17.05.47:656][ 99]LogModuleManager: Shutting down and abandoning module TextureAlignMode (187)
+[2016.04.04-17.05.47:656][ 99]LogModuleManager: Shutting down and abandoning module BspMode (186)
+[2016.04.04-17.05.47:656][ 99]LogModuleManager: Shutting down and abandoning module PlacementMode (185)
+[2016.04.04-17.05.47:656][ 99]LogModuleManager: Shutting down and abandoning module AutomationWorker (184)
+[2016.04.04-17.05.47:656][ 99]LogModuleManager: Shutting down and abandoning module CharacterAI (183)
+[2016.04.04-17.05.47:656][ 99]LogModuleManager: Shutting down and abandoning module SmartSnapping (182)
+[2016.04.04-17.05.47:656][ 99]LogModuleManager: Shutting down and abandoning module ViewportSnapping (181)
+[2016.04.04-17.05.47:656][ 99]LogModuleManager: Shutting down and abandoning module LogVisualizer (180)
+[2016.04.04-17.05.47:656][ 99]LogModuleManager: Shutting down and abandoning module GameProjectGeneration (179)
+[2016.04.04-17.05.47:656][ 99]LogModuleManager: Shutting down and abandoning module IntroTutorials (178)
+[2016.04.04-17.05.47:656][ 99]LogModuleManager: Shutting down and abandoning module EditorLiveStreaming (177)
+[2016.04.04-17.05.47:656][ 99]LogModuleManager: Shutting down and abandoning module IOSPlatformEditor (176)
+[2016.04.04-17.05.47:656][ 99]LogModuleManager: Shutting down and abandoning module HTML5PlatformEditor (175)
+[2016.04.04-17.05.47:656][ 99]LogModuleManager: Shutting down and abandoning module AndroidDeviceDetection (174)
+[2016.04.04-17.05.48:039][ 99]LogModuleManager: Shutting down and abandoning module AndroidPlatformEditor (173)
+[2016.04.04-17.05.48:039][ 99]LogModuleManager: Shutting down and abandoning module IOSRuntimeSettings (172)
+[2016.04.04-17.05.48:039][ 99]LogModuleManager: Shutting down and abandoning module AndroidRuntimeSettings (171)
+[2016.04.04-17.05.48:039][ 99]LogModuleManager: Shutting down and abandoning module MergeActors (170)
+[2016.04.04-17.05.48:039][ 99]LogModuleManager: Shutting down and abandoning module SizeMap (169)
+[2016.04.04-17.05.48:039][ 99]LogModuleManager: Shutting down and abandoning module TreeMap (168)
+[2016.04.04-17.05.48:039][ 99]LogModuleManager: Shutting down and abandoning module ReferenceViewer (167)
+[2016.04.04-17.05.48:039][ 99]LogModuleManager: Shutting down and abandoning module LocalizationService (166)
+[2016.04.04-17.05.48:039][ 99]LogModuleManager: Shutting down and abandoning module LocalizationDashboard (165)
+[2016.04.04-17.05.48:039][ 99]LogModuleManager: Shutting down and abandoning module HardwareTargeting (164)
+[2016.04.04-17.05.48:039][ 99]LogModuleManager: Shutting down and abandoning module DeviceProfileEditor (163)
+[2016.04.04-17.05.48:039][ 99]LogModuleManager: Shutting down and abandoning module UndoHistory (162)
+[2016.04.04-17.05.48:039][ 99]LogModuleManager: Shutting down and abandoning module GameplayTagsEditor (161)
+[2016.04.04-17.05.48:039][ 99]LogModuleManager: Shutting down and abandoning module UserFeedback (160)
+[2016.04.04-17.05.48:039][ 99]LogModuleManager: Shutting down and abandoning module XmlParser (159)
+[2016.04.04-17.05.48:039][ 99]LogModuleManager: Shutting down and abandoning module Blutility (158)
+[2016.04.04-17.05.48:039][ 99]LogModuleManager: Shutting down and abandoning module ProjectTargetPlatformEditor (157)
+[2016.04.04-17.05.48:039][ 99]LogModuleManager: Shutting down and abandoning module ProjectSettingsViewer (156)
+[2016.04.04-17.05.48:039][ 99]LogModuleManager: Shutting down and abandoning module InputBindingEditor (155)
+[2016.04.04-17.05.48:039][ 99]LogModuleManager: Shutting down and abandoning module EditorSettingsViewer (154)
+[2016.04.04-17.05.48:039][ 99]LogModuleManager: Shutting down and abandoning module SettingsEditor (153)
+[2016.04.04-17.05.48:039][ 99]LogModuleManager: Shutting down and abandoning module ProjectLauncher (152)
+[2016.04.04-17.05.48:039][ 99]LogModuleManager: Shutting down and abandoning module SessionFrontend (151)
+[2016.04.04-17.05.48:039][ 99]LogModuleManager: Shutting down and abandoning module ProfilerClient (150)
+[2016.04.04-17.05.48:039][ 99]LogModuleManager: Shutting down and abandoning module TargetDeviceServices (149)
+[2016.04.04-17.05.48:039][ 99]LogModuleManager: Shutting down and abandoning module DeviceManager (148)
+[2016.04.04-17.05.48:039][ 99]LogModuleManager: Shutting down and abandoning module AutomationController (147)
+[2016.04.04-17.05.48:039][ 99]LogModuleManager: Shutting down and abandoning module AutomationWindow (146)
+[2016.04.04-17.05.48:040][ 99]LogModuleManager: Shutting down and abandoning module Layers (145)
+[2016.04.04-17.05.48:040][ 99]LogModuleManager: Shutting down and abandoning module ComponentVisualizers (144)
+[2016.04.04-17.05.48:040][ 99]LogModuleManager: Shutting down and abandoning module DetailCustomizations (143)
+[2016.04.04-17.05.48:040][ 99]LogModuleManager: Shutting down and abandoning module PackagesDialog (142)
+[2016.04.04-17.05.48:040][ 99]LogModuleManager: Shutting down and abandoning module Persona (141)
+[2016.04.04-17.05.48:040][ 99]LogModuleManager: Shutting down and abandoning module Kismet (140)
+[2016.04.04-17.05.48:040][ 99]LogModuleManager: Shutting down and abandoning module GraphEditor (139)
+[2016.04.04-17.05.48:040][ 99]LogModuleManager: Shutting down and abandoning module ClassViewer (138)
+[2016.04.04-17.05.48:040][ 99]LogModuleManager: Shutting down and abandoning module Toolbox (137)
+[2016.04.04-17.05.48:040][ 99]LogModuleManager: Shutting down and abandoning module ModuleUI (136)
+[2016.04.04-17.05.48:040][ 99]LogModuleManager: Shutting down and abandoning module MovieSceneTools (135)
+[2016.04.04-17.05.48:040][ 99]LogModuleManager: Shutting down and abandoning module OutputLog (134)
+[2016.04.04-17.05.48:040][ 99]LogModuleManager: Shutting down and abandoning module GammaUI (133)
+[2016.04.04-17.05.48:040][ 99]LogModuleManager: Shutting down and abandoning module Documentation (132)
+[2016.04.04-17.05.48:040][ 99]LogModuleManager: Shutting down and abandoning module GameLiveStreaming (131)
+[2016.04.04-17.05.48:040][ 99]LogModuleManager: Shutting down and abandoning module StreamingPauseRendering (130)
+[2016.04.04-17.05.48:040][ 99]LogModuleManager: Shutting down and abandoning module AnalyticsET (129)
+[2016.04.04-17.05.48:040][ 99]LogModuleManager: Shutting down and abandoning module Analytics (128)
+[2016.04.04-17.05.48:040][ 99]LogModuleManager: Shutting down and abandoning module AITestSuite (127)
+[2016.04.04-17.05.48:040][ 99]LogModuleManager: Shutting down and abandoning module GameplayDebugger (126)
+[2016.04.04-17.05.48:040][ 99]LogModuleManager: Shutting down and abandoning module AIModule (125)
+[2016.04.04-17.05.48:040][ 99]LogModuleManager: Shutting down and abandoning module ProfilerService (124)
+[2016.04.04-17.05.48:096][ 99]LogModuleManager: Shutting down and abandoning module TaskGraph (123)
+[2016.04.04-17.05.48:096][ 99]LogModuleManager: Shutting down and abandoning module SlateRemote (122)
+[2016.04.04-17.05.48:096][ 99]LogModuleManager: Shutting down and abandoning module SteamVRController (121)
+[2016.04.04-17.05.48:096][ 99]LogModuleManager: Shutting down and abandoning module SteamVR (120)
+[2016.04.04-17.05.48:096][ 99]LogModuleManager: Shutting down and abandoning module ProceduralMeshComponent (119)
+[2016.04.04-17.05.48:096][ 99]LogModuleManager: Shutting down and abandoning module OculusLibrary (118)
+[2016.04.04-17.05.48:096][ 99]LogModuleManager: Shutting down and abandoning module OculusInput (117)
+[2016.04.04-17.05.48:096][ 99]LogModuleManager: Shutting down and abandoning module LeapMotionController (116)
+[2016.04.04-17.05.48:101][ 99]LogModuleManager: Shutting down and abandoning module CustomMeshComponent (115)
+[2016.04.04-17.05.48:101][ 99]LogModuleManager: Shutting down and abandoning module CableComponent (114)
+[2016.04.04-17.05.48:101][ 99]LogModuleManager: Shutting down and abandoning module ArchVisCharacter (113)
+[2016.04.04-17.05.48:101][ 99]LogModuleManager: Shutting down and abandoning module MessagingDebugger (112)
+[2016.04.04-17.05.48:101][ 99]LogModuleManager: Shutting down and abandoning module MediaPlayerEditor (111)
+[2016.04.04-17.05.48:101][ 99]LogModuleManager: Shutting down and abandoning module HTML5Networking (110)
+[2016.04.04-17.05.48:101][ 99]LogModuleManager: Shutting down and abandoning module SpeedTreeImporter (109)
+[2016.04.04-17.05.48:101][ 99]LogModuleManager: Shutting down and abandoning module PluginBrowser (108)
+[2016.04.04-17.05.48:101][ 99]LogModuleManager: Shutting down and abandoning module EpicSurvey (107)
+[2016.04.04-17.05.48:101][ 99]LogModuleManager: Shutting down and abandoning module DesktopPlatform (106)
+[2016.04.04-17.05.48:101][ 99]LogModuleManager: Shutting down and abandoning module VisualStudioSourceCodeAccess (105)
+[2016.04.04-17.05.48:101][ 99]LogModuleManager: Shutting down and abandoning module UObjectPlugin (104)
+[2016.04.04-17.05.48:101][ 99]LogModuleManager: Shutting down and abandoning module SubversionSourceControl (103)
+[2016.04.04-17.05.48:101][ 99]LogModuleManager: Shutting down and abandoning module PerforceSourceControl (102)
+[2016.04.04-17.05.48:101][ 99]LogModuleManager: Shutting down and abandoning module SourceControl (101)
+[2016.04.04-17.05.48:101][ 99]LogModuleManager: Shutting down and abandoning module GitSourceControl (100)
+[2016.04.04-17.05.48:101][ 99]LogModuleManager: Shutting down and abandoning module LightPropagationVolumeEditor (99)
+[2016.04.04-17.05.48:101][ 99]LogModuleManager: Shutting down and abandoning module PaperTiledImporter (98)
+[2016.04.04-17.05.48:101][ 99]LogModuleManager: Shutting down and abandoning module PaperSpriteSheetImporter (97)
+[2016.04.04-17.05.48:101][ 99]LogModuleManager: Shutting down and abandoning module MeshPaint (96)
+[2016.04.04-17.05.48:101][ 99]LogModuleManager: Shutting down and abandoning module SlateReflector (95)
+[2016.04.04-17.05.48:101][ 99]LogModuleManager: Shutting down and abandoning module HotReload (94)
+[2016.04.04-17.05.48:101][ 99]LogModuleManager: Shutting down and abandoning module MainFrame (93)
+[2016.04.04-17.05.48:101][ 99]LogModuleManager: Shutting down and abandoning module LevelEditor (92)
+[2016.04.04-17.05.48:102][ 99]LogModuleManager: Shutting down and abandoning module DirectoryWatcher (91)
+[2016.04.04-17.05.48:102][ 99]LogModuleManager: Shutting down and abandoning module AssetRegistry (90)
+[2016.04.04-17.05.48:132][ 99]LogModuleManager: Shutting down and abandoning module ContentBrowser (89)
+[2016.04.04-17.05.48:133][ 99]LogModuleManager: Shutting down and abandoning module Paper2DEditor (88)
+[2016.04.04-17.05.48:133][ 99]LogModuleManager: Shutting down and abandoning module Flight (87)
+[2016.04.04-17.05.48:133][ 99]LogModuleManager: Shutting down and abandoning module UdpMessaging (86)
+[2016.04.04-17.05.48:233][ 99]LogModuleManager: Shutting down and abandoning module LightPropagationVolumeRuntime (85)
+[2016.04.04-17.05.48:233][ 99]LogModuleManager: Shutting down and abandoning module Paper2D (84)
+[2016.04.04-17.05.48:233][ 99]LogModuleManager: Shutting down and abandoning module WindowsMoviePlayer (83)
+[2016.04.04-17.05.48:236][ 99]LogModuleManager: Shutting down and abandoning module Media (82)
+[2016.04.04-17.05.48:236][ 99]LogModuleManager: Shutting down and abandoning module WmfMedia (81)
+[2016.04.04-17.05.48:237][ 99]LogModuleManager: Shutting down and abandoning module OnlineBlueprintSupport (80)
+[2016.04.04-17.05.48:237][ 99]LogModuleManager: Shutting down and abandoning module GameplayTasksEditor (79)
+[2016.04.04-17.05.48:237][ 99]LogModuleManager: Shutting down and abandoning module PropertyEditor (78)
+[2016.04.04-17.05.48:237][ 99]LogModuleManager: Shutting down and abandoning module BehaviorTreeEditor (77)
+[2016.04.04-17.05.48:237][ 99]LogModuleManager: Shutting down and abandoning module FunctionalTesting (76)
+[2016.04.04-17.05.48:237][ 99]LogModuleManager: Shutting down and abandoning module CollisionAnalyzer (75)
+[2016.04.04-17.05.48:237][ 99]LogModuleManager: Shutting down and abandoning module WorkspaceMenuStructure (74)
+[2016.04.04-17.05.48:237][ 99]LogModuleManager: Shutting down and abandoning module MessageLog (73)
+[2016.04.04-17.05.48:237][ 99]LogModuleManager: Shutting down and abandoning module Sequencer (72)
+[2016.04.04-17.05.48:237][ 99]LogModuleManager: Shutting down and abandoning module AssetTools (71)
+[2016.04.04-17.05.48:237][ 99]LogModuleManager: Shutting down and abandoning module UMGEditor (70)
+[2016.04.04-17.05.48:237][ 99]LogModuleManager: Shutting down and abandoning module UMG (69)
+[2016.04.04-17.05.48:237][ 99]LogModuleManager: Shutting down and abandoning module Slate (68)
+[2016.04.04-17.05.48:237][ 99]LogModuleManager: Shutting down and abandoning module EditorStyle (67)
+[2016.04.04-17.05.48:238][ 99]LogModuleManager: Shutting down and abandoning module SessionServices (66)
+[2016.04.04-17.05.48:238][ 99]LogModuleManager: Shutting down and abandoning module SourceCodeAccess (65)
+[2016.04.04-17.05.48:238][ 99]LogModuleManager: Shutting down and abandoning module HeadMountedDisplay (64)
+[2016.04.04-17.05.48:239][ 99]LogModuleManager: Shutting down and abandoning module XAudio2 (63)
+[2016.04.04-17.05.48:239][ 99]LogModuleManager: Shutting down and abandoning module Networking (61)
+[2016.04.04-17.05.48:239][ 99]LogModuleManager: Shutting down and abandoning module Core (60)
+[2016.04.04-17.05.48:239][ 99]LogModuleManager: Shutting down and abandoning module KismetCompiler (59)
+[2016.04.04-17.05.48:239][ 99]LogModuleManager: Shutting down and abandoning module PhysXFormats (58)
+[2016.04.04-17.05.48:239][ 99]LogModuleManager: Shutting down and abandoning module MeshUtilities (57)
+[2016.04.04-17.05.48:239][ 99]LogModuleManager: Shutting down and abandoning module DerivedDataCache (56)
+[2016.04.04-17.05.48:243][ 99]LogDerivedDataCache: Shutdown
+[2016.04.04-17.05.48:243][ 99]LogModuleManager: Shutting down and abandoning module ShaderFormatOpenGL (55)
+[2016.04.04-17.05.48:243][ 99]LogModuleManager: Shutting down and abandoning module ShaderFormatD3D (54)
+[2016.04.04-17.05.48:243][ 99]LogModuleManager: Shutting down and abandoning module MetalShaderFormat (53)
+[2016.04.04-17.05.48:243][ 99]LogModuleManager: Shutting down and abandoning module TextureFormatUncompressed (52)
+[2016.04.04-17.05.48:243][ 99]LogModuleManager: Shutting down and abandoning module TextureFormatPVR (51)
+[2016.04.04-17.05.48:243][ 99]LogModuleManager: Shutting down and abandoning module TextureFormatIntelISPCTexComp (50)
+[2016.04.04-17.05.48:243][ 99]LogModuleManager: Shutting down and abandoning module TextureFormatDXT (49)
+[2016.04.04-17.05.48:243][ 99]LogModuleManager: Shutting down and abandoning module ImageWrapper (48)
+[2016.04.04-17.05.48:243][ 99]LogModuleManager: Shutting down and abandoning module TextureFormatASTC (47)
+[2016.04.04-17.05.48:243][ 99]LogModuleManager: Shutting down and abandoning module TextureFormatAndroid (46)
+[2016.04.04-17.05.48:243][ 99]LogModuleManager: Shutting down and abandoning module AudioFormatOpus (45)
+[2016.04.04-17.05.48:243][ 99]LogModuleManager: Shutting down and abandoning module AudioFormatOgg (44)
+[2016.04.04-17.05.48:243][ 99]LogModuleManager: Shutting down and abandoning module AudioFormatADPCM (43)
+[2016.04.04-17.05.48:243][ 99]LogModuleManager: Shutting down and abandoning module LinuxTargetPlatform (42)
+[2016.04.04-17.05.48:243][ 99]LogModuleManager: Shutting down and abandoning module LinuxServerTargetPlatform (41)
+[2016.04.04-17.05.48:243][ 99]LogModuleManager: Shutting down and abandoning module LinuxNoEditorTargetPlatform (40)
+[2016.04.04-17.05.48:243][ 99]LogModuleManager: Shutting down and abandoning module Messaging (39)
+[2016.04.04-17.05.48:243][ 99]LogModuleManager: Shutting down and abandoning module IOSTargetPlatform (38)
+[2016.04.04-17.05.48:243][ 99]LogModuleManager: Shutting down and abandoning module HTML5TargetPlatform (37)
+[2016.04.04-17.05.48:243][ 99]LogModuleManager: Shutting down and abandoning module Android_PVRTCTargetPlatform (36)
+[2016.04.04-17.05.48:243][ 99]LogModuleManager: Shutting down and abandoning module Android_MultiTargetPlatform (35)
+[2016.04.04-17.05.48:243][ 99]LogModuleManager: Shutting down and abandoning module Android_ETC2TargetPlatform (34)
+[2016.04.04-17.05.48:243][ 99]LogModuleManager: Shutting down and abandoning module Android_ETC1TargetPlatform (33)
+[2016.04.04-17.05.48:243][ 99]LogModuleManager: Shutting down and abandoning module Android_DXTTargetPlatform (32)
+[2016.04.04-17.05.48:243][ 99]LogModuleManager: Shutting down and abandoning module Android_ATCTargetPlatform (31)
+[2016.04.04-17.05.48:243][ 99]LogModuleManager: Shutting down and abandoning module Android_ASTCTargetPlatform (30)
+[2016.04.04-17.05.48:243][ 99]LogModuleManager: Shutting down and abandoning module AndroidTargetPlatform (29)
+[2016.04.04-17.05.48:243][ 99]LogModuleManager: Shutting down and abandoning module WindowsTargetPlatform (28)
+[2016.04.04-17.05.48:243][ 99]LogModuleManager: Shutting down and abandoning module WindowsServerTargetPlatform (27)
+[2016.04.04-17.05.48:243][ 99]LogModuleManager: Shutting down and abandoning module WindowsNoEditorTargetPlatform (26)
+[2016.04.04-17.05.48:243][ 99]LogModuleManager: Shutting down and abandoning module WindowsClientTargetPlatform (25)
+[2016.04.04-17.05.48:243][ 99]LogModuleManager: Shutting down and abandoning module AllDesktopTargetPlatform (24)
+[2016.04.04-17.05.48:243][ 99]LogModuleManager: Shutting down and abandoning module TargetPlatform (23)
+[2016.04.04-17.05.48:243][ 99]LogModuleManager: Shutting down and abandoning module InputCore (22)
+[2016.04.04-17.05.48:243][ 99]LogModuleManager: Shutting down and abandoning module Settings (21)
+[2016.04.04-17.05.48:243][ 99]LogModuleManager: Shutting down and abandoning module OnlineSubsystem (19)
+[2016.04.04-17.05.48:243][ 99]LogModuleManager: Shutting down and abandoning module HTTP (18)
+[2016.04.04-17.05.49:744][ 99]LogModuleManager: Shutting down and abandoning module XMPP (17)
+[2016.04.04-17.05.49:744][ 99]LogModuleManager: Shutting down and abandoning module OculusRift (16)
+[2016.04.04-17.05.49:744][ 99]LogHMD: Oculus shutdown.
+[2016.04.04-17.05.49:744][ 99]LogModuleManager: Shutting down and abandoning module ExampleDeviceProfileSelector (15)
+[2016.04.04-17.05.49:744][ 99]LogModuleManager: Shutting down and abandoning module TextureCompressor (14)
+[2016.04.04-17.05.49:744][ 99]LogModuleManager: Shutting down and abandoning module ShaderCore (13)
+[2016.04.04-17.05.49:744][ 99]LogModuleManager: Shutting down and abandoning module Landscape (12)
+[2016.04.04-17.05.49:744][ 99]LogModuleManager: Shutting down and abandoning module SlateRHIRenderer (11)
+[2016.04.04-17.05.49:745][ 99]LogModuleManager: Shutting down and abandoning module OpenGLDrv (10)
+[2016.04.04-17.05.49:745][ 99]LogModuleManager: Shutting down and abandoning module D3D11RHI (9)
+[2016.04.04-17.05.49:745][ 99]LogModuleManager: Shutting down and abandoning module AnimGraphRuntime (8)
+[2016.04.04-17.05.49:745][ 99]LogModuleManager: Shutting down and abandoning module Renderer (7)
+[2016.04.04-17.05.49:745][ 99]LogModuleManager: Shutting down and abandoning module Engine (6)
+[2016.04.04-17.05.49:745][ 99]LogModuleManager: Shutting down and abandoning module CoreUObject (5)
+[2016.04.04-17.05.49:745][ 99]LogModuleManager: Shutting down and abandoning module NetworkFile (4)
+[2016.04.04-17.05.49:745][ 99]LogModuleManager: Shutting down and abandoning module StreamingFile (3)
+[2016.04.04-17.05.49:745][ 99]LogModuleManager: Shutting down and abandoning module SandboxFile (2)
+[2016.04.04-17.05.49:745][ 99]LogModuleManager: Shutting down and abandoning module PakFile (1)
+[2016.04.04-17.05.49:746][ 99]LogExit: Exiting.
+[2016.04.04-17.05.49:756][ 99]Log file closed, 04/04/16 13:05:49
