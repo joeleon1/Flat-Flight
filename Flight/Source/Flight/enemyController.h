@@ -65,14 +65,7 @@ public:
 	}
 
 	// This function will cause the enemy ship to fire.
-	void fire()
-	{
-		FVector playerLocation;
-		FVector enemyLocation = GetActorLocation();
-		FVector fireDirection = playerLocation - enemyLocation;
-		fireDirection.Normalize();
-
-	}
+	void fire();
 
 protected:
 	UPROPERTY(VisibleAnywhere)
@@ -88,4 +81,6 @@ protected:
 		USoundBase* EnemyDeathSound;
 	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly)
 		float CollisionDamage;
+
+	void makeBullet(FVector Vector, FRotator Rotator);
 };

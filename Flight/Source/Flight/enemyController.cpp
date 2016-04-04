@@ -3,6 +3,7 @@
 #include "Flight.h"
 #include "enemyController.h"
 #include "FlightPlayer.h"
+#include "EnemyBullet.h"
 
 // Sets default values
 AenemyController::AenemyController()
@@ -71,4 +72,21 @@ void AenemyController::OnBeginOverlap(AActor* OtherActor)
 		Player->TakeDamage(CollisionDamage, Event, NULL, this);
 		TakeDamage(health, Event, NULL, this);
 	}
+}
+
+void AenemyController::fire ()
+{
+	FVector playerLocation;
+	FVector enemyLocation = GetActorLocation();
+	FVector fireDirection = playerLocation - enemyLocation;
+	fireDirection.Normalize();
+
+}
+
+void AenemyController::makeBullet(FVector Vector, FRotator Rotator)
+{
+	AEnemyBullet* Bullet;
+
+	Bullet = GetWorld()->SpawnActor<AEnemyBullet>(Vector, Rotator);
+	
 }
