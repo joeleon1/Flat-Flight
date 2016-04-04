@@ -9,7 +9,7 @@ ULeaderboardSaveGame::ULeaderboardSaveGame()
 	UserIndex = 0;
 }
 
-/*void ULeaderboardSaveGame::WriteToLeaderboard(uint32 newScore)
+void ULeaderboardSaveGame::WriteToLeaderboard(uint32 newScore)
 {
 	ULeaderboardSaveGame* LoadGameInstance = Cast<ULeaderboardSaveGame>(UGameplayStatics::CreateSaveGameObject(ULeaderboardSaveGame::StaticClass()));
 	LoadGameInstance = Cast<ULeaderboardSaveGame>(UGameplayStatics::LoadGameFromSlot(LoadGameInstance->SaveSlotName, LoadGameInstance->UserIndex));
@@ -26,4 +26,4 @@ TArray<uint32> ULeaderboardSaveGame::ReadLeaderboard()
 	ULeaderboardSaveGame* LoadGameInstance = Cast<ULeaderboardSaveGame>(UGameplayStatics::CreateSaveGameObject(ULeaderboardSaveGame::StaticClass()));
 	LoadGameInstance = Cast<ULeaderboardSaveGame>(UGameplayStatics::LoadGameFromSlot(LoadGameInstance->SaveSlotName, LoadGameInstance->UserIndex));
 	return LoadGameInstance->Leaderboard;
-}*/
+}

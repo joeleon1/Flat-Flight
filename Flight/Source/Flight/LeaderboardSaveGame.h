@@ -16,6 +16,9 @@ class FLIGHT_API ULeaderboardSaveGame : public USaveGame
 public:
 
 	UPROPERTY(VisibleAnywhere, Category = Basic)
+		FString PlayerName;
+
+	UPROPERTY(VisibleAnywhere, Category = Basic)
 		FString SaveSlotName;
 
 	UPROPERTY(VisibleAnywhere, Category = Basic)
@@ -25,6 +28,6 @@ public:
 		TArray<uint32> Leaderboard;
 
 	ULeaderboardSaveGame();
-	//void WriteToLeaderboard(uint32 newScore);
-	//TArray<uint32> ReadLeaderboard();
+	void WriteToLeaderboard(uint32 newScore);
+	TArray<uint32> ReadLeaderboard();
 };

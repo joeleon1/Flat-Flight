@@ -39,7 +39,6 @@ public:
 
 	void AddScore(int32 Score, AActor* CallingActor);
 
-	void Reset();
 
 	UFUNCTION(BlueprintCallable, Category = "Widget")
 		void ShowDamageEffect();
