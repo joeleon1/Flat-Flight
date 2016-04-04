@@ -39,6 +39,9 @@ public:
 	//Sets the Player pawn to what ever is selected by the PlayerClass static variable
 	void SetPlayerPawn();
 	void SetGameOver();
+
+	virtual UClass* GetDefaultPawnClassForController_Implementation(AController* InController) override;
+
 	enum PLAYER_CLASS
 	{
 		BASIC, ATTACK, SPEED, DEFENCE,
@@ -52,11 +55,13 @@ public:
 	TArray<FScoreToDisplay> GetScores() const { return ScoresAdded; }
 
 	static PLAYER_CLASS PlayerClass;
-private:
+
 	TSubclassOf<APawn> BasicPlayerClass;
 	TSubclassOf<APawn> AttackPlayerClass;
 	TSubclassOf<APawn> DefencePlayerClass;
 	TSubclassOf<APawn> SpeedPlayerClass;
+private:
+	
 
 	UPROPERTY()
 		TArray<FScoreToDisplay> ScoresAdded;

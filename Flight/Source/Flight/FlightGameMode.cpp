@@ -83,7 +83,25 @@ void AFlightGameMode::SetPlayerPawn()
 		break;
 	}
 }
-
+UClass* AFlightGameMode::GetDefaultPawnClassForController_Implementation(AController* InController)
+{
+	switch (AFlightGameMode::PlayerClass)
+	{
+	case BASIC:
+		return BasicPlayerClass;
+		break;
+	case ATTACK:
+		return AttackPlayerClass;
+		break;
+	case DEFENCE:
+		return  DefencePlayerClass;
+		break;
+	case SPEED:
+		return SpeedPlayerClass;
+		break;
+	}
+	return BasicPlayerClass;
+}
 
 void AFlightGameMode::BeginPlay()
 {

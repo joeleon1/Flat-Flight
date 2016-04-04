@@ -116,7 +116,66 @@ void AFlightPlayer::SetupPlayerInputComponent(class UInputComponent* InputCompon
 
 	InputComponent->BindAction(TEXT("TakeDamage"), EInputEvent::IE_Released,this, &AFlightPlayer::Damage);
 	InputComponent->BindAction(TEXT("Reset"), EInputEvent::IE_Released, this, &AFlightPlayer::Reset);
+
+	InputComponent->BindAction(TEXT("BasicPlayer"), EInputEvent::IE_Released, this, &AFlightPlayer::SetBasicPlayer);
+	InputComponent->BindAction(TEXT("AttackPlayer"), EInputEvent::IE_Released, this, &AFlightPlayer::SetAttackPlayer);
+	InputComponent->BindAction(TEXT("DefencePlayer"), EInputEvent::IE_Released, this, &AFlightPlayer::SetDefencePlayer);
+	InputComponent->BindAction(TEXT("SpeedPlayer"), EInputEvent::IE_Released, this, &AFlightPlayer::SetSpeedPlayer);
 }
+
+void AFlightPlayer::SetBasicPlayer()
+{
+	AFlightGameMode::PlayerClass = AFlightGameMode::BASIC;
+	AFlightGameMode* Mode = Cast<AFlightGameMode>(GetWorld()->GetAuthGameMode());
+	if (Mode)
+	{
+		if (Mode->BasicPlayerClass)
+		{
+			AFlightPlayer* NewShip = GetWorld()->SpawnActor<AFlightPlayer>(Mode->BasicPlayerClass, GetActorLocation(), GetActorRotation());
+			if (NewShip)
+			{
+				GetController()->Possess(NewShip);
+				Destroy();
+			}
+		}
+		
+		
+	}
+}
+void AFlightPlayer::SetAttackPlayer()
+{
+	AFlightGameMode::PlayerClass = AFlightGameMode::ATTACK;
+	AFlightGameMode* Mode = Cast<AFlightGameMode>(GetWorld()->GetAuthGameMode());
+	if (Mode)
+	{
+		AFlightPlayer* NewShip = GetWorld()->SpawnActor<AFlightPlayer>(Mode->AttackPlayerClass, GetActorLocation(), GetActorRotation());
+		GetController()->Possess(NewShip);
+		Destroy();
+	}
+}
+void AFlightPlayer::SetSpeedPlayer()
+{
+	AFlightGameMode::PlayerClass = AFlightGameMode::SPEED;
+	AFlightGameMode* Mode = Cast<AFlightGameMode>(GetWorld()->GetAuthGameMode());
+	if (Mode)
+	{
+		AFlightPlayer* NewShip = GetWorld()->SpawnActor<AFlightPlayer>(Mode->SpeedPlayerClass, GetActorLocation(), GetActorRotation());
+		GetController()->Possess(NewShip);
+		Destroy();
+	}
+}
+void AFlightPlayer::SetDefencePlayer()
+{
+	AFlightGameMode::PlayerClass = AFlightGameMode::DEFENCE;
+	AFlightGameMode* Mode = Cast<AFlightGameMode>(GetWorld()->GetAuthGameMode());
+	if (Mode)
+	{
+		AFlightPlayer* NewShip = GetWorld()->SpawnActor<AFlightPlayer>(Mode->DefencePlayerClass, GetActorLocation(), GetActorRotation());
+		GetController()->Possess(NewShip);
+		Destroy();
+	}
+}
+
 
 UPawnMovementComponent* AFlightPlayer::GetMovementComponent() const
 {

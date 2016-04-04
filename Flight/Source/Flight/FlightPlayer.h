@@ -55,6 +55,11 @@ public:
 	void EquipWeaponThree();
 	void EquipWeaponFour();
 
+	void SetBasicPlayer();
+	void SetAttackPlayer();
+	void SetDefencePlayer();
+	void SetSpeedPlayer();
+
 	void MoveVertical(float Scale);
 	void MoveHorizontal(float Scale);
 protected:
