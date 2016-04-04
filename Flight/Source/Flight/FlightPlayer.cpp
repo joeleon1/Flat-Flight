@@ -111,6 +111,7 @@ void AFlightPlayer::SetupPlayerInputComponent(class UInputComponent* InputCompon
 	InputComponent->BindAction(TEXT("WeaponSlot2"), EInputEvent::IE_Released, this, &AFlightPlayer::EquipWeaponTwo);
 	InputComponent->BindAction(TEXT("WeaponSlot3"), EInputEvent::IE_Released, this, &AFlightPlayer::EquipWeaponThree);
 	InputComponent->BindAction(TEXT("WeaponSlot4"), EInputEvent::IE_Released, this, &AFlightPlayer::EquipWeaponFour);
+	InputComponent->BindAction(TEXT("Reset"), EInputEvent::IE_Released, this, &AFlightPlayer::Reset);
 	InputComponent->BindAxis(TEXT("Vertical"), this, &AFlightPlayer::MoveVertical);
 	InputComponent->BindAxis(TEXT("Horizontal"), this, &AFlightPlayer::MoveHorizontal);
 
@@ -212,23 +213,41 @@ float AFlightPlayer::TakeDamage(float Damage, struct FDamageEvent const & Damage
 			{
 				UGameplayStatics::PlaySoundAtLocation(this, PlayerDeathSound, GetActorLocation(), FRotator(0, 0, 0), 0.1, 1.0, 0, nullptr);
 			}
-			//write to leaderboard and change state
+
+			//write to leaderboard and change state to end game
 			AFlightPlayerState* playerState = Cast<AFlightPlayerState>(PlayerState);
 
 			if (playerState)
 			{
+				//load leaderboard
+				ULeaderboardSaveGame* LoadGameInstance = Cast<ULeaderboardSaveGame>(UGameplayStatics::CreateSaveGameObject(ULeaderboardSaveGame::StaticClass()));
+				LoadGameInstance = Cast<ULeaderboardSaveGame>(UGameplayStatics::LoadGameFromSlot(LoadGameInstance->SaveSlotName, LoadGameInstance->UserIndex));
+				TArray<uint32> tempBoard = LoadGameInstance->Leaderboard;
+
+				//add new score & sort
+				tempBoard.Add(playerState->ActualScore);
+				tempBoard.Sort();
+
+				//save leaderboard
 				ULeaderboardSaveGame* SaveGameInstance = Cast<ULeaderboardSaveGame>(UGameplayStatics::CreateSaveGameObject(ULeaderboardSaveGame::StaticClass()));
-				SaveGameInstance->WriteToLeaderboard(playerState->ActualScore);
+				SaveGameInstance->Leaderboard = tempBoard;
+				UGameplayStatics::SaveGameToSlot(SaveGameInstance, SaveGameInstance->SaveSlotName, SaveGameInstance->UserIndex);
+
 				AFlightGameMode* GameMode = Cast<AFlightGameMode>(GetWorld()->GetAuthGameMode());
 				GameMode->SetGameOver();
 			}
-			GetWorld()->GetAuthGameMode()->RestartPlayer(GetWorld()->GetFirstPlayerController());
 			
 		}
 	}
-
 	
 	return 0;
+}
+
+void AFlightPlayer::Reset()
+{
+	//done in bp so can be executed while paused
+	APlayerController* PlayerController1 = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+	PlayerController1->ConsoleCommand(TEXT("RestartLevel"), true);
 }
 
 void AFlightPlayer::ShowDamageEffect() {
