@@ -115,6 +115,7 @@ void AFlightPlayer::SetupPlayerInputComponent(class UInputComponent* InputCompon
 	InputComponent->BindAxis(TEXT("Horizontal"), this, &AFlightPlayer::MoveHorizontal);
 
 	InputComponent->BindAction(TEXT("TakeDamage"), EInputEvent::IE_Released,this, &AFlightPlayer::Damage);
+	InputComponent->BindAction(TEXT("Reset"), EInputEvent::IE_Released, this, &AFlightPlayer::Reset);
 }
 
 UPawnMovementComponent* AFlightPlayer::GetMovementComponent() const
@@ -217,18 +218,36 @@ float AFlightPlayer::TakeDamage(float Damage, struct FDamageEvent const & Damage
 
 			if (playerState)
 			{
+				//load leaderboard
+				ULeaderboardSaveGame* LoadGameInstance = Cast<ULeaderboardSaveGame>(UGameplayStatics::CreateSaveGameObject(ULeaderboardSaveGame::StaticClass()));
+				LoadGameInstance = Cast<ULeaderboardSaveGame>(UGameplayStatics::LoadGameFromSlot(LoadGameInstance->SaveSlotName, LoadGameInstance->UserIndex));
+				TArray<uint32> tempBoard = LoadGameInstance->Leaderboard;
+
+				//add new score & sort
+				tempBoard.Add(playerState->ActualScore);
+				tempBoard.Sort();
+
+				//save leaderboard
 				ULeaderboardSaveGame* SaveGameInstance = Cast<ULeaderboardSaveGame>(UGameplayStatics::CreateSaveGameObject(ULeaderboardSaveGame::StaticClass()));
-				SaveGameInstance->WriteToLeaderboard(playerState->ActualScore);
+				SaveGameInstance->Leaderboard = tempBoard;
+				UGameplayStatics::SaveGameToSlot(SaveGameInstance, SaveGameInstance->SaveSlotName, SaveGameInstance->UserIndex);
+
 				AFlightGameMode* GameMode = Cast<AFlightGameMode>(GetWorld()->GetAuthGameMode());
 				GameMode->SetGameOver();
 			}
-			GetWorld()->GetAuthGameMode()->RestartPlayer(GetWorld()->GetFirstPlayerController());
 			
 		}
 	}
 
 	
 	return 0;
+}
+
+void AFlightPlayer::Reset()
+{
+	//done in bp so can be executed while paused
+	APlayerController* PlayerController1 = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+	PlayerController1->ConsoleCommand(TEXT("RestartLevel"), true);
 }
 
 void AFlightPlayer::ShowDamageEffect() {
