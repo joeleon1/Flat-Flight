@@ -24,6 +24,8 @@ class FLIGHT_API APlayerHUD : public AHUD
 		UTexture* LaserIMG;
 		UTexture* FlightIMG;
 		UTexture* CannonIMG;
+		UTexture* HeartIMG;
+		UTexture* ShieldIMG;
 
 	//Primary draw call for the HUD
 	virtual void DrawHUD() override;

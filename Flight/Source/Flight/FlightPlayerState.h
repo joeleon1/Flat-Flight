@@ -24,6 +24,8 @@ public:
 	UPROPERTY()
 	int8 CurrentCombo = 1;
 	UPROPERTY()
+	float MaxHealth = 100;
+	UPROPERTY()
 	float MaxShields = 50;
 	UPROPERTY()
 	int16 ShotsFired = 0;

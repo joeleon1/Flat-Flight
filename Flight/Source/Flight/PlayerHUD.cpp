@@ -22,6 +22,10 @@ APlayerHUD::APlayerHUD(const FObjectInitializer& ObjectInitializer)
 	MachinegunIMG = (UTexture*)HUDTextureOB3.Object;
 	static ConstructorHelpers::FObjectFinder<UTexture>HUDTextureOB4(TEXT("/Game/Textures/Flamethrower"));
 	FlamethrowerIMG = (UTexture*)HUDTextureOB4.Object;
+	static ConstructorHelpers::FObjectFinder<UTexture>HUDTextureOB5(TEXT("/Game/Textures/Heart"));
+	HeartIMG = (UTexture*)HUDTextureOB5.Object;
+	static ConstructorHelpers::FObjectFinder<UTexture>HUDTextureOB6(TEXT("/Game/Textures/Shield"));
+	ShieldIMG = (UTexture*)HUDTextureOB6.Object;
 
 }
 
@@ -41,9 +45,11 @@ void APlayerHUD::DrawHUD()
 	FString currentWep;
 	int16 ammoCount = 0;
 	int health = 0;
-	int maxHealth = 100;
+	int maxHealth = 0;
 	int shields = 0;
+	int maxShields = 0;
 	int combo = 0;
+	int score = 0;
 
 	if (PlayerController1 && Player1) {
 		//get playerstate
@@ -54,7 +60,10 @@ void APlayerHUD::DrawHUD()
 		ammoCount = Player1->GetWeapon()->GetAmmo();
 		health = PlayerState1->Health;
 		shields = PlayerState1->Shields;
+		maxHealth = PlayerState1->MaxHealth;
+		maxShields = PlayerState1->MaxShields;
 		combo = PlayerState1->CurrentCombo;
+		score = PlayerState1->ActualScore;
 		//get ammo
 		//ammoCount = Player1->GetWeapon()->GetAmmo();
 	}
@@ -75,13 +84,21 @@ void APlayerHUD::DrawHUD()
 		
 	//draw shields & health
 	int barSizeX = 3;
-	int barSizeY = 32;
+	int hbarSizeY = 32;
+	int sbarSizeY = 16;
 	int xHP = 64;
 	int yHP = 64 - (wepSizeY / 2);
-	DrawRect(FColor::Red, xHP, yHP, health * barSizeX, barSizeY);
-	DrawRect(FColor::Blue, xHP + 10, yHP - 10, shields * barSizeX, barSizeY);
+	//bg
+	DrawRect(FColor::Black, xHP-4, yHP-4, maxHealth * barSizeX + 8, hbarSizeY + 8);
+	DrawRect(FColor::Black, xHP+6, yHP-26, maxShields * barSizeX + 8, sbarSizeY + 8);
+	//bars
+	DrawRect(FColor::Red, xHP, yHP, health*barSizeX, hbarSizeY);
+	DrawRect(FColor::Blue, xHP+10, yHP-22, shields*barSizeX, sbarSizeY);
+	//draw imgs
+	DrawTexture(HeartIMG, xHP - 16, yHP, 32, 32, 1, 1, 1, 1);
+	DrawTexture(ShieldIMG, xHP, yHP-22, 16, 16, 1, 1, 1, 1);
 	
-	//draw combo
+	//draw combo 
 	if (combo > 0) {
 		FVector comboSize;
 		FString comboString = FString().FromInt(combo);
@@ -89,6 +106,13 @@ void APlayerHUD::DrawHUD()
 		GetTextSize(comboString, comboSize.X, comboSize.Y, HUDFont);
 		DrawText(comboString, FColor::Yellow, ScreenDimensions.X - comboSize.X - 64, 32, HUDFont);
 	}
+
+	//draw score
+	FVector scoreSize;
+	FString scoreString = FString().FromInt(score);
+	GetTextSize(scoreString, scoreSize.X, scoreSize.Y, HUDFont);
+	DrawText(scoreString, FColor::Yellow, ScreenDimensions.X - scoreSize.X - 64, scoreSize.Y - 32, HUDFont);
+
 
 	//draw ammo
 	if (currentWep != (FString)"BasicWeapon") {

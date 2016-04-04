@@ -38,6 +38,7 @@ public:
 	AFlightGameMode(const FObjectInitializer& ObjectInitializer);
 	//Sets the Player pawn to what ever is selected by the PlayerClass static variable
 	void SetPlayerPawn();
+	void SetGameOver();
 	enum PLAYER_CLASS
 	{
 		BASIC, ATTACK, SPEED, DEFENCE,

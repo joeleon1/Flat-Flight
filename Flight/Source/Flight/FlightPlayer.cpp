@@ -212,6 +212,16 @@ float AFlightPlayer::TakeDamage(float Damage, struct FDamageEvent const & Damage
 			{
 				UGameplayStatics::PlaySoundAtLocation(this, PlayerDeathSound, GetActorLocation(), FRotator(0, 0, 0), 0.1, 1.0, 0, nullptr);
 			}
+			//write to leaderboard and change state
+			AFlightPlayerState* playerState = Cast<AFlightPlayerState>(PlayerState);
+
+			if (playerState)
+			{
+				ULeaderboardSaveGame* SaveGameInstance = Cast<ULeaderboardSaveGame>(UGameplayStatics::CreateSaveGameObject(ULeaderboardSaveGame::StaticClass()));
+				SaveGameInstance->WriteToLeaderboard(playerState->ActualScore);
+				AFlightGameMode* GameMode = Cast<AFlightGameMode>(GetWorld()->GetAuthGameMode());
+				GameMode->SetGameOver();
+			}
 			GetWorld()->GetAuthGameMode()->RestartPlayer(GetWorld()->GetFirstPlayerController());
 			
 		}

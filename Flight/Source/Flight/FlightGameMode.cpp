@@ -4,6 +4,7 @@
 #include "FlightGameMode.h"
 #include "FlightPlayerState.h"
 #include "PlayerHUD.h"
+#include "LeaderboardHUD.h"
 
 AFlightGameMode::PLAYER_CLASS AFlightGameMode::PlayerClass = BASIC;
 
@@ -112,4 +113,10 @@ void AFlightGameMode::AddDisplayScore(int32 Score, FVector ActorLocation)
 	NewScore.YPos = 1 - (ActorLocation.Z / SCREEN_HEIGHT);
 
 	ScoresAdded.Add(NewScore);
+}
+
+void AFlightGameMode::SetGameOver() {
+	APlayerController* PlayerController1 = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+	PlayerController1->ClientSetHUD(ALeaderboardHUD::StaticClass());
+	UGameplayStatics::SetGamePaused(GetWorld(), true);
 }
