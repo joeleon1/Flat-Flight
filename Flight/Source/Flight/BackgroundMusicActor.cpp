@@ -11,7 +11,7 @@ void ABackgroundMusicActor::BeginPlay()
 {
 	Super::BeginPlay();
 	if(BackgroundMusic)
-		UGameplayStatics::PlaySoundAtLocation(this, BackgroundMusic, GetActorLocation(), FRotator(0, 0, 0), 0.5, 1.0, 65, nullptr);
+		UGameplayStatics::PlaySoundAtLocation(this, BackgroundMusic, GetActorLocation(), FRotator(0, 0, 0), 0.09, 1.0, 65, nullptr);
 	
 }
 
