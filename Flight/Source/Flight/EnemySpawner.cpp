@@ -28,17 +28,16 @@ void AEnemySpawner::Tick( float DeltaTime )
 
 	if (timeToNextCheck <= 0) {
 		timeToNextCheck = spawnCheckRate;
-		float temp = ((float)(rand() % 100)) / 100;
+		float temp = ((float)(rand() % 100)) / 100.0f;
 
-		if (temp < spawnChance) {
+		//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Blue, "Checking for spawn: "+ FString::SanitizeFloat(temp));
+
+		if (temp <= spawnChance) {
 
 			SpawnEnemy();
 		}
 
-
 	}
-
-
 
 
 }
@@ -47,11 +46,13 @@ void AEnemySpawner::Tick( float DeltaTime )
 
 void AEnemySpawner::SpawnEnemy() {
 	//FActorSpawnParameters SpawnParameters;
+	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Blue, "Spawning enemy");
+	AenemyController* newEnemy;
 
-	GetWorld()->SpawnActor<AenemyController>(EnemyClass,
-		GetActorLocation(),
-		GetActorRotation()
+	newEnemy =  GetWorld()->SpawnActor<AenemyController>(EnemyClass,
+		this->GetActorLocation(),
+		this->GetActorRotation()
 		);
-
+	
 }
 

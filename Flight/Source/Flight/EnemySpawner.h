@@ -30,6 +30,9 @@ protected:
 		float spawnChance = 0.5f;
 
 	float timeToNextCheck = 1;
+	
+	int numOfLoops = 0;
+	int timesToIncreaseDifficulty = 10;
 
 	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly)
 		TSubclassOf<AenemyController> EnemyClass;
