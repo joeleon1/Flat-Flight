@@ -34,6 +34,9 @@ protected:
 	int numOfLoops = 0;
 	int timesToIncreaseDifficulty = 10;
 
+	float speedToAssign = 3;
+	float speedIncrease = 0.5;
+
 	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly)
 		TSubclassOf<AenemyController> EnemyClass;
 

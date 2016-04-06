@@ -28,6 +28,13 @@ void AEnemySpawner::Tick( float DeltaTime )
 
 	if (timeToNextCheck <= 0) {
 		timeToNextCheck = spawnCheckRate;
+		numOfLoops++;
+
+		if (numOfLoops >= timesToIncreaseDifficulty) {
+			numOfLoops = 0;
+			speedToAssign += speedIncrease;
+		}
+
 		float temp = ((float)(rand() % 100)) / 100.0f;
 
 		//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Blue, "Checking for spawn: "+ FString::SanitizeFloat(temp));
@@ -53,6 +60,6 @@ void AEnemySpawner::SpawnEnemy() {
 		this->GetActorLocation(),
 		this->GetActorRotation()
 		);
-	
+	newEnemy->downSpeed = speedToAssign;
 }
 
