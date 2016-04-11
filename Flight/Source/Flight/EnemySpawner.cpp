@@ -53,7 +53,7 @@ void AEnemySpawner::Tick( float DeltaTime )
 
 void AEnemySpawner::SpawnEnemy() {
 	//FActorSpawnParameters SpawnParameters;
-	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Blue, "Spawning enemy");
+	//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Blue, "Spawning enemy");
 	AenemyController* newEnemy;
 
 	newEnemy =  GetWorld()->SpawnActor<AenemyController>(EnemyClass,

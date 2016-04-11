@@ -50,6 +50,11 @@ void AenemyController::Tick(float DeltaTime)
 		// We are ready to fire again.
 		fired = false;
 	}
+
+	if (GetActorLocation().Z < 0)
+	{
+		Destroy();
+	}
 }
 
 void AenemyController::move(float deltaTime)
@@ -83,7 +88,7 @@ float AenemyController::TakeDamage(float DamageAmount, struct FDamageEvent const
 				Player->AddScore(Score, this);
 			}
 
-			SetLifeSpan(0.001f);
+			Destroy();
 			if (EnemyDeathSound)
 			{
 				UGameplayStatics::PlaySoundAtLocation(this, EnemyDeathSound, GetActorLocation(), FRotator(0, 0, 0), 0.1, 1.0, 0, nullptr);
@@ -108,7 +113,7 @@ void AenemyController::OnBeginOverlap(AActor* OtherActor)
 
 void AenemyController::fire ()
 {
-	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, "Trying to shoot.");
+	//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, "Trying to shoot.");
 	//ACharacter* player = UGameplayStatics::GetPlayerCharacter(GetWorld(), 0);
 	APlayerController* Controller = UGameplayStatics::GetPlayerController(GetWorld(), 0);
 	APawn* player = Controller->GetPawn();
