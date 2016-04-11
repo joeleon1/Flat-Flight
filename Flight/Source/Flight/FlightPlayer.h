@@ -85,10 +85,10 @@ protected:
 private:
 	FORCEINLINE void StartFiring() { bIsFiring = true; }
 	FORCEINLINE void EndFiring() { bIsFiring = false; }
-	FORCEINLINE void StartNuke() { bIsNuke = true; }
-	FORCEINLINE void EndNuke() { bIsNuke = false; }
-	FORCEINLINE void Damage() { FDamageEvent Event;TakeDamage(10, Event, nullptr, nullptr); }
-	FORCEINLINE float GetDamageMultiplier() { return DamageMultiplier; }
+	void StartNuke();
+	void EndNuke();
+	void Damage() { FDamageEvent Event;TakeDamage(10, Event, nullptr, nullptr); }
+	float GetDamageMultiplier() { return DamageMultiplier; }
 
 	void SetDefaults();
 	void EquipWeaponAtSlot(int8 Slot);

@@ -16,7 +16,8 @@ public:
 		ANukeBullet();
 	
 	virtual void Tick(float DeltaTime)override;
-
+	UFUNCTION()
+		void OnBeginOverlap(AActor* OtherActor);
 protected:
 	UPROPERTY(EditAnywhere)
 		float ScaleOverTime;
