@@ -14,7 +14,7 @@ void ANukeBullet::OnBeginOverlap(AActor* OtherActor)
 	AenemyController* Enemy = Cast<AenemyController>(OtherActor);
 	if (Enemy)
 	{
-		UGameplayStatics::ApplyDamage(Enemy, Damage,NULL, GetOwner(), UDamageType::StaticClass());
+		UGameplayStatics::ApplyDamage(Enemy, Damage * DamageScale,NULL, GetOwner(), UDamageType::StaticClass());
 	}
 }
 void ANukeBullet::Tick(float DeltaTime)

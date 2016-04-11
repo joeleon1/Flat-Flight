@@ -15,13 +15,15 @@ void AFlightWeapon::Tick(float DeltaTime)
 
 	TimeSinceShot+= DeltaTime;
 }
-void AFlightWeapon::MakeBullet(FVector Vector, FRotator Rotator)
+void AFlightWeapon::MakeBullet(FVector Vector, FRotator Rotator,float DamageScale)
 {
 	AFlightBullet* Bullet;
 	
 	Bullet = GetWorld()->SpawnActor<AFlightBullet>(ProjectileClass, Vector, Rotator);
 	Bullet->SetLevel(WeaponLevel);
 	Bullet->SetOwner(GetOwner());
+
+	Bullet->SetDamageScale(DamageScale);
 }
 void AFlightWeapon::Fire()
 {
@@ -43,19 +45,19 @@ void AFlightWeapon::Fire()
 
 		check(GetOwner());
 		FVector Location = GetOwner()->GetActorLocation();
-		MakeBullet(Location, FRotator(0, 90, 0));
-		MakeBullet(Location, FRotator(0, -90, 0));
+		MakeBullet(Location, FRotator(0, 90, 0),Player->GetDamageMultiplier());
+		MakeBullet(Location, FRotator(0, -90, 0), Player->GetDamageMultiplier());
 		if (WeaponLevel >= 2)
 		{
-			MakeBullet(Location, FRotator(45, 90, 0));
-			MakeBullet(Location, FRotator(45, -90, 0));
+			MakeBullet(Location, FRotator(45, 90, 0), Player->GetDamageMultiplier());
+			MakeBullet(Location, FRotator(45, -90, 0), Player->GetDamageMultiplier());
 		}
 		if (WeaponLevel == 3)
 		{
 			Location.Y += 50;
-			MakeBullet(Location,FRotator(90,90,0));
+			MakeBullet(Location,FRotator(90,90,0), Player->GetDamageMultiplier());
 			Location.Y -= 100;
-			MakeBullet(Location,FRotator(90,90,0));
+			MakeBullet(Location,FRotator(90,90,0), Player->GetDamageMultiplier());
 		}
 	}
 	

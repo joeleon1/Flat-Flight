@@ -17,7 +17,7 @@ void AFlamethrowerBullet::OnBeginOverlap(AActor* OtherActor)
 	if (Enemy)
 	{
 		//Enemy->TakeDamge(Damage);
-		UGameplayStatics::ApplyDamage(Enemy, Damage,
+		UGameplayStatics::ApplyDamage(Enemy, Damage * DamageScale,
 			NULL, GetOwner(), UDamageType::StaticClass());
 		Destroy();
 	}

@@ -17,11 +17,14 @@ public:
 	virtual void Tick( float DeltaSeconds ) override;
 
 	FORCEINLINE void SetLevel(uint8 value) { Damage *= value; }
-	
+	void SetDamageScale(float value)
+	{
+		DamageScale = value;
+	}
 protected:
 	//When the bullet will kill its self
 	UPROPERTY(EditAnywhere)
-		float TimeTillDeath;
+	float TimeTillDeath;
 	float timeAlive;
 	UPROPERTY(VisibleAnywhere)
 	UProjectileMovementComponent* MovementComponent;
@@ -34,4 +37,6 @@ protected:
 	//Damage the bullet does
 	UPROPERTY(EditDefaultsOnly, Category = "Bullet Properties")
 	float Damage;
+
+	float DamageScale;
 };

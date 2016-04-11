@@ -8,11 +8,12 @@
 #include "FlightPlayerMovementComponent.h"
 #include "FlightPlayer.generated.h"
 #define NUMBER_OF_POSSIBLE_WEAPONS 5
+
 UCLASS()
 class FLIGHT_API AFlightPlayer : public APawn
 {
 	GENERATED_BODY()
-
+	
 public:
 	// Sets default values for this character's properties
 	AFlightPlayer();
@@ -62,6 +63,8 @@ public:
 
 	void MoveVertical(float Scale);
 	void MoveHorizontal(float Scale);
+
+	float GetDamageMultiplier() { return DamageMultiplier; }
 protected:
 	UPROPERTY(VisibleAnywhere)
 		UStaticMeshComponent* ShipMesh;
@@ -88,7 +91,6 @@ private:
 	void StartNuke();
 	void EndNuke();
 	void Damage() { FDamageEvent Event;TakeDamage(10, Event, nullptr, nullptr); }
-	float GetDamageMultiplier() { return DamageMultiplier; }
 
 	void SetDefaults();
 	void EquipWeaponAtSlot(int8 Slot);

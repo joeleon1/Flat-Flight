@@ -52,5 +52,5 @@ protected:
 	USoundBase* FireSound;
 
 private:
-	void MakeBullet(FVector Vector, FRotator Rotator = FRotator( 0,0,0 ));
+	void MakeBullet(FVector Vector, FRotator Rotator = FRotator( 0,0,0 ),float DamageScale = 0);
 };
