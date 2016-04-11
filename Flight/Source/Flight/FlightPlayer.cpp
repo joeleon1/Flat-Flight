@@ -116,6 +116,9 @@ void AFlightPlayer::SetupPlayerInputComponent(class UInputComponent* InputCompon
 
 	InputComponent->BindAction(TEXT("TakeDamage"), EInputEvent::IE_Released,this, &AFlightPlayer::Damage);
 	InputComponent->BindAction(TEXT("Reset"), EInputEvent::IE_Released, this, &AFlightPlayer::Reset);
+	// Joe here. making the reset action usable when paused.
+	InputComponent->BindAction(TEXT("Reset"), EInputEvent::IE_Released, this, &AFlightPlayer::Reset).bExecuteWhenPaused = true;
+	
 
 	InputComponent->BindAction(TEXT("BasicPlayer"), EInputEvent::IE_Released, this, &AFlightPlayer::SetBasicPlayer);
 	InputComponent->BindAction(TEXT("AttackPlayer"), EInputEvent::IE_Released, this, &AFlightPlayer::SetAttackPlayer);
