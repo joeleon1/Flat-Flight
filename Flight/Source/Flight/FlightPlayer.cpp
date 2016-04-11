@@ -272,10 +272,8 @@ float AFlightPlayer::TakeDamage(float Damage, struct FDamageEvent const & Damage
 			{
 				UGameplayStatics::PlaySoundAtLocation(this, PlayerDeathSound, GetActorLocation(), FRotator(0, 0, 0), 0.1, 1.0, 0, nullptr);
 			}
-			//write to leaderboard and change state
-			AFlightPlayerState* playerState = Cast<AFlightPlayerState>(PlayerState);
 
-			if (playerState)
+			if (playerState->Lives == -1)
 			{
 				//load leaderboard
 				ULeaderboardSaveGame* LoadGameInstance = Cast<ULeaderboardSaveGame>(UGameplayStatics::CreateSaveGameObject(ULeaderboardSaveGame::StaticClass()));
@@ -466,4 +464,12 @@ void AFlightPlayer::AddShields(float Shields)
 void AFlightPlayer::GetNuke()
 {
 	NukeWeapon->AddAmmo();
+}
+void AFlightPlayer::StartNuke()
+{ 
+	bIsNuke = true; 
+}
+void AFlightPlayer::EndNuke()
+{ 
+	bIsNuke = false; 
 }
