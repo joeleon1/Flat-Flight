@@ -2,6 +2,7 @@
 
 #include "Flight.h"
 #include "NukeWeapon.h"
+#include "../enemyController.h"
 
 ANukeWeapon::ANukeWeapon():Ammo(MAX_AMMO/2),FireRate(1),TimeSinceShot(0)
 {
@@ -41,12 +42,14 @@ void ANukeWeapon::Fire()
 		if(FireSound)
 			UGameplayStatics::PlaySoundAtLocation(this, FireSound, GetActorLocation(), FRotator(0, 0, 0), 0.1, 1.0, 1, nullptr);
 		//iterate through all enemies and apply damage
-		/*for (TActorIterator<AFlightEnemy> ActorItr(WorldRef); ActorItr; ++ActorItr)
+		/*for (TActorIterator<AenemyController> ActorItr(GetWorld()); ActorItr; ++ActorItr)
 		{
-		}*/
+			UGameplayStatics::ApplyDamage(*ActorItr, 50,NULL, GetOwner(), UDamageType::StaticClass());
+		}*/ 
 		TimeSinceShot = 0;
 		check(GetOwner());
 		Ammo--;
-		GetWorld()->SpawnActor<ANukeBullet>(ProjectileClass, this->GetOwner()->GetActorLocation(), FRotator(0, 90, 0));
+		ANukeBullet* Bullet = GetWorld()->SpawnActor<ANukeBullet>(ProjectileClass, this->GetOwner()->GetActorLocation(), FRotator(0, 90, 0));
+		Bullet->SetOwner(GetOwner());
 	}
 }
