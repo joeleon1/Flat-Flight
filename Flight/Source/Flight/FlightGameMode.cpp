@@ -114,7 +114,7 @@ void AFlightGameMode::Tick(float DeltaSeconds)
 
 	for (int32 i = 0;i != ScoresAdded.Num();++i)
 	{
-		if (ScoresAdded.Num() == 0)
+		if (ScoresAdded.Num() >= i)
 			return;
 		ScoresAdded[i].TimeOnScreen += DeltaSeconds;
 		if (ScoresAdded[i].TimeOnScreen > 2)
