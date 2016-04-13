@@ -233,7 +233,8 @@ void AFlightPlayer::AddScore(int32 Score, AActor* Actor)
 
 float AFlightPlayer::TakeDamage(float Damage, struct FDamageEvent const & DamageEvent, AController * EventInstigator, AActor * DamageCauser)
 {
-	isShowingDmgEffect = true;
+	//isShowingDmgEffect = true;
+	ShowDamageEffect();
 
 	Super::TakeDamage(Damage, DamageEvent, EventInstigator, DamageCauser);
 	AFlightPlayerState* playerState = Cast<AFlightPlayerState>(PlayerState);
@@ -311,7 +312,7 @@ void AFlightPlayer::Reset()
 }
 
 void AFlightPlayer::ShowDamageEffect() {
-
+	damageEffectSignal = true;
 }
 
 void AFlightPlayer::EquipBasicWeapon()

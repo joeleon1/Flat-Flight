@@ -48,6 +48,9 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 		bool isShowingDmgEffect = false;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+		bool damageEffectSignal = false;
+
 	void CycleWeaponsUp();
 	void CycleWeaponsDown();
 	void EquipBasicWeapon();
