@@ -7,13 +7,13 @@
 
 ALaserBullet::ALaserBullet()
 {
-	OnActorBeginOverlap.AddDynamic(this, &ALaserBullet::OnBeginOverlap);
+	OnActorEndOverlap.AddDynamic(this, &ALaserBullet::OnBeginOverlap);
 }
 
 void ALaserBullet::OnBeginOverlap(AActor* OtherActor)
 {
 	AenemyController* Enemy = Cast<AenemyController>(OtherActor);
-
+	
 	if (Enemy)
 	{
 		//Enemy->TakeDamge(Damage);
