@@ -3,6 +3,7 @@
 #pragma once
 
 #include "GameFramework/Actor.h"
+#include "RealBoss.h"
 #include "BossSpawner.generated.h"
 
 UCLASS()
@@ -20,15 +21,24 @@ public:
 	// Called every frame
 	virtual void Tick( float DeltaSeconds ) override;
 
-	float timeToSpawnBoss = 60;
+protected:
+	UPROPERTY(EditAnywhere)
+		float spawnCheckRate = 2.5f;
 
-	float gameTime = 0;
+	UPROPERTY(EditAnywhere)
+		float spawnChance = 0.5f;
 
-	float minHeight = 0;
-	float maxHeight = 1000;
-	
-	bool isBossSpawned = false;
-	// ADD WHEN WE HAVE A BOSS CLASS
-	/*UPROPERTY(BlueprintReadWrite, EditDefaultsOnly)
-		TSubclassOf<AbossController> BossClass;*/
+	float timeToNextCheck = 1;
+
+	int numOfLoops = 0;
+	int timesToIncreaseDifficulty = 10;
+
+	float speedToAssign = 3;
+	float speedIncrease = 0.5;
+
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly)
+		TSubclassOf<ARealBoss> BossClass;
+
+	void SpawnBoss();
+
 };
