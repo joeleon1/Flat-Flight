@@ -241,7 +241,7 @@ float AFlightPlayer::TakeDamage(float Damage, struct FDamageEvent const & Damage
 	/// Play Player hit sound here.
 	if(PlayerHitSound)
 	{
-	UGameplayStatics::PlaySoundAtLocation(this, PlayerHitSound, GetActorLocation(), FRotator(0, 0, 0), 0.1, 1.0, 0, nullptr);
+		UGameplayStatics::PlaySoundAtLocation(this, PlayerHitSound, GetActorLocation(), FRotator(0, 0, 0), 0.1, 1.0, 0, nullptr);
 	}
 	
 	
