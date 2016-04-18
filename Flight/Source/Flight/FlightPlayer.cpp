@@ -238,7 +238,7 @@ float AFlightPlayer::TakeDamage(float Damage, struct FDamageEvent const & Damage
 
 	Super::TakeDamage(Damage, DamageEvent, EventInstigator, DamageCauser);
 	AFlightPlayerState* playerState = Cast<AFlightPlayerState>(PlayerState);
-
+	/// Play Player hit sound here.
 	if (playerState)
 	{
 		playerState->CurrentCombo = 1;
