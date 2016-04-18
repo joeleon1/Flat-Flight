@@ -77,5 +77,8 @@ protected:
 	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly)
 		TSubclassOf<AEnemyBullet> ProjectileClass;
 
+	bool isMovingLeft;
+	bool justChangedDirection;
+
 	void makeBullet(FVector Vector, FRotator Rotator, float damage);
 };
