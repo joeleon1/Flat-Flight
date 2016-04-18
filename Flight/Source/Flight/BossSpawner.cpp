@@ -24,31 +24,17 @@ void ABossSpawner::Tick( float DeltaTime )
 {
 	Super::Tick(DeltaTime);
 
-	timeToNextCheck -= DeltaTime;
+	gameTime += DeltaTime;
 
-	if (timeToNextCheck <= 0) {
-		timeToNextCheck = spawnCheckRate;
-		numOfLoops++;
-
-		if (numOfLoops >= timesToIncreaseDifficulty) {
-			numOfLoops = 0;
-			speedToAssign += speedIncrease;
-		}
-
-		float temp = ((float)(rand() % 100)) / 100.0f;
-
-		//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Blue, "Checking for spawn: "+ FString::SanitizeFloat(temp));
-
-		if (temp <= spawnChance) {
-
-			SpawnBoss();
-		}
+	if (isBossSpawned == false && gameTime > timeToSpawnBoss) {
+		isBossSpawned = true;
+		//int temp = (rand() % ((int)maxHeight - (int)minHeight)) + minHeight;
+		SpawnBoss();
 	}
 }
 
 void ABossSpawner::SpawnBoss() {
 	//FActorSpawnParameters SpawnParameters;
-	//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Blue, "Spawning enemy");
 	ARealBoss* newBoss;
 
 	newBoss = GetWorld()->SpawnActor<ARealBoss>(BossClass,
