@@ -80,6 +80,8 @@ protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
 		USoundBase* ShieldsFadeSound;
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
+		USoundBase* PlayerHitSound;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
 		USoundBase* PlayerDeathSound;
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
 		float DamageMultiplier;
