@@ -57,18 +57,35 @@ void ARealBoss::Tick( float DeltaTime )
 	{
 		Destroy();
 	}
+
+	if (!ShipMesh->IsVisible() && !justChangedDirection) 
+	{
+		isMovingLeft = !isMovingLeft;
+		justChangedDirection = true;
+	}
+	else {
+		justChangedDirection = false;
+	}
 }
 
 void ARealBoss::move(float deltaTime)
 {
+	int dir = 0;
+	if (isMovingLeft)
+	{
+		dir = 1;
+	}
+	else {
+		dir = -1;
+	}
 	FVector strafeLocation = GetActorLocation();
 
-	// This returns a number between -1 and 1, to be used as a scalar for where the enemy ship is.
+	// This returns a number between -1 and 1, to be used as a scalar for where the boss ship is.
 	float vertDeviation = (FMath::Sin(deltaTime + timePassed) - FMath::Sin(timePassed));
 
 	// Set the z location to be somewhere in the vertical boundary, scaled by the horDeviation.
 	strafeLocation.Z += vertDeviation * vertBound;
-	strafeLocation.Y -= horizontalSpeed;
+	strafeLocation.Y -= horizontalSpeed * dir;
 	timePassed += deltaTime;
 	SetActorLocation(strafeLocation);
 }
@@ -93,7 +110,7 @@ float ARealBoss::TakeDamage(float DamageAmount, struct FDamageEvent const & Dama
 			Destroy();
 			if (BossDeathSound)
 			{
-				UGameplayStatics::PlaySoundAtLocation(this, BossDeathSound, GetActorLocation(), FRotator(0, 0, 0), 0.1, 1.0, 0, nullptr);
+//				UGameplayStatics::PlaySoundAtLocation(this, BossDeathSound, GetActorLocation(), FRotator(0, 0, 0), 0.1, 1.0, 0, nullptr);
 			}
 		}
 	}

@@ -15,6 +15,8 @@ public:
 	// Sets default values for this actor's properties
 	ABossSpawner();
 
+	float timeToSpawnBoss = 45;
+
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 	
@@ -22,19 +24,11 @@ public:
 	virtual void Tick( float DeltaSeconds ) override;
 
 protected:
-	UPROPERTY(EditAnywhere)
-		float spawnCheckRate = 2.5f;
-
-	UPROPERTY(EditAnywhere)
-		float spawnChance = 0.5f;
-
-	float timeToNextCheck = 1;
-
-	int numOfLoops = 0;
-	int timesToIncreaseDifficulty = 10;
-
+	
+	float gameTime = 0;
 	float speedToAssign = 3;
-	float speedIncrease = 0.5;
+
+	bool isBossSpawned = false;
 
 	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly)
 		TSubclassOf<ARealBoss> BossClass;
