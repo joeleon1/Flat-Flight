@@ -3,7 +3,7 @@
 #include "Flight.h"
 #include "LaserBullet.h"
 #include "enemyController.h"
-
+#include "RealBoss.h"
 
 ALaserBullet::ALaserBullet()
 {
@@ -19,6 +19,13 @@ void ALaserBullet::OnBeginOverlap(AActor* OtherActor)
 		//Enemy->TakeDamge(Damage);
 		UGameplayStatics::ApplyDamage(Enemy, Damage * DamageScale,
 			NULL, GetOwner(), UDamageType::StaticClass());
+		return;
+	}
+	ARealBoss* Boss = Cast<ARealBoss>(OtherActor);
+	if (Boss)
+	{
+		UGameplayStatics::ApplyDamage(Boss, Damage * DamageScale, NULL, GetOwner(), UDamageType::StaticClass());
+		return;
 	}
 }
 

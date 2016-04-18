@@ -3,6 +3,7 @@
 #include "Flight.h"
 #include "NukeBullet.h"
 #include "enemyController.h"
+#include "RealBoss.h"
 ANukeBullet::ANukeBullet()
 {
 	MovementComponent->InitialSpeed = 0;
@@ -15,6 +16,12 @@ void ANukeBullet::OnBeginOverlap(AActor* OtherActor)
 	if (Enemy)
 	{
 		UGameplayStatics::ApplyDamage(Enemy, Damage * DamageScale,NULL, GetOwner(), UDamageType::StaticClass());
+		return;
+	}
+	ARealBoss* Boss = Cast<ARealBoss>(OtherActor);
+	if (Boss)
+	{
+		UGameplayStatics::ApplyDamage(Boss, Damage * DamageScale, NULL, GetOwner(), UDamageType::StaticClass());
 	}
 }
 void ANukeBullet::Tick(float DeltaTime)

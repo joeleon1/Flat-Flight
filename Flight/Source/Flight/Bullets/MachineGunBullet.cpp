@@ -3,7 +3,7 @@
 #include "Flight.h"
 #include "MachineGunBullet.h"
 #include "enemyController.h"
-
+#include "RealBoss.h"
 
 AMachineGunBullet::AMachineGunBullet()
 {
@@ -20,6 +20,14 @@ void AMachineGunBullet::OnBeginOverlap(AActor* OtherActor)
 		UGameplayStatics::ApplyDamage(Enemy, Damage * DamageScale,
 			NULL, GetOwner(), UDamageType::StaticClass());
 		Destroy();
+		return;
+	}
+	ARealBoss* Boss = Cast<ARealBoss>(OtherActor);
+	if (Boss)
+	{
+		UGameplayStatics::ApplyDamage(Boss, Damage * DamageScale, NULL, GetOwner(), UDamageType::StaticClass());
+		Destroy();
+		return;
 	}
 }
 
