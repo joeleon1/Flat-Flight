@@ -78,7 +78,7 @@ protected:
 		TSubclassOf<AEnemyBullet> ProjectileClass;
 
 	bool isMovingLeft;
-	bool justChangedDirection;
+	bool justChangedDirection = false;
 
 	void makeBullet(FVector Vector, FRotator Rotator, float damage);
 };

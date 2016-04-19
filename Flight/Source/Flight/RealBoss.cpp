@@ -57,14 +57,15 @@ void ARealBoss::Tick( float DeltaTime )
 	{
 		Destroy();
 	}
-
-	if (!ShipMesh->IsVisible() && !justChangedDirection) 
-	{
-		isMovingLeft = !isMovingLeft;
-		justChangedDirection = true;
+	
+	// If shipmesh is on screen and we 'just changed direction'
+	if (GetActorLocation().Y >  2600) {
+		isMovingLeft = true;
 	}
-	else {
-		justChangedDirection = false;
+	// If the shipmesh is offscreen and we DIDNT recently change direction
+	else if (GetActorLocation().Y < -200) 
+	{
+		isMovingLeft = false;
 	}
 }
 
