@@ -4,6 +4,7 @@
 #include "FlightGameMode.h"
 #include "FlightPlayerState.h"
 #include "PlayerHUD.h"
+#include "PlayerSelectHUD.h"
 #include "LeaderboardHUD.h"
 
 AFlightGameMode::PLAYER_CLASS AFlightGameMode::PlayerClass = BASIC;
