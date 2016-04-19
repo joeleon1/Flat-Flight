@@ -111,7 +111,7 @@ float ARealBoss::TakeDamage(float DamageAmount, struct FDamageEvent const & Dama
 			Destroy();
 			if (BossDeathSound)
 			{
-//				UGameplayStatics::PlaySoundAtLocation(this, BossDeathSound, GetActorLocation(), FRotator(0, 0, 0), 0.1, 1.0, 0, nullptr);
+		UGameplayStatics::PlaySoundAtLocation(this, BossDeathSound, GetActorLocation(), FRotator(0, 0, 0), 0.1, 1.0, 0, nullptr);
 			}
 		}
 	}
