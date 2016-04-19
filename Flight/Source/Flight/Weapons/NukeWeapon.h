@@ -22,7 +22,7 @@ public:
 	
 
 	FORCEINLINE bool HasAmmo() { return Ammo != 0; }
-	
+	FORCEINLINE int8 GetAmmo() { return Ammo; }
 private:
 	TSubclassOf<ANukeBullet> ProjectileClass;
 	UPROPERTY()

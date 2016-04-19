@@ -26,7 +26,8 @@ APlayerHUD::APlayerHUD(const FObjectInitializer& ObjectInitializer)
 	HeartIMG = (UTexture*)HUDTextureOB5.Object;
 	static ConstructorHelpers::FObjectFinder<UTexture>HUDTextureOB6(TEXT("/Game/Textures/Shield"));
 	ShieldIMG = (UTexture*)HUDTextureOB6.Object;
-
+	static ConstructorHelpers::FObjectFinder<UTexture>HUDTextureOB7(TEXT("/Game/Textures/Nuke"));
+	NukeIMG = (UTexture*)HUDTextureOB7.Object;
 }
 
 void APlayerHUD::DrawHUD()
@@ -50,7 +51,8 @@ void APlayerHUD::DrawHUD()
 	int maxShields = 0;
 	int combo = 0;
 	int score = 0;
-
+	int8 NukeAmmo = 0;
+	int8 lives = 0;
 	if (PlayerController1 && Player1) {
 		//get playerstate
 		AFlightPlayerState* PlayerState1 = Cast<AFlightPlayerState>(PlayerController1->PlayerState);
@@ -64,6 +66,8 @@ void APlayerHUD::DrawHUD()
 		maxShields = PlayerState1->MaxShields;
 		combo = PlayerState1->CurrentCombo;
 		score = PlayerState1->ActualScore;
+		NukeAmmo = Player1->GetNukeAmmo();
+		lives = PlayerState1->Lives;
 		//get ammo
 		//ammoCount = Player1->GetWeapon()->GetAmmo();
 	}
@@ -81,7 +85,10 @@ void APlayerHUD::DrawHUD()
 		DrawTexture(MachinegunIMG, wepX, wepY, wepSizeX, wepSizeY, 1, 1, 1, 1);
 	if (currentWep == (FString)"FlamethrowerWeapon")
 		DrawTexture(FlamethrowerIMG, wepX, wepY, wepSizeX, wepSizeY, 1, 1, 1, 1);
-		
+
+	DrawTexture(NukeIMG, 0, ScreenDimensions.Y-wepSizeY, wepSizeX, wepSizeY, 1, 1, 1, 1);
+	DrawText(FString().FromInt(NukeAmmo), FColor::Yellow, wepSizeX, ScreenDimensions.Y - wepSizeY, HUDFont);
+	
 	//draw shields & health
 	int barSizeX = 3;
 	int hbarSizeY = 32;

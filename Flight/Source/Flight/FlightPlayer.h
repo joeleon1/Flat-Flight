@@ -37,6 +37,7 @@ public:
 	void LevelUpWeapon(UClass* WeaponToLevel);
 	void AddShields(float Sheilds);
 	void GetNuke();
+	FORCEINLINE int8 GetNukeAmmo() { return NukeWeapon->GetAmmo(); }
 
 	void AddScore(int32 Score, AActor* CallingActor);
 
