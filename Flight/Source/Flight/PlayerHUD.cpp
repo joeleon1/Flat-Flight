@@ -89,6 +89,18 @@ void APlayerHUD::DrawHUD()
 	DrawTexture(NukeIMG, 0, ScreenDimensions.Y-wepSizeY, wepSizeX, wepSizeY, 1, 1, 1, 1);
 	DrawText(FString().FromInt(NukeAmmo), FColor::Yellow, wepSizeX, ScreenDimensions.Y - wepSizeY, HUDFont);
 	
+	AFlightGameMode* GameMode = Cast<AFlightGameMode>(GetWorld()->GetAuthGameMode());
+	if (GameMode)
+	{
+		TArray<FScoreToDisplay> Scores = GameMode->GetScores();
+		FScoreToDisplay Score;
+		for (int32 i = 0;i != Scores.Num();++i)
+		{
+			Score = Scores[i];
+			DrawText(FString().FromInt(Score.Score), FColor::Red, Score.XPos*ScreenDimensions.X, Score.YPos*ScreenDimensions.Y, HUDFont);
+		}
+	}
+
 	//draw shields & health
 	int barSizeX = 3;
 	int hbarSizeY = 32;
