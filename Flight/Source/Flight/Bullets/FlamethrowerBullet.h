@@ -17,5 +17,6 @@ public:
 	AFlamethrowerBullet();
 	UFUNCTION()
 	void OnBeginOverlap(AActor* OtherActor);
-	
+	UPROPERTY(VisibleAnywhere)
+	UParticleSystemComponent* ParticleSystem;
 };

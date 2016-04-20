@@ -4,6 +4,8 @@
 
 #include "GameFramework/Actor.h"
 #include "EnemyBullet.h"
+#include "EnemyDeath.h"
+#include "LaserDamage.h"
 #include "enemyController.generated.h"
 
 UCLASS()
@@ -62,6 +64,8 @@ public:
 	// This function will cause the enemy ship to fire.
 	void fire();
 
+	void AddLaserDamage();
+
 protected:
 	UPROPERTY(VisibleAnywhere)
 		UStaticMeshComponent* ShipMesh;
@@ -78,6 +82,11 @@ protected:
 		float CollisionDamage;
 	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly)
 		TSubclassOf<AEnemyBullet> ProjectileClass;
+
+	UPROPERTY(EditDefaultsOnly, BLueprintReadWrite)
+		TSubclassOf<ALaserDamage> LaserEmitter;
+	UPROPERTY(EditDefaultsOnly, BLueprintReadWrite)
+		TSubclassOf<AEnemyDeath> SmokeEmitter;
 
 	void makeBullet(FVector Vector, FRotator Rotator, float damage);
 };

@@ -8,6 +8,8 @@
 AFlamethrowerBullet::AFlamethrowerBullet()
 {
 	OnActorBeginOverlap.AddDynamic(this, &AFlamethrowerBullet::OnBeginOverlap);
+	ParticleSystem = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("Particle System"));
+	ParticleSystem->AttachTo(RootComponent);
 }
 
 void AFlamethrowerBullet::OnBeginOverlap(AActor* OtherActor)

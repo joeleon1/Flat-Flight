@@ -3,7 +3,7 @@
 #include "Flight.h"
 #include "enemyController.h"
 #include "FlightPlayer.h"
-
+#include "Bullets/LaserBullet.h"
 // Sets default values
 AenemyController::AenemyController()
 {
@@ -56,7 +56,11 @@ void AenemyController::Tick(float DeltaTime)
 		Destroy();
 	}
 }
-
+void AenemyController::AddLaserDamage()
+{
+	ALaserDamage* Damage = GetWorld()->SpawnActor<ALaserDamage>(LaserEmitter, GetActorLocation(), GetActorRotation());
+	Damage->SetOwner(this);
+}
 void AenemyController::move(float deltaTime)
 {
 	FVector strafeLocation = GetActorLocation();
@@ -87,7 +91,7 @@ float AenemyController::TakeDamage(float DamageAmount, struct FDamageEvent const
 			{
 				Player->AddScore(Score, this);
 			}
-
+			GetWorld()->SpawnActor<AEnemyDeath>(SmokeEmitter, GetActorLocation(), GetActorRotation());
 			Destroy();
 			if (EnemyDeathSound)
 			{

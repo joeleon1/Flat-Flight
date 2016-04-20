@@ -127,7 +127,7 @@ void ARealBoss::OnBeginOverlap(AActor* OtherActor)
 	{
 		FDamageEvent Event;
 		Player->TakeDamage(CollisionDamage, Event, NULL, this);
-		TakeDamage(health, Event, NULL, this);
+		TakeDamage(1, Event, NULL, this);
 	}
 }
 

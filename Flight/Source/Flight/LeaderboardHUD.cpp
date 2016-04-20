@@ -32,7 +32,7 @@ void ALeaderboardHUD::DrawHUD()
 	if (PlayerController1 && Player1) {
 		//get playerstate
 		AFlightPlayerState* PlayerState1 = Cast<AFlightPlayerState>(PlayerController1->PlayerState);
-		yrscore = PlayerState1->Score;
+		yrscore = PlayerState1->ActualScore;
 	}
 
 	//draw background
@@ -47,7 +47,11 @@ void ALeaderboardHUD::DrawHUD()
 
 	bool doOnce = true;
 	FVector numSize;
-	for (int i = 0; i < leaderboard.Num(); i++) {
+	
+	FString Text = FString::Printf(TEXT("Your Score Was %d Congratulations!"), yrscore);
+	GetTextSize(Text, numSize.X, numSize.Y, HUDFont);
+	DrawText(Text, FColor::Yellow, (ScreenDimensions.X - numSize.X)/ 2, (ScreenDimensions.Y - numSize.Y) / 2, HUDFont);
+	/*for (int i = 0; i < leaderboard.Num(); i++) {
 		FString num = FString().FromInt(i + 1);
 		num.Append(".");
 		GetTextSize(num, numSize.X, numSize.Y, HUDFont);
@@ -60,6 +64,6 @@ void ALeaderboardHUD::DrawHUD()
 			DrawText((FString)"Your Score ->", FColor::Yellow, ScreenDimensions.X / 2 - numSize.X - scoreSize.X, i * numSize.Y, HUDFont);
 			doOnce = false;
 		}
-	}
+	}*/
 }
 

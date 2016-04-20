@@ -19,12 +19,13 @@ void ALaserBullet::OnBeginOverlap(AActor* OtherActor)
 		//Enemy->TakeDamge(Damage);
 		UGameplayStatics::ApplyDamage(Enemy, Damage * DamageScale,
 			NULL, GetOwner(), UDamageType::StaticClass());
+		Enemy->AddLaserDamage();
 		return;
 	}
 	ARealBoss* Boss = Cast<ARealBoss>(OtherActor);
 	if (Boss)
 	{
-		UGameplayStatics::ApplyDamage(Boss, Damage * DamageScale, NULL, GetOwner(), UDamageType::StaticClass());
+		UGameplayStatics::ApplyDamage(Boss, Damage * DamageScale, NULL, GetOwner(), ALaserBullet::StaticClass());
 		return;
 	}
 }

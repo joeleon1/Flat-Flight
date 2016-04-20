@@ -274,9 +274,11 @@ float AFlightPlayer::TakeDamage(float Damage, struct FDamageEvent const & Damage
 
 		if (playerState->Health <= 0)
 		{
+			GetWorld()->SpawnActor<AEnemyDeath>(DeathEmitter, GetActorLocation(), GetActorRotation());
 			playerState->Health = 100;
 			playerState->Lives--;
 			SetDefaults();
+
 			FlashTimer = 0;
 			//play death sound and make a timer to respawn.
 			if (PlayerDeathSound)
@@ -286,6 +288,7 @@ float AFlightPlayer::TakeDamage(float Damage, struct FDamageEvent const & Damage
 
 			if (playerState->Lives == -1)
 			{
+				playerState->Lives = 3;
 				//load leaderboard
 				ULeaderboardSaveGame* LoadGameInstance = Cast<ULeaderboardSaveGame>(UGameplayStatics::CreateSaveGameObject(ULeaderboardSaveGame::StaticClass()));
 				LoadGameInstance = Cast<ULeaderboardSaveGame>(UGameplayStatics::LoadGameFromSlot(LoadGameInstance->SaveSlotName, LoadGameInstance->UserIndex));
@@ -316,6 +319,13 @@ void AFlightPlayer::Reset()
 	//done in bp so can be executed while paused
 	APlayerController* PlayerController1 = UGameplayStatics::GetPlayerController(GetWorld(), 0);
 	PlayerController1->ConsoleCommand(TEXT("RestartLevel"), true);
+	AFlightPlayerState* playerState = Cast<AFlightPlayerState>(PlayerState);
+
+	if (playerState)
+	{
+		playerState->ActualScore = 0;
+	}
+	
 }
 
 void AFlightPlayer::ShowDamageEffect() {

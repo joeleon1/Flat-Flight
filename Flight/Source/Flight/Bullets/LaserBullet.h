@@ -16,5 +16,4 @@ public:
 	ALaserBullet();
 	UFUNCTION()
 	void OnBeginOverlap(AActor* OtherActor);
-	
 };

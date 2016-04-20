@@ -6,6 +6,7 @@
 #include "Weapons/FlightWeapon.h"
 #include "Weapons/NukeWeapon.h"
 #include "FlightPlayerMovementComponent.h"
+#include "EnemyDeath.h"
 #include "FlightPlayer.generated.h"
 #define NUMBER_OF_POSSIBLE_WEAPONS 5
 
@@ -88,6 +89,9 @@ protected:
 		float DamageMultiplier;
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
 		float DefenceMultiplier;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
+		TSubclassOf<AEnemyDeath> DeathEmitter;
 
 
 		APlayerStart* PlayerStart;
