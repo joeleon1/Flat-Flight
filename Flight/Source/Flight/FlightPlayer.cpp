@@ -317,14 +317,14 @@ float AFlightPlayer::TakeDamage(float Damage, struct FDamageEvent const & Damage
 void AFlightPlayer::Reset()
 {
 	//done in bp so can be executed while paused
-	APlayerController* PlayerController1 = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+	/*APlayerController* PlayerController1 = UGameplayStatics::GetPlayerController(GetWorld(), 0);
 	PlayerController1->ConsoleCommand(TEXT("RestartLevel"), true);
 	AFlightPlayerState* playerState = Cast<AFlightPlayerState>(PlayerState);
 
 	if (playerState)
 	{
 		playerState->ActualScore = 0;
-	}
+	}*/
 	
 }
 
