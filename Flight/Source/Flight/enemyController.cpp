@@ -91,7 +91,7 @@ float AenemyController::TakeDamage(float DamageAmount, struct FDamageEvent const
 			{
 				Player->AddScore(Score, this);
 			}
-			GetWorld()->SpawnActor<AEnemyDeath>(SmokeEmitter, GetActorLocation(), GetActorRotation());
+			
 			Destroy();
 			if (EnemyDeathSound)
 			{

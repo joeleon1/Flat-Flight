@@ -29,7 +29,11 @@ void ARealBoss::BeginPlay()
 	Super::BeginPlay();
 	
 }
-
+void ARealBoss::AddLaserDamage()
+{
+	ALaserDamage* Damage = GetWorld()->SpawnActor<ALaserDamage>(LaserEmitter, GetActorLocation(), GetActorRotation());
+	Damage->SetOwner(this);
+}
 // Called every frame
 void ARealBoss::Tick( float DeltaTime )
 {
@@ -107,7 +111,7 @@ float ARealBoss::TakeDamage(float DamageAmount, struct FDamageEvent const & Dama
 			{
 				Player->AddScore(Score, this);
 			}
-
+			GetWorld()->SpawnActor<AEnemyDeath>(SmokeEmitter, GetActorLocation(), GetActorRotation());
 			Destroy();
 			if (BossDeathSound)
 			{

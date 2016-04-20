@@ -4,6 +4,8 @@
 
 #include "GameFramework/Actor.h"
 #include "EnemyBullet.h"
+#include "EnemyDeath.h"
+#include "LaserDamage.h"
 #include "RealBoss.generated.h"
 
 UCLASS()
@@ -60,6 +62,7 @@ public:
 	void fire();
 
 
+	void AddLaserDamage();
 protected:
 	UPROPERTY(VisibleAnywhere)
 		UStaticMeshComponent* ShipMesh;
@@ -76,6 +79,11 @@ protected:
 		float CollisionDamage;
 	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly)
 		TSubclassOf<AEnemyBullet> ProjectileClass;
+
+	UPROPERTY(EditDefaultsOnly, BLueprintReadWrite)
+		TSubclassOf<ALaserDamage> LaserEmitter;
+	UPROPERTY(EditDefaultsOnly, BLueprintReadWrite)
+		TSubclassOf<AEnemyDeath> SmokeEmitter;
 
 	bool isMovingLeft;
 	bool justChangedDirection = false;
