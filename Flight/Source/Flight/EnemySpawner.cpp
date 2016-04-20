@@ -60,6 +60,8 @@ void AEnemySpawner::SpawnEnemy() {
 		this->GetActorLocation(),
 		this->GetActorRotation()
 		);
-	newEnemy->downSpeed = speedToAssign;
+	if (newEnemy) {
+		newEnemy->downSpeed = speedToAssign;
+	}
 }
 

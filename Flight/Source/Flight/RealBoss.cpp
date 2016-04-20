@@ -158,6 +158,8 @@ void ARealBoss::makeBullet(FVector Vector, FRotator Rotator, float damage)
 	{
 		//Spawn the blueprint version linked through the enemy blueprint ( Otherwise nothing will really happen)
 		Bullet = GetWorld()->SpawnActor<AEnemyBullet>(ProjectileClass, this->GetActorLocation(), Vector.Rotation());
-		Bullet->SetDamage(damage);
+		if (Bullet) {
+			Bullet->SetDamage(damage);
+		}
 	}
 }

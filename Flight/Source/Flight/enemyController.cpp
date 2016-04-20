@@ -59,7 +59,9 @@ void AenemyController::Tick(float DeltaTime)
 void AenemyController::AddLaserDamage()
 {
 	ALaserDamage* Damage = GetWorld()->SpawnActor<ALaserDamage>(LaserEmitter, GetActorLocation(), GetActorRotation());
-	Damage->SetOwner(this);
+	if (Damage) {
+		Damage->SetOwner(this);
+	}
 }
 void AenemyController::move(float deltaTime)
 {
@@ -140,7 +142,9 @@ void AenemyController::makeBullet(FVector Vector, FRotator Rotator, float damage
 	{
 		//Spawn the blueprint version linked through the enemy blueprint ( Otherwise nothing will really happen)
 		Bullet = GetWorld()->SpawnActor<AEnemyBullet>(ProjectileClass,this->GetActorLocation(), Vector.Rotation());
-		Bullet->SetDamage(damage);
+		if (Bullet) {
+			Bullet->SetDamage(damage);
+		}
 	}
 	
 	
